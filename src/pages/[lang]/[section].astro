@@ -1,0 +1,791 @@
+---
+import Base from '../../layouts/Base.astro';
+import {
+  asArray,
+  contentSections,
+  getDict,
+  languages,
+  objectValues,
+  pathFor,
+  productLinks,
+  productSections,
+  titledBlocks,
+  type Lang,
+  type SectionSlug,
+} from '../../lib/site';
+
+export function getStaticPaths() {
+  return languages.flatMap((lang) =>
+    contentSections.map((section) => ({ params: { lang, section } })),
+  );
+}
+
+const lang = Astro.params.lang as Lang;
+const section = Astro.params.section as SectionSlug;
+const dict = getDict(lang);
+const isProduct = productSections.includes(section as (typeof productSections)[number]);
+const product: any = isProduct ? dict.products[section as keyof typeof dict.products] : undefined;
+const pageData: any =
+  product ??
+  (section === 'market'
+    ? dict.marketplace
+    : dict[section as keyof typeof dict]);
+const hero: any = pageData?.hero ?? pageData;
+const pageTitle = hero?.title ?? pageData?.title ?? section;
+const description = hero?.description ?? hero?.subtitle ?? pageData?.subtitle ?? pageTitle;
+
+function hrefForPrimary() {
+  if (isProduct) return productLinks[section as keyof typeof productLinks]?.docs ?? 'https://docs.objectstack.ai';
+  if (section === 'pricing') return 'https://github.com/objectstack-ai/framework';
+  if (section === 'enterprise') return 'https://tally.so/r/2EeW0V';
+  return 'https://docs.objectstack.ai';
+}
+
+function hrefForSecondary() {
+  if (isProduct) return productLinks[section as keyof typeof productLinks]?.github ?? 'https://github.com/objectstack-ai/framework';
+  return section === 'enterprise' ? pathFor(lang, '/solutions') : 'https://github.com/objectstack-ai/framework';
+}
+
+const productFeatureBlocks = product ? titledBlocks(product.features).filter((item) => item.description) : [];
+const productUseCases = product ? titledBlocks(product.useCases).filter((item) => item.description) : [];
+const enterpriseChallenges = section === 'enterprise' ? titledBlocks(dict.enterprise.challenges).filter((item) => item.description) : [];
+const enterpriseFeatures = section === 'enterprise' ? titledBlocks(dict.enterprise.features).filter((item) => item.description) : [];
+const marketplaceItems: any[] =
+  section === 'market' ? objectValues(dict.marketplace.items).filter((item) => item && typeof item === 'object') : [];
+const legalSections: any[] = section === 'privacy' || section === 'terms' ? asArray(pageData.sections) : [];
+const pricingPlans: any[] = section === 'pricing' ? objectValues(dict.pricing.plans) : [];
+const integrationCategories: any[] =
+  section === 'integrations'
+    ? [
+        dict.integrations.driverRegistry.relational,
+        dict.integrations.driverRegistry.nosql,
+        dict.integrations.driverRegistry.files,
+        dict.integrations.driverRegistry.custom,
+      ]
+    : [];
+const industries: any[] =
+  section === 'solutions' ? titledBlocks(dict.solutions.byIndustry).filter((item) => item.description) : [];
+const scenarios: any[] =
+  section === 'solutions' ? titledBlocks(dict.solutions.byScenario).filter((item) => item.description) : [];
+const solutionStats =
+  lang === 'zh'
+    ? [
+        { value: 'Self-hosted', label: '可部署在私有云、本地或气隙环境' },
+        { value: 'MCP-ready', label: 'AI agent 使用同一套权限与审计' },
+        { value: 'Driver-based', label: '包装遗留系统，而不是推倒重来' },
+        { value: 'Metadata IP', label: '对象、流程、策略和视图可版本化' },
+      ]
+    : [
+        { value: 'Self-hosted', label: 'Runs in private cloud, on-prem, or air-gapped networks' },
+        { value: 'MCP-ready', label: 'Agents inherit the same permissions and audit model' },
+        { value: 'Driver-based', label: 'Wrap legacy systems instead of replacing them' },
+        { value: 'Metadata IP', label: 'Version objects, flows, policies, and views' },
+      ];
+const capabilityRows =
+  lang === 'zh'
+    ? [
+        ['治理', 'RBAC、RLS、FLS、审计、租户隔离'],
+        ['数据', 'Postgres、MongoDB、Excel、SaaS、专有系统 Driver'],
+        ['AI', '权限感知 MCP tools、请求追踪、动作审计'],
+        ['交付', '自托管、ObjectCloud、私有环境、区域驻留'],
+      ]
+    : [
+        ['Governance', 'RBAC, RLS, FLS, audit, tenant isolation'],
+        ['Data', 'Postgres, MongoDB, Excel, SaaS, proprietary drivers'],
+        ['AI', 'Permission-aware MCP tools, request tracing, action audit'],
+        ['Delivery', 'Self-hosted, ObjectCloud, private regions, residency'],
+      ];
+---
+
+<Base lang={lang} title={`${pageTitle} | ObjectStack`} description={description}>
+  {section !== 'solutions' && (
+  <section class="page-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">{hero?.label ?? hero?.badge ?? 'ObjectStack'}</p>
+        <h1>{pageTitle}</h1>
+        {hero?.subtitle && <p class="subtitle">{hero.subtitle}</p>}
+        <p class="lead">{hero?.description ?? pageData?.intro ?? pageData?.subtitle}</p>
+        {(hero?.cta || hero?.secondaryCta || section === 'pricing') && (
+          <div class="button-row">
+            <a class="button" href={hrefForPrimary()}>{hero?.cta ?? dict.cta.secondaryButton}</a>
+            <a class="button secondary" href={hrefForSecondary()}>{hero?.secondaryCta ?? 'GitHub'}</a>
+          </div>
+        )}
+      </div>
+      <aside class={`route-mark route-${section}`} aria-label={`${pageTitle} route marker`}>
+        <span>/{lang}/{section}</span>
+        <strong>{isProduct ? product?.hero?.title : pageTitle}</strong>
+        <p>{isProduct ? product?.hero?.subtitle : description}</p>
+      </aside>
+    </div>
+  </section>
+  )}
+
+  {isProduct && product && (
+    <>
+      <section class="section">
+        <div class="container">
+          <h2>{product.features?.title ?? 'Features'}</h2>
+          <p class="lead">{product.features?.subtitle}</p>
+          <div class="grid three">
+            {productFeatureBlocks.map((item) => (
+              <article class="card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {product.example && (
+        <section class="section band">
+          <div class="container">
+            <h2>{product.example.title}</h2>
+            <p class="lead">{product.example.subtitle}</p>
+            <div class="grid two code-grid">
+              {product.example.schema && (
+                <div>
+                  <h3>{product.example.schemaTitle}</h3>
+                  <pre class="code-panel">{product.example.schema}</pre>
+                </div>
+              )}
+              {product.example.sql && (
+                <div>
+                  <h3>{product.example.sqlTitle}</h3>
+                  <pre class="code-panel">{product.example.sql}</pre>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section class="section">
+        <div class="container">
+          <h2>{product.useCases?.title ?? 'Use Cases'}</h2>
+          <p class="lead">{product.useCases?.subtitle}</p>
+          <div class="grid three">
+            {productUseCases.map((item) => (
+              <article class="card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+
+  {section === 'enterprise' && (
+    <>
+      <section class="section">
+        <div class="container">
+          <h2>{dict.enterprise.challenges.title}</h2>
+          <p class="lead">{dict.enterprise.challenges.subtitle}</p>
+          <div class="grid two">
+            {enterpriseChallenges.map((item) => (
+              <article class="card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section class="section band">
+        <div class="container">
+          <h2>{dict.enterprise.features.title}</h2>
+          <p class="lead">{dict.enterprise.features.subtitle}</p>
+          <div class="grid three">
+            {enterpriseFeatures.map((item) => (
+              <article class="card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+
+  {section === 'pricing' && (
+    <section class="section">
+      <div class="container">
+        <div class="grid three pricing-grid">
+          {pricingPlans.map((plan) => (
+            <article class="card price-card">
+              <h2>{plan.title}</h2>
+              <strong>{plan.price}</strong>
+              {plan.period && <span>{plan.period}</span>}
+              <p>{plan.description}</p>
+              <ul>
+                {asArray(plan.features).map((feature) => <li>{feature}</li>)}
+              </ul>
+              <a class="button secondary" href={plan.href}>{plan.cta}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {section === 'integrations' && (
+    <>
+      <section class="section">
+        <div class="container">
+          <h2>{dict.integrations.driverRegistry.title}</h2>
+          <p class="lead">{dict.integrations.driverRegistry.subtitle}</p>
+          <div class="grid four">
+            {integrationCategories.map((category) => (
+              <article class="card">
+                <h3>{category.title}</h3>
+                {objectValues(category)
+                  .filter((item) => item && typeof item === 'object' && 'name' in item)
+                  .map((driver) => (
+                    <p><strong>{driver.name}</strong><br />{driver.description}</p>
+                  ))}
+                {category.description && <p>{category.description}</p>}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section class="section band">
+        <div class="container">
+          <h2>{dict.integrations.customDriver.title}</h2>
+          <p class="lead">{dict.integrations.customDriver.subtitle}</p>
+          <div class="grid three">
+            {objectValues(dict.integrations.customDriver.steps).map((step) => (
+              <article class="card">
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+
+  {section === 'market' && (
+    <section class="section">
+      <div class="container">
+        <div class="market-toolbar">
+          {objectValues(dict.marketplace.tabs).map((tab) => <span class="tag">{tab}</span>)}
+        </div>
+        <div class="grid three">
+          {marketplaceItems.map((item) => (
+            <article class="card">
+              <span class="tag">{dict.marketplace.categories[item.category] ?? item.category}</span>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <small>{item.author}</small>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {section === 'solutions' && (
+    <>
+      <section class="solutions-hero">
+        <div class="container solutions-hero-grid">
+          <div>
+            <p class="eyebrow">{lang === 'zh' ? '企业解决方案' : 'Enterprise Solutions'}</p>
+            <h1>{dict.solutions.hero.title}</h1>
+            <p class="lead">{dict.solutions.hero.subtitle}</p>
+            <div class="button-row">
+              <a class="button" href="https://tally.so/r/2EeW0V">{dict.solutions.byIndustry.cta}</a>
+              <a class="button secondary" href={pathFor(lang, '/enterprise')}>{lang === 'zh' ? '查看企业能力' : 'View enterprise capabilities'}</a>
+            </div>
+          </div>
+          <aside class="capability-panel">
+            <div class="panel-title">
+              <span>{lang === 'zh' ? '平台能力' : 'Platform capability'}</span>
+              <strong>ObjectStack</strong>
+            </div>
+            <div class="capability-rows">
+              {capabilityRows.map(([label, text]) => (
+                <div>
+                  <span>{label}</span>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="solution-stats">
+        <div class="container stats-grid">
+          {solutionStats.map((stat) => (
+            <div>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="section industry-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">{lang === 'zh' ? '行业' : 'Industries'}</p>
+              <h2>{dict.solutions.byIndustry.title}</h2>
+            </div>
+            <p>{dict.solutions.byIndustry.subtitle}</p>
+          </div>
+          <div class="industry-list">
+            {industries.map((item, index) => (
+              <article class="industry-row">
+                <div class="row-index">{String(index + 1).padStart(2, '0')}</div>
+                <div class="row-main">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+                <ul>
+                  {asArray(item.features).map((feature) => <li>{feature}</li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section band scenario-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">{lang === 'zh' ? '场景' : 'Scenarios'}</p>
+              <h2>{dict.solutions.byScenario.title}</h2>
+            </div>
+            <p>{dict.solutions.byScenario.subtitle}</p>
+          </div>
+          <div class="playbook-grid">
+            {scenarios.map((item) => (
+              <article class="playbook">
+                <span class="tag">{item.tagline ?? item.approach}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <div class="playbook-meta">
+                  <div>
+                    <span>{dict.solutions.byScenario.approachLabel}</span>
+                    <strong>{item.approach}</strong>
+                  </div>
+                  <div>
+                    <span>{dict.solutions.byScenario.outcomeLabel}</span>
+                    <strong>{item.outcome}</strong>
+                  </div>
+                </div>
+                <ol>
+                  {asArray(item.steps).map((step) => <li>{step}</li>)}
+                </ol>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+
+  {(section === 'privacy' || section === 'terms') && (
+    <section class="section legal">
+      <div class="container legal-body">
+        <p class="updated">{pageData.lastUpdated}</p>
+        <p class="lead">{pageData.intro}</p>
+        {legalSections.map((item) => (
+          <article>
+            <h2>{item.title}</h2>
+            <p>{item.content}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .page-hero {
+    padding: 86px 0 76px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(290px, 0.92fr);
+    gap: 34px;
+    align-items: center;
+  }
+
+  .subtitle {
+    margin-bottom: 16px;
+    color: var(--accent-strong);
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    font-weight: 760;
+    line-height: 1.15;
+  }
+
+  .route-mark {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    padding: 28px;
+  }
+
+  .route-mark span {
+    color: var(--accent-strong);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.88rem;
+  }
+
+  .route-mark strong {
+    display: block;
+    margin: 26px 0 12px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1;
+  }
+
+  .route-mark p {
+    color: var(--muted);
+  }
+
+  .code-grid h3 {
+    margin-top: 0;
+  }
+
+  .pricing-grid {
+    align-items: stretch;
+  }
+
+  .price-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .price-card strong {
+    display: block;
+    margin: 8px 0;
+    font-size: 2.3rem;
+    line-height: 1;
+  }
+
+  .price-card span,
+  small,
+  .updated {
+    color: var(--muted);
+  }
+
+  ul {
+    padding-left: 1.15rem;
+    color: var(--muted);
+  }
+
+  li + li {
+    margin-top: 7px;
+  }
+
+  .market-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .legal-body {
+    max-width: 850px;
+  }
+
+  .legal article {
+    border-top: 1px solid var(--line);
+    padding: 30px 0;
+  }
+
+  .legal h2 {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+  }
+
+  .solutions-hero {
+    padding: 88px 0 38px;
+  }
+
+  .solutions-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) 430px;
+    gap: 52px;
+    align-items: center;
+  }
+
+  .solutions-hero h1 {
+    max-width: 880px;
+    font-size: clamp(3rem, 6vw, 5.25rem);
+    line-height: 1.02;
+  }
+
+  .solutions-hero .lead {
+    max-width: 760px;
+    color: var(--ink-soft);
+    font-size: clamp(1.08rem, 1.7vw, 1.24rem);
+  }
+
+  .capability-panel {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(8, 116, 95, 0.08), transparent 42%),
+      var(--panel);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .panel-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    border-bottom: 1px solid var(--line);
+    padding: 22px 24px;
+  }
+
+  .panel-title span,
+  .capability-rows span,
+  .row-index,
+  .playbook-meta span {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 780;
+    text-transform: uppercase;
+  }
+
+  .panel-title strong {
+    font-size: 1.3rem;
+  }
+
+  .capability-rows > div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 18px;
+    border-bottom: 1px solid var(--line);
+    padding: 20px 24px;
+  }
+
+  .capability-rows > div:last-child {
+    border-bottom: 0;
+  }
+
+  .capability-rows p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  .solution-stats {
+    padding: 22px 0 54px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    overflow: hidden;
+  }
+
+  .stats-grid > div {
+    min-height: 126px;
+    border-right: 1px solid var(--line);
+    padding: 24px;
+  }
+
+  .stats-grid > div:last-child {
+    border-right: 0;
+  }
+
+  .stats-grid strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent-strong);
+    font-size: 1.35rem;
+  }
+
+  .stats-grid span {
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+    gap: 36px;
+    align-items: end;
+    margin-bottom: 34px;
+  }
+
+  .section-heading h2 {
+    margin-bottom: 0;
+  }
+
+  .section-heading > p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .industry-list {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    overflow: hidden;
+  }
+
+  .industry-row {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 0.82fr) minmax(300px, 1fr);
+    gap: 26px;
+    border-bottom: 1px solid var(--line);
+    padding: 28px;
+  }
+
+  .industry-row:last-child {
+    border-bottom: 0;
+  }
+
+  .industry-row:hover {
+    background: var(--panel-2);
+  }
+
+  .row-index {
+    color: var(--accent-strong);
+    font-size: 0.9rem;
+  }
+
+  .row-main h3 {
+    margin-bottom: 10px;
+    font-size: 1.45rem;
+  }
+
+  .row-main p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  .industry-row ul {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .industry-row li {
+    position: relative;
+    margin: 0;
+    padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+  }
+
+  .industry-row li::before {
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--accent);
+    content: "";
+  }
+
+  .scenario-section {
+    padding-bottom: 96px;
+  }
+
+  .playbook-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .playbook {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    padding: 26px;
+  }
+
+  .playbook h3 {
+    margin: 18px 0 10px;
+    font-size: 1.45rem;
+  }
+
+  .playbook p {
+    color: var(--muted);
+  }
+
+  .playbook-meta {
+    display: grid;
+    gap: 12px;
+    margin: 10px 0 20px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+
+  .playbook-meta strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+
+  .playbook ol {
+    display: grid;
+    gap: 8px;
+    margin: auto 0 0;
+    padding-left: 1.25rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .solutions-hero-grid,
+    .section-heading,
+    .industry-row,
+    .playbook-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid > div:nth-child(2n) {
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid > div {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stats-grid > div:last-child {
+      border-bottom: 0;
+    }
+  }
+</style>

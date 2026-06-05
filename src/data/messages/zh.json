@@ -1,0 +1,1692 @@
+{
+  "nav": {
+    "data": "ObjectStack",
+    "control": "运行时",
+    "view": "UI 引擎",
+    "studio": "Studio",
+    "cloud": "Object Cloud",
+    "enterprise": "企业版",
+    "docs": "文档",
+    "blog": "博客",
+    "github": "GitHub",
+    "joinWaitlist": "加入候补名单",
+    "toggleTheme": "切换主题",
+    "platformLabel": "ObjectOS",
+    "platformTooltip": "面向业务团队的内部工具、审批与 AI 协作运行平台",
+    "engineLabel": "ObjectStack",
+    "engineTooltip": "开源 AI 原生应用框架与文档",
+    "componentsLabel": "ObjectUI",
+    "componentsTooltip": "面向前端开发者的 Schema 驱动 React UI 引擎",
+    "marketplaceLabel": "应用市场",
+    "marketplaceTooltip": "应用、插件与通用驱动",
+    "solutionsLabel": "解决方案",
+    "contactSales": "联系销售",
+    "platform": {
+      "title": "平台",
+      "framework": {
+        "title": "核心项目",
+        "data": {
+          "title": "ObjectStack Framework",
+          "description": "AI 就绪元数据、Driver、API、工具、开源框架"
+        },
+        "control": {
+          "title": "面向业务团队的 ObjectOS",
+          "description": "内部工具、审批、审计、AI 运营"
+        },
+        "view": {
+          "title": "面向前端开发的 ObjectUI",
+          "description": "React App Shell、渲染器、插件视图"
+        }
+      },
+      "tools": {
+        "title": "工具",
+        "studio": {
+          "title": "Object Studio",
+          "description": "本地优先桌面 IDE"
+        },
+        "cloud": {
+          "title": "Object Cloud",
+          "description": "无服务器 PaaS 部署"
+        },
+        "cli": {
+          "title": "CLI",
+          "description": "DevOps 与自动化"
+        }
+      },
+      "footer": "GitHub →"
+    },
+    "ecosystem": {
+      "title": "应用市场",
+      "marketplace": {
+        "title": "市场",
+        "description": "发现插件、主题与驱动"
+      },
+      "driverRegistry": {
+        "title": "驱动",
+        "postgres": {
+          "title": "Postgres",
+          "description": "PostgreSQL 驱动"
+        },
+        "redis": {
+          "title": "Redis",
+          "description": "高性能缓存"
+        },
+        "excel": {
+          "title": "Excel",
+          "description": "将电子表格转化为 API"
+        },
+        "salesforce": {
+          "title": "Salesforce",
+          "description": "CRM 集成"
+        }
+      }
+    },
+    "developers": {
+      "title": "开发者",
+      "documentation": "文档",
+      "blog": "博客",
+      "github": "GitHub"
+    },
+    "menu": "菜单",
+    "search": "搜索",
+    "objectstack": "ObjectStack",
+    "objectql": "ObjectQL"
+  },
+  "hero": {
+    "comingSoon": "抢先体验",
+    "launchDate": "2026 年 7 月发布",
+    "title": "AI 原生时代的",
+    "titleHighlight": "业务操作系统",
+    "description": "ObjectStack 是开源 AI 原生业务框架：把对象、权限、流程、API、UI 元数据与 Agent 工具一次性定义为结构化 Zod 元数据；用 ObjectOS 运行受治理的业务操作，用 ObjectUI 渲染可控界面，并把带权限边界的工具交给 AI Agent，而不是给它原始数据库访问。",
+    "cta": "加入候补名单",
+    "ctaPrimary": "⭐ 查看 GitHub 开源版",
+    "ctaSecondary": "申请抢先体验"
+  },
+  "builtForAi": {
+    "eyebrow": "百倍压缩",
+    "title": "为 AI 而生,不是事后改造。",
+    "lead": "一个典型的企业级系统,是分散在十几个文件中的数万行 CRUD、表单、查询、权限和 API 胶水代码。ObjectStack 把同样的能力压缩到几百行带类型的元数据 —— 开发者要写和维护的代码量,少了大约两个数量级。",
+    "pullquote": "重点不是代码行数,重点是能整体放进 Agent 的上下文窗口。",
+    "closer": "当整个业务系统足够小、强类型、且是声明式的,AI Agent 就能端到端地加载它、推理每一处依赖,并在一次变更里安全地跨数据、API、UI 与权限同步重构。这才让 AI 从\"自动补全工具\",真正成为生产级业务系统的协同维护者。",
+    "statBeforeLabel": "传统企业系统",
+    "statBeforeValue": "~50,000 行代码",
+    "statBeforeMeta": "命令式代码 × 十几个文件",
+    "statAfterLabel": "ObjectStack",
+    "statAfterValue": "~500 行",
+    "statAfterMeta": "带类型元数据 × 一份 schema × 一个上下文窗口"
+  },
+  "ecosystem": {
+    "title": "ObjectStack Core，业务运行时，前端 UI。",
+    "subtitle": "ObjectStack 正在收束到一个更清晰的中心：开源 AI 原生框架，让业务元数据、API、UI 表面与 Agent 工具共享一个真相源。ObjectQL 仍是内部数据/查询引擎，但不再是产品主标题。",
+    "protocol": {
+      "label": "开源 AI 框架",
+      "name": "ObjectStack",
+      "description": "如果你想了解开源项目，从这里开始：对象、权限、流程、视图、动作、Agent、API、SDK、MCP 工具与 Driver 的 Zod 元数据框架。ObjectQL 是 ObjectStack 内部的数据/查询引擎，会被刻意放在更大的框架叙事后面。"
+    },
+    "runtime": {
+      "label": "业务运行平台",
+      "name": "ObjectOS",
+      "description": "ObjectOS 面向业务用户与运营团队：在自己的环境里运行内部工具、审批流程、审计日志与 AI 协作。AI Agent 通过受治理动作执行工作，与人类共享同一套身份、权限和审计模型。"
+    },
+    "view": {
+      "label": "前端 UI 引擎",
+      "name": "ObjectUI",
+      "description": "ObjectUI 面向前端开发者：用 Schema 驱动 React 界面，但保留控制权。它渲染的元数据与 API、AI 工具共享同源，让人类界面和 Agent 动作保持一致。"
+    }
+  },
+  "features": {
+    "title": "为 AI 原生业务运营而生",
+    "subtitle": "ObjectStack 把业务系统显式化到足以让人、服务和 AI Agent 在同一套权限模型下安全操作。",
+    "localFirst": {
+      "title": "运行在你的边界内",
+      "description": "ObjectOS 可以跑在本机、私有云、本地集群或气隙网络中。业务数据、身份、会话、审计日志、文件与提示词都留在你控制的基础设施里。"
+    },
+    "databaseAgnostic": {
+      "title": "Driver，而不是迁移表演",
+      "description": "Postgres、MySQL、SQLite、MongoDB、电子表格、SaaS API 与自定义系统都可以通过 Driver 挂载。数据/查询引擎退到幕后；业务契约保持为 ObjectStack 元数据。"
+    },
+    "protocolDriven": {
+      "title": "Agent 真正能读懂的元数据",
+      "description": "对象、流程、权限、视图、仪表盘、动作、Agent 与包会编译成版本化工件。它们可 diff、可评审、可热加载，也足够小，能让 AI Agent 端到端理解。"
+    },
+    "typeSafe": {
+      "title": "UI、API 与 AI 工具同源",
+      "description": "ObjectStack 从 Zod Schema 出发，派生 TypeScript 类型、JSON Schema、REST 契约、UI 元数据、SDK 与 MCP 工具签名。"
+    },
+    "scale": {
+      "title": "一个运行时，多种能力",
+      "description": "微内核按需加载认证、安全、审计、存储、任务、队列、Webhook、AI 与 Driver 插件。一个小型 ObjectOS 进程既能跑单应用，也能服务多个项目内核。"
+    },
+    "aiNative": {
+      "title": "带运行时护栏的 AI 工具",
+      "description": "每个被允许的对象/动作都能变成 MCP 工具，并继承登录用户的同一套权限。Agent 通过 ObjectOS 做真实工作，有请求 ID、审计日志、策略检查，而不是拿到原始 SQL。"
+    }
+  },
+  "protocolLongevity": {
+    "title": "元数据可用数十年，框架往往三年即逝。",
+    "subtitle": "您的业务定义应比框架选择更持久。投资于结构化 Zod 元数据，而不是今年最热门的运行时。",
+    "protocolsTitle": "持久基石（稳健之选）",
+    "frameworksTitle": "UI 框架（变动风险）",
+    "insight": "💡 ObjectStack 把您的业务表达为 Zod 元数据——版本化、可签名、可重放。下一代运行时到来时，您的对象、流程、策略、MCP 工具定义都能原样迁移。",
+    "protocols": [
+      {
+        "name": "HTTP",
+        "years": 33,
+        "color": "bg-green-500"
+      },
+      {
+        "name": "SQL (ISO 标准)",
+        "years": 40,
+        "color": "bg-green-500"
+      },
+      {
+        "name": "JSON",
+        "years": 22,
+        "color": "bg-green-500"
+      },
+      {
+        "name": "REST",
+        "years": 23,
+        "color": "bg-green-500"
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "React",
+        "years": 11,
+        "color": "bg-orange-500"
+      },
+      {
+        "name": "Angular 1.x (已弃用)",
+        "years": 5,
+        "color": "bg-red-500"
+      },
+      {
+        "name": "Backbone.js (已消亡)",
+        "years": 7,
+        "color": "bg-red-500"
+      },
+      {
+        "name": "Vue.js",
+        "years": 10,
+        "color": "bg-orange-500"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "元数据驱动架构实战",
+    "subtitle": "从 ObjectStack 元数据，到编译工件，再到带 API、Console UI 与 AI 工具的自托管运行时。",
+    "demoTitle": "从元数据到生产",
+    "demoDescription": "看 ObjectStack 元数据如何变成可被 AI 安全操作的受治理应用",
+    "demoStep1Label": "Zod 元数据定义",
+    "demoStep2Label": "内核执行",
+    "demoStep2Subtitle": "ObjectOS 运行时",
+    "demoStep3Label": "应用、API 与 Agent 工具",
+    "nextStep": "下一层",
+    "step1": {
+      "title": "定义：ObjectStack 中的业务元数据",
+      "description": "对象、字段、关系、校验、权限、视图、流程、Agent 与包都写成结构化元数据。数据/查询引擎是内部管道；公开契约是 ObjectStack。",
+      "code": "// users.object.ts\nexport const User = object({\n  name: 'User',\n  fields: {\n    email: z.string().email(),\n    role: z.enum(['admin', 'user']),\n  },\n  permissions: {\n    read: 'authenticated',\n    write: 'role:admin',\n  },\n});\n\n// 通过 Driver 与存储无关"
+    },
+    "step2": {
+      "title": "执行：微内核运行时",
+      "description": "ObjectOS 从编译工件启动项目内核，只加载启用能力，并统一执行认证、RBAC、行级规则、字段脱敏、校验、AI 工具边界与审计。",
+      "code": "// 自动生成的接口（全部受权限保护）\nREST   /api/users\nSDK    client.users.create(...)\nMCP    tool: users.create\n\n// 内核统一执行：\n// ✓ 权限与租户隔离\n// ✓ 复用同一份 Zod schema 校验\n// ✓ 每次操作都有审计记录"
+    },
+    "step3": {
+      "title": "投影：应用、API 与 Agent 工具",
+      "description": "同一份工件驱动 REST 端点、SDK 调用、ObjectUI 视图、Console 表面与 MCP 工具。人类用户和 AI Agent 操作的是同一个受治理后端。",
+      "code": "// view.manifest.json\n{\n  \"type\": \"form\",\n  \"object\": \"User\",\n  \"fields\": [\"email\", \"role\"]\n}\n\n// MCP 工具自动注册：\n// ✓ 输入类型来自同一份 Zod schema\n// ✓ 执行受权限约束\n// ✓ 每次调用都可审计"
+    }
+  },
+  "useCases": {
+    "title": "从原型到关键任务系统",
+    "subtitle": "用同一套元数据模型构建本地内部工具、自托管企业应用与 AI 操作的流程。",
+    "individualDevelopers": {
+      "title": "内部工具与本地优先应用",
+      "description": "用 SQLite 启动本地 ObjectOS，马上获得生成的 REST、Console、Account、审计与元数据驱动 UI。无需等待云基础设施即可做内部工具原型。",
+      "stats": "零基础设施开销"
+    },
+    "enterpriseIT": {
+      "title": "异构数据统一与影子 IT",
+      "description": "把现有数据库、电子表格与 SaaS API 包装成受治理对象。无需大爆炸迁移，即可施加 RBAC、行级规则、字段脱敏、审计与 MCP 暴露。",
+      "stats": "包容存量，而非迁移"
+    },
+    "saasStartups": {
+      "title": "面向 Agent 的 SaaS 基础",
+      "description": "从第一版开始就具备租户、权限、生成 API、React Console 与 AI 工具。托管、自托管或气隙部署都使用同一套工件模型。",
+      "stats": "多租户 + Agent 就绪，开箱即用"
+    },
+    "lowCodeVendors": {
+      "title": "平台工程与开放核心产品",
+      "description": "把 ObjectStack 作为你自有平台底层的开放框架：Zod 元数据、插件运行时、Driver、ObjectUI 渲染器和 Agent 工具。产品体验仍由你差异化。",
+      "stats": "开放核心，可商业化扩展"
+    }
+  },
+  "faq": {
+    "title": "决策者常问问题",
+    "subtitle": "CTO 与工程领袖的战略和技术考量。",
+    "items": [
+      {
+        "question": "这如何降低我们的总拥有成本 (TCO)？",
+        "answer": "它减少重复胶水：一份元数据同时驱动对象、API、SDK、UI、权限与 MCP 工具。ObjectOS 提供认证、安全、审计、任务、Webhook、AI 等运行时基础设施；ObjectUI 提供可复用渲染器，不必每个应用重写 CRUD 页面。"
+      },
+      {
+        "question": "从现有系统迁移的路径是什么？",
+        "answer": "渐进式。先通过 Driver 挂载一张现有表、电子表格或 SaaS API，定义它的 ObjectStack 元数据，只暴露你需要的受治理表面。ObjectQL 仍是有用的数据引擎，但不需要围绕它重写整个系统。"
+      },
+      {
+        "question": "我们如何处理合规与审计？",
+        "answer": "每一次操作——UI、API、SDK 或 MCP 工具调用——都带主体（用户或 agent）、意图与元数据变更的审计记录。字段级权限直接声明在 Zod 中，而不是事后补的中间件。对数据驻留要求严格的辖区可以私有化部署。"
+      },
+      {
+        "question": "可以在气隙或边缘环境中部署吗？",
+        "answer": "可以。内核 + 工件包可完全离线运行。部署在现场设备、生产车间或安全设施中；恢复连接时再同步。本地 AI 工具继续可以通过 MCP 接口操作系统。"
+      },
+      {
+        "question": "与原生查询相比，性能影响如何？",
+        "answer": "ObjectOS 通过 Driver 访问数据，Driver 发起原生 SQL 或原生数据库/API 调用。热点路径仍可使用自定义 action 或 driver-specific 逻辑，同时保留权限、UI 与 Agent 工具所需的元数据契约。"
+      },
+      {
+        "question": "如何融入我们现有的技术栈？",
+        "answer": "Framework 是 TypeScript 优先、基于 Zod；ObjectOS 是 Node.js 运行时；ObjectUI 基于 React。其他服务可以通过生成的 REST API 与 MCP 工具交互，所以它可以与现有系统并存，而不是一次性替换。"
+      },
+      {
+        "question": "SAML SSO 等企业能力的路线图是怎样的?",
+        "answer": "Auth、OAuth/OIDC、RBAC、RLS、FLS 与审计日志已经在开源内核中(Apache-2.0)。ObjectCloud GA(2026 年 7 月)及之后路线图:SAML/SCIM、SIEM 导出、高级流程编排、SOC 2 认证。企业客户参与优先级排序——加入候补名单与我们沟通需求。"
+      },
+      {
+        "question": "如何让团队长期维护？",
+        "answer": "Zod 元数据就是纯 TypeScript——没有专有 DSL；类型端到端推导；工件包可 diff、可重放。元数据归您所有，运行时是可替换的。"
+      }
+    ]
+  },
+  "cta": {
+    "badge": "早期访问计划",
+    "headline1": "把业务定义一次。",
+    "headline2": "让人类与 Agent 安全地一起运营。",
+    "description": "别再把业务逻辑散落在 SQL、JavaScript 与 UI 状态里。让对象、权限、工作流、API、UI 元数据与 Agent 工具,成为同一份结构化的 Zod 真相源——可分析、版本化、端到端可审计。2026 年 7 月发布。",
+    "primaryButton": "申请早期访问",
+    "secondaryButton": "在 GitHub 上查看",
+    "noCreditCard": "无需承诺",
+    "launchDate": "2026 年 7 月发布",
+    "earlyAccess": "技术团队优先访问"
+  },
+  "footer": {
+    "tagline": "AI 原生时代的业务操作系统。",
+    "product": "平台",
+    "ecosystem": "生态系统",
+    "resources": "资源",
+    "community": "社区",
+    "data": "ObjectStack",
+    "control": "业务版 ObjectOS",
+    "view": "前端版 ObjectUI",
+    "studio": "Object Studio",
+    "cloud": "Object Cloud",
+    "integrations": "驱动注册表",
+    "marketplace": "应用市场",
+    "docs": "文档",
+    "pricing": "定价",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "cli": "命令行工具 (ObjectStack CLI)"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "页面未找到",
+    "description": "您正在寻找的页面不存在或已被移动。",
+    "backToHome": "返回首页",
+    "goBack": "返回"
+  },
+  "integrations": {
+    "hero": {
+      "badge": "驱动注册表",
+      "headline": "任意数据源，统一 API。",
+      "subheadline": "现代商业数据的通用适配器",
+      "description": "ObjectStack 充当通用适配器。在 ObjectQL 中一次编写业务逻辑，即可在 Postgres、Redis、MongoDB 或 Excel 上运行。如果您有遗留的专有系统，请编写驱动程序，而不是迁移脚本。"
+    },
+    "driverRegistry": {
+      "title": "驱动注册表",
+      "subtitle": "这不仅仅是一堆 Logo。这是一个将任何数据源连接到统一 API 的驱动注册表。",
+      "relational": {
+        "title": "关系型数据库",
+        "postgres": {
+          "name": "PostgreSQL",
+          "description": "生产级关系型数据库，具有 JSONB 和完整的 SQL 合规性。",
+          "status": "稳定版"
+        },
+        "mysql": {
+          "name": "MySQL",
+          "description": "针对 Web 规模工作负载优化的高并发关系型数据库。",
+          "status": "稳定版"
+        }
+      },
+      "nosql": {
+        "title": "NoSQL 与缓存",
+        "redis": {
+          "name": "Redis",
+          "description": "用作数据库、缓存和消息代理的内存数据结构存储。",
+          "highlight": "即时高性能存储",
+          "status": "稳定版"
+        },
+        "mongodb": {
+          "name": "MongoDB",
+          "description": "具有 Schema 到文档映射的文档数据库。",
+          "status": "Beta"
+        }
+      },
+      "files": {
+        "title": "文件与电子表格",
+        "excel": {
+          "name": "Excel / CSV",
+          "description": "将电子表格挂载到您的数据库旁边，并通过统一 API 进行查询。",
+          "highlight": "将电子表格转化为安全的 API",
+          "status": "稳定版"
+        },
+        "csv": {
+          "name": "CSV 文件",
+          "description": "通过完整的 ObjectQL 查询支持读写 CSV 文件。",
+          "status": "稳定版"
+        }
+      },
+      "custom": {
+        "title": "自定义：使用 TypeScript 构建这自己的驱动",
+        "description": "使用自定义驱动程序为专有系统、遗留数据库或 SaaS API 扩展 ObjectStack。一次使用 TypeScript 编写，随处部署。"
+      }
+    },
+    "categories": {
+      "title": "探索驱动市场",
+      "subtitle": "发现社区为 ObjectStack 构建的驱动、主题和插件。",
+      "viewAll": "查看完整市场"
+    },
+    "customDriver": {
+      "title": "构建您自己的驱动",
+      "subtitle": "使用自定义驱动扩展 ObjectStack，支持任何数据源——遗留系统、专有数据库或第三方 API。",
+      "steps": {
+        "step1": {
+          "title": "实现驱动接口",
+          "description": "编写实现 ObjectQL 驱动协议的 TypeScript 代码。定义如何读取、写入和查询您的数据源。"
+        },
+        "step2": {
+          "title": "使用 Studio 本地测试",
+          "description": "在 Object Studio 中加载您的自定义驱动。测试查询、验证性能并快速迭代。"
+        },
+        "step3": {
+          "title": "发布到注册表",
+          "description": "与社区分享您的驱动，或为您的组织保持私有。包含版本控制和依赖管理。"
+        }
+      },
+      "cta": "阅读驱动开发指南",
+      "docsLink": "https://docs.objectstack.ai/drivers/custom"
+    }
+  },
+  "products": {
+    "objectql": {
+      "hero": {
+        "label": "查询引擎",
+        "title": "ObjectQL",
+        "subtitle": "ObjectStack 内部的查询与 Driver 引擎",
+        "description": "ObjectQL 是 ObjectStack 使用的内部查询引擎与 Driver 契约。它把过滤、排序、分页、聚合、关系展开和数据源 Driver 标准化，让业务对象可以跨 SQL 数据库、文档库、电子表格、SaaS API 与专有系统运行，而不改变应用元数据。",
+        "cta": "阅读 ObjectQL 文档",
+        "secondaryCta": "查看 Framework 仓库"
+      },
+      "features": {
+        "title": "ObjectQL 做什么",
+        "subtitle": "面向企业异构数据源的可移植查询契约。",
+        "queryModel": {
+          "title": "统一查询形态",
+          "description": "过滤、排序、分页、关联展开、聚合和投影都表达为结构化查询元数据，而不是分散在各个路由里的 SQL 字符串。"
+        },
+        "driverContract": {
+          "title": "Driver 契约",
+          "description": "Driver 把 ObjectQL 操作翻译为原生 SQL、MongoDB pipeline、电子表格读取、SaaS API 调用或企业专有协议，同时保持对象契约稳定。"
+        },
+        "permissionAware": {
+          "title": "权限感知执行",
+          "description": "ObjectOS 可以围绕每一次 ObjectQL-backed 操作执行租户隔离、行级规则、字段脱敏、审计与 Agent 身份。"
+        },
+        "aiReadable": {
+          "title": "AI 工具可读",
+          "description": "查询结构足够清晰，可供 SDK、REST API、ObjectUI 视图与 MCP 工具生成安全数据访问能力，而不是把原始 SQL 交给 Agent。"
+        }
+      },
+      "useCases": {
+        "title": "ObjectQL 放在哪里",
+        "subtitle": "ObjectQL 是基础设施，不是完整框架。它适合需要可移植、受治理数据访问的地方。",
+        "federatedData": {
+          "title": "企业异构数据联邦",
+          "description": "把 Postgres、MongoDB、Excel 与遗留系统挂载到同一个查询契约背后，让应用通过一致对象元数据读取。"
+        },
+        "driverDevelopment": {
+          "title": "自定义 Driver 开发",
+          "description": "为专有数据库、SaaS API、主机系统或文件格式实现 Driver，让 ObjectStack 以受治理对象方式暴露它。"
+        },
+        "aiDataAccess": {
+          "title": "AI 数据访问边界",
+          "description": "向 Agent 暴露权限感知的列表、搜索、聚合与查找工具，同时保留请求归因和审计轨迹。"
+        }
+      },
+      "example": {
+        "title": "从可移植查询到原生执行",
+        "subtitle": "ObjectQL 描述意图；每个 Driver 用数据源自己的语言执行。",
+        "schemaTitle": "ObjectQL 查询",
+        "sqlTitle": "Driver 执行",
+        "schema": "await objectql.find('customer', {\n  where: {\n    industry: { eq: 'manufacturing' },\n    annualRevenue: { gte: 10000000 }\n  },\n  sort: [{ field: 'updatedAt', direction: 'desc' }],\n  expand: ['accountManager'],\n  limit: 50\n});",
+        "sql": "// PostgreSQL driver\nSELECT * FROM customers\nWHERE industry = $1 AND annual_revenue >= $2\nORDER BY updated_at DESC\nLIMIT 50;\n\n// MongoDB driver\ndb.customers.aggregate([...]);\n\n// Excel driver\n读取 workbook 行，应用过滤，返回 typed records"
+      },
+      "comparison": {
+        "title": "ObjectQL vs. 原始 SQL / ORM 查询",
+        "subtitle": "ObjectQL 是 ObjectStack 的运行时查询契约，不是所有底层数据库工具的替代品。",
+        "objectqlColumn": "ObjectQL",
+        "ormColumn": "原始 SQL / ORM",
+        "runtimeOverhead": {
+          "category": "范围",
+          "objectql": "跨 Driver 与对象表面的可移植查询元数据。",
+          "orm": "通常绑定到一个数据库方言、模型层或应用服务。"
+        },
+        "security": {
+          "category": "治理",
+          "objectql": "设计上运行在 ObjectOS 权限、审计、脱敏和租户边界之后。",
+          "orm": "治理经常需要在每个路由或服务方法里手工执行。"
+        },
+        "portability": {
+          "category": "可移植性",
+          "objectql": "Driver 可以把同一查询形态翻译到 SQL、文档库、电子表格或 API。",
+          "orm": "切换存储通常会改模型、迁移和查询代码。"
+        },
+        "virtualColumns": {
+          "category": "AI 访问",
+          "objectql": "结构化查询输入可以变成安全 MCP 工具。",
+          "orm": "Agent 通常需要手写工具包装，或冒险访问 SQL。"
+        }
+      },
+      "drivers": {
+        "title": "Driver 目标",
+        "subtitle": "当 Driver 让不同数据源通过同一对象契约被治理时，ObjectQL 才真正有价值。",
+        "postgresql": {
+          "name": "PostgreSQL",
+          "description": "生产关系存储与分析友好的查询。"
+        },
+        "mysql": {
+          "name": "MySQL",
+          "description": "常见 Web 与企业应用的关系存储。"
+        },
+        "sqlite": {
+          "name": "SQLite",
+          "description": "本地开发、嵌入式工具和独立部署。"
+        },
+        "sqlserver": {
+          "name": "SQL Server",
+          "description": "通过商业或自定义 Driver 对接企业关系系统。"
+        },
+        "oracle": {
+          "name": "Oracle Database",
+          "description": "遗留系统可以先包装，而不是立刻迁移。"
+        },
+        "mongodb": {
+          "name": "MongoDB",
+          "description": "在适合场景下使用原生聚合语义。"
+        },
+        "excel": {
+          "name": "Excel / CSV",
+          "description": "电子表格成为可查询、受治理的数据源。"
+        }
+      }
+    },
+    "objectos": {
+      "hero": {
+        "label": "业务运行平台",
+        "title": "ObjectOS",
+        "subtitle": "运行在你自己环境里的业务平台",
+        "description": "ObjectOS 面向业务用户、运营团队与 IT 团队：在不把业务系统交给第三方云的前提下，获得内部工具、审批流程、受治理的 AI 动作、审计日志与数据主权。AI 助手通过和人相同的受控业务动作执行工作。",
+        "cta": "阅读 ObjectOS 文档",
+        "secondaryCta": "查看 GitHub"
+      },
+      "commandCenter": {
+        "title": "AI 真正能使用的业务平台",
+        "subtitle": "ObjectOS 把元数据定义的应用变成业务团队能运行、治理和审计的工具。",
+        "description": "把 CRM、合同、工单、审批和内部工具放到 ObjectOS 上。人和 AI 助手在同一套身份、权限与审计模型下行动，因此即使 Agent 参与执行业务，运营也保持受治理。"
+      },
+      "pillars": {
+        "title": "业务团队能从 ObjectOS 得到什么",
+        "subtitle": "自托管应用、生成式管理界面、Account、权限、审计、审批与 AI 协作，同时保留数据控制权。",
+        "identityGovernance": {
+          "title": "业务访问控制",
+          "description": "用户通过你已经信任的身份系统登录。角色、行级规则与字段脱敏保护记录，无论工作发生在 Console、API 还是 AI 辅助动作中。"
+        },
+        "workflowOrchestration": {
+          "title": "审批与内部工具",
+          "description": "工单、合同、报销、入职、库存与自定义流程都可以成为带治理的业务应用，并自动获得 API 与 Console 表面。"
+        },
+        "localFirstSync": {
+          "title": "数据留在你的环境里",
+          "description": "业务记录、身份、会话、审计日志、文件与提示词都保存在你的数据库和存储中。离线与气隙部署仍是一等选项。"
+        },
+        "pluginArchitecture": {
+          "title": "扩展而不换平台",
+          "description": "通过插件添加 Driver、身份提供方、审计导出、Webhook、存储、任务与 AI 能力，同时保留同一个业务运行时。"
+        }
+      },
+      "manifest": {
+        "title": "架构即代码",
+        "subtitle": "声明性地定义您的业务逻辑。内核处理执行。",
+        "description": "停止为常见模式编写命令式代码。在配置中表达您的意图；让 ObjectOS 编排实现。",
+        "workflowTitle": "工作流定义 (YAML)",
+        "workflowCode": "# expense-approval.workflow.yml\nname: ExpenseApproval\ninitialState: submitted\n\nstates:\n  submitted:\n    on:\n      approve:\n        target: approved\n        conditions:\n          - role: manager\n          - amount: < 5000\n      escalate:\n        target: pending_director\n        conditions:\n          - amount: >= 5000\n  \n  pending_director:\n    on:\n      approve:\n        target: approved\n        conditions:\n          - role: director\n      reject:\n        target: rejected\n  \n  approved:\n    actions:\n      - notify: submitter\n      - update_ledger\n      - archive\n  \n  rejected:\n    actions:\n      - notify: submitter\n      - log_audit",
+        "pluginTitle": "插件清单 (TypeScript)",
+        "pluginCode": "// crm-plugin.manifest.ts\nexport const CRMPlugin = {\n  name: 'enterprise-crm',\n  version: '2.1.0',\n  \n  entities: [\n    { import: '@objectql/schemas/customer' },\n    { import: '@objectql/schemas/opportunity' },\n    { import: '@objectql/schemas/contract' }\n  ],\n  \n  workflows: [\n    { import: './workflows/lead-qualification.yml' },\n    { import: './workflows/contract-approval.yml' }\n  ],\n  \n  permissions: {\n    'sales-rep': ['read:customers', 'create:opportunities'],\n    'sales-manager': ['*:customers', '*:opportunities'],\n    'finance': ['read:contracts', 'approve:contracts']\n  },\n  \n  hooks: {\n    'opportunity.created': './handlers/notify-team',\n    'contract.approved': './handlers/generate-invoice'\n  }\n};"
+      },
+      "localFirstDeepDive": {
+        "title": "本地优先同步协议",
+        "subtitle": "构建离线优先应用程序很难。ObjectOS 使其自动化。",
+        "problem": "分布式状态的挑战",
+        "problemDescription": "当用户离线工作时——现场技术人员、远程区域的销售代表、移动员工——他们的本地数据库与服务器发生偏离。合并变更充满冲突：如果两个用户编辑了同一条记录怎么办？谁赢？如何防止数据丢失？",
+        "solution": "作为复制主控的 ObjectOS",
+        "solutionDescription": "ObjectOS 充当权威的复制控制器，管理服务器数据库和客户端数据库 (SQLite/RxDB) 之间的差异。同步引擎使用无冲突复制数据类型 (CRDT) 和最后写入胜出 (LWW) 策略来解决冲突。开发者声明同步规则；内核处理复杂性。",
+        "benefits": [
+          "离线用户的零延迟交互",
+          "自动冲突解决——无需手动合并逻辑",
+          "保留审计跟踪的双向同步",
+          "适用于任何 ObjectQL 支持的数据库"
+        ]
+      },
+      "ecosystem": {
+        "title": "三层架构，一个元数据脊柱",
+        "subtitle": "大多数用户首先部署 ObjectOS；Framework 与 ObjectUI 解释工件与 UI 表面从哪里来。",
+        "objectqlRole": {
+          "title": "Framework / ObjectQL",
+          "description": "用结构化元数据定义对象、字段、查询、Driver、流程、视图、动作与 Agent。"
+        },
+        "objectuiRole": {
+          "title": "ObjectUI",
+          "description": "从元数据渲染 Console、App Shell、对象视图、表单、仪表盘与插件视图。"
+        },
+        "objectosRole": {
+          "title": "ObjectOS",
+          "description": "在你的环境中运行工件，执行身份与权限，并暴露 API 与 MCP 工具。"
+        },
+        "integration": "ObjectOS 是你运营的运行时；Framework 元数据与 ObjectUI 渲染器插入其中。"
+      },
+      "useCases": {
+        "title": "从原型到关键任务系统",
+        "subtitle": "从单用户工具扩展到多租户平台的架构。",
+        "fieldOperations": {
+          "title": "现场作业与离线工作",
+          "description": "为现场技术人员、检查员或销售团队配备在连接恢复时同步的本地优先工具。即使离线也能实现零延迟数据输入、自动冲突解决和完整的审计跟踪。"
+        },
+        "enterpriseApps": {
+          "title": "企业应用套件",
+          "description": "构建具有统一治理的 ERP、CRM 或 HRM 系统。跨模块单点登录。集中审计日志以确保合规性。用于审批和自动化的工作流编排。部署在本地或您的云端。"
+        },
+        "multiTenantSaaS": {
+          "title": "多租户 SaaS 平台",
+          "description": "推出内置租户隔离、基于角色的访问控制和使用分析的 SaaS 产品。无需架构重写即可从 10 个租户扩展到 10,000 个租户。"
+        }
+      }
+    },
+    "objectui": {
+      "hero": {
+        "label": "前端开发工具包",
+        "title": "ObjectUI",
+        "subtitle": "面向专业前端团队的 Schema 驱动 React 界面",
+        "description": "ObjectUI 面向前端开发者：从 ObjectStack 元数据渲染对象、表单、仪表盘、页面与插件视图，同时保留 React、Tailwind、Shadcn、自定义路由、自定义认证与自有后端的控制权。同一份元数据也会驱动 API 与 AI 工具。",
+        "cta": "阅读 ObjectUI 文档",
+        "secondaryCta": "查看 GitHub"
+      },
+      "features": {
+        "title": "为什么选择 ObjectUI？",
+        "subtitle": "模块化前端工具包：需要时用完整 Console，不需要时把 app-shell/provider 包组合进自己的 React 应用。",
+        "theStack": {
+          "title": "为 React 团队构建",
+          "description": "使用熟悉的 React 原语、Tailwind 工具类、Radix/Shadcn 组件和现有设计系统。ObjectUI 从元数据渲染，但不会把你关进黑盒。"
+        },
+        "serverDriven": {
+          "title": "元数据，但不失去控制",
+          "description": "视图、页面、仪表盘、表单、字段与动作可以来自元数据；路由、认证、布局边界与组件覆盖仍留在你的前端代码里。"
+        },
+        "enterpriseReady": {
+          "title": "完整 Console 或嵌入式 Shell",
+          "description": "运行完整 ObjectStack Console，或嵌入 @object-ui/app-shell 与 @object-ui/providers，构建连接到 REST、GraphQL 或 ObjectOS 后端的小型自定义界面。"
+        },
+        "extensible": {
+          "title": "前端插件表面",
+          "description": "注册自定义字段、组件、视图类型，以及 kanban、calendar、charts、reports、map、AI、workflow 等插件视图。"
+        }
+      },
+      "useCases": {
+        "title": "用例",
+        "subtitle": "从快速原型到生产级企业系统。",
+        "admin": {
+          "title": "管理仪表板与内部工具",
+          "description": "从 Schema 生成完整的管理界面。CRUD 操作、高级过滤、批量操作——全部声明性定义。在几小时内而不是几周内交付内部工具。"
+        },
+        "forms": {
+          "title": "动态表单与工作流",
+          "description": "多步向导、条件逻辑、复杂验证。构建无需编写状态管理代码即可适应用户输入的入职流程、调查和数据收集表单。"
+        },
+        "dataViz": {
+          "title": "数据密集型应用",
+          "description": "具有虚拟化、实时更新、导出功能的表格。可流畅处理数百万行的仪表板小部件、分析面板和报告界面。"
+        }
+      },
+      "magicTrick": {
+        "title": "魔法",
+        "subtitle": "声明元数据；ObjectUI 通过 App Shell 与 Providers 渲染真实界面。",
+        "inputLabel": "视图元数据",
+        "outputLabel": "渲染后的 ObjectUI 表面",
+        "code": "{\n  \"type\": \"dataTable\",\n  \"schema\": \"users\",\n  \"columns\": [\n    { \"field\": \"name\", \"sortable\": true },\n    { \"field\": \"email\", \"sortable\": true },\n    { \"field\": \"role\", \"filterable\": true }\n  ],\n  \"actions\": [\n    {\n      \"label\": \"Edit\",\n      \"type\": \"navigate\",\n      \"route\": \"/users/:id/edit\"\n    },\n    {\n      \"label\": \"Delete\",\n      \"type\": \"confirm\",\n      \"variant\": \"destructive\"\n    }\n  ],\n  \"pagination\": true,\n  \"search\": true\n}",
+        "output": "一个全功能数据表：\n\n• Shadcn UI 组件（默认美观）\n• 按名称或电子邮件排序（可点击标题）\n• 按角色过滤（多选下拉菜单）\n• 编辑按钮 → 导航到编辑页面\n• 删除按钮 → 显示确认对话框\n• 分页控制（每页 10/25/50 条）\n• 跨所有列的全局搜索\n• 响应式设计（移动端友好）\n• 键盘导航与 ARIA 标签\n• Tailwind 类（自由定制）"
+      },
+      "architecture": {
+        "title": "如何工作",
+        "subtitle": "Metadata -> Providers -> App Shell/Renderers，可接入你的后端或 ObjectOS。",
+        "step1": {
+          "title": "步骤 1：元数据",
+          "description": "对象、视图、仪表盘、页面、字段、标签与动作都是结构化定义，可以懒加载，并按约定做本地化。"
+        },
+        "step2": {
+          "title": "步骤 2：Providers",
+          "description": "DataSourceProvider、MetadataProvider 与 ThemeProvider 把 ObjectUI 连接到 ObjectOS，或连接到你的 REST/GraphQL/自定义 API。"
+        },
+        "step3": {
+          "title": "步骤 3：Renderers",
+          "description": "AppShell、ObjectRenderer、DashboardRenderer、PageRenderer 与 FormRenderer 把元数据映射成可访问的 React 组件。"
+        }
+      },
+      "extensibility": {
+        "title": "不仅仅是玩具",
+        "subtitle": "针对复杂要求的生产级可扩展性。",
+        "description": "注册自定义 React 组件并在 JSON Schema 中使用它们。ObjectUI 不会锁定您——它是您构建的基础。当您需要特定功能时，编写一次 React 组件，并在所有协议驱动的界面中重复使用它。",
+        "example": {
+          "title": "自定义组件示例",
+          "code": "// 1. Register your custom component\nimport { SignaturePad } from '@/components/custom';\n\nobjectUI.registerComponent('signaturePad', SignaturePad);\n\n// 2. Use it in your JSON schema\n{\n  \"type\": \"form\",\n  \"fields\": [\n    { \"name\": \"name\", \"type\": \"text\" },\n    {\n      \"name\": \"signature\",\n      \"type\": \"signaturePad\",  // Your custom component\n      \"label\": \"Please sign here\",\n      \"required\": true\n    }\n  ]\n}\n\n// 3. It just works\n// ✓ Validation integrated\n// ✓ State management handled\n// ✓ Reusable across all forms"
+        }
+      },
+      "ecosystem": {
+        "title": "ObjectStack 的一部分",
+        "subtitle": "完整的协议驱动开发平台。",
+        "description": "ObjectUI 可以通过 providers 独立接入任何后端，但它与 ObjectOS 和 ObjectStack 元数据天然对齐。ObjectQL 只是部分对象背后的数据引擎，并不是每个 UI 集成都必须围绕它。",
+        "standalone": "用 @object-ui/app-shell + @object-ui/providers 接入自有后端",
+        "integrated": "完整 ObjectOS Console 与 ObjectStack 元数据集成"
+      }
+    },
+    "cloud": {
+      "hero": {
+        "label": "云端开发",
+        "title": "ObjectCloud",
+        "subtitle": "用 ObjectStack 构建企业 AI 应用的云端工作区",
+        "description": "ObjectCloud 是即将开放的 ObjectStack 云端开发与运行环境。开发者可以创建项目、管理元数据、预览 ObjectOS 运行时、测试 MCP 工具，并把版本化工件发布到托管或自托管环境。早期团队即将开放。",
+        "cta": "加入早期访问",
+        "secondaryCta": "阅读文档"
+      },
+      "features": {
+        "title": "ObjectCloud 将提供什么",
+        "subtitle": "首先是开发者工作区，同时提供生产运行选项。",
+        "hostedWorkspace": {
+          "title": "托管 ObjectStack 工作区",
+          "description": "在浏览器中创建 ObjectStack 项目，管理环境，并把元数据版本、密钥和部署工件放在一个受治理工作区中。"
+        },
+        "runtimePreview": {
+          "title": "运行时预览",
+          "description": "为每个项目版本启动 ObjectOS 预览运行时，在发布前检查 API、权限、审计日志、ObjectUI 页面和 MCP 工具。"
+        },
+        "artifactPromotion": {
+          "title": "工件发布",
+          "description": "把同一份签名元数据包从开发环境推进到测试和生产。环境差异存在配置里，而不是重写应用代码。"
+        },
+        "openingSoon": {
+          "title": "即将开放",
+          "description": "ObjectCloud 尚未正式开放。早期访问会优先面向构建 AI 操作型内部工具和企业 SaaS 后端的开发团队。"
+        }
+      },
+      "useCases": {
+        "title": "云端开发场景",
+        "subtitle": "适合希望先开发 ObjectStack，而不想先搭基础设施的团队。",
+        "teamDevelopment": {
+          "title": "团队元数据开发",
+          "description": "围绕对象、权限、视图、动作和 Agent 工具协作，使用共享环境与可评审元数据版本。"
+        },
+        "aiToolTesting": {
+          "title": "MCP 工具测试",
+          "description": "在把工具暴露给生产 copilot 或 agent 前，先在权限感知运行时中预览生成的 Agent 工具。"
+        },
+        "deploymentReadiness": {
+          "title": "部署准备",
+          "description": "把 ObjectStack 工件打包给 ObjectCloud 托管运行时、自托管 ObjectOS 或私有企业基础设施。"
+        }
+      },
+      "workflow": {
+        "title": "从云工作区到运行时",
+        "subtitle": "在云端开发，同一份工件可以发布到任何地方。",
+        "step1": {
+          "title": "创建项目",
+          "description": "从模板或仓库开始，定义对象、视图、权限、动作和 Agent 工具。"
+        },
+        "step2": {
+          "title": "预览运行时",
+          "description": "在隔离的 ObjectOS 预览环境中运行项目版本，检查 API、UI、审计与 MCP 工具表面。"
+        },
+        "step3": {
+          "title": "发布或导出",
+          "description": "部署到托管 ObjectCloud，导出到自托管 ObjectOS，或交给企业基础设施团队。"
+        }
+      },
+      "noVendorLockIn": {
+        "title": "天生可移植",
+        "subtitle": "云端开发不应该锁住应用。",
+        "description": "ObjectCloud 使用 ObjectStack 工件：对象、策略、动作、视图与 Agent 工具。团队可以导出同一份元数据包，在业务或合规要求变化时运行到自托管环境。"
+      },
+      "ecosystem": {
+        "title": "开发者工具链的一部分",
+        "subtitle": "Cloud、Studio、CLI 是三个独立入口。",
+        "description": "ObjectCloud 是浏览器里的云端工作区。Studio 是元数据可视化开发环境。CLI 是面向本地开发、CI/CD 与运维的命令行自动化工具。",
+        "opensource": "围绕开源 ObjectStack Framework 构建",
+        "studio": "导入并预览 Studio 编写的元数据",
+        "enterprise": "导出工件用于私有运行时部署"
+      }
+    },
+    "studio": {
+      "hero": {
+        "label": "元数据可视化 IDE",
+        "title": "Object Studio",
+        "subtitle": "ObjectStack 元数据可视化开发环境",
+        "description": "Object Studio 面向希望直接建模 ObjectStack 元数据的开发者和架构师：对象、字段、关系、权限、视图、动作与 Agent 工具。它不是 CLI，也不是云平台；它是理解和编辑业务系统元数据的可视化工作区。",
+        "cta": "了解 Studio",
+        "secondaryCta": "查看 CLI"
+      },
+      "features": {
+        "title": "Studio 用来做什么",
+        "subtitle": "让元数据可见、可评审、可推理。",
+        "visualDesigner": {
+          "title": "元数据可视化建模",
+          "description": "查看并编辑对象 Schema、字段、关系、权限、视图元数据和动作定义，同时保留底层 typed source of truth。"
+        },
+        "localFirst": {
+          "title": "本地 / 工作区预览",
+          "description": "预览元数据如何变成 ObjectOS 运行时表面、生成 API、ObjectUI 页面和 MCP 工具，再发布版本化工件。"
+        },
+        "integratedCLI": {
+          "title": "配合 CLI，而不是替代 CLI",
+          "description": "Studio 帮助人理解和可视化编辑元数据。CLI 仍然是独立的脚手架、校验、CI/CD 与部署自动化表面。"
+        },
+        "hotReload": {
+          "title": "元数据反馈循环",
+          "description": "修改对象、权限、视图或 Agent 工具元数据后，可以快速检查对应运行时表面，减少在原始文件之间来回跳转。"
+        }
+      },
+      "useCases": {
+        "title": "Studio 场景",
+        "subtitle": "适合需要可视化理解元数据系统的开发者。",
+        "rapidPrototyping": {
+          "title": "建模新的业务领域",
+          "description": "在完整实现前探索对象、关系、权限和 UI 投影。"
+        },
+        "enterpriseApps": {
+          "title": "评审企业元数据",
+          "description": "帮助平台团队、架构师和开发者在设计评审与实现阶段查看同一份元数据模型。"
+        },
+        "edgeDeployment": {
+          "title": "预览生成 UI 和工具",
+          "description": "查看元数据如何渲染成 ObjectUI 页面，以及动作如何成为 Agent-ready 工具表面。"
+        }
+      },
+      "workflow": {
+        "title": "Studio 工作流",
+        "subtitle": "理解、编辑、预览。",
+        "step1": {
+          "title": "打开元数据",
+          "description": "加载项目或云工作区，检查对象、视图、动作、权限和 Agent 工具。"
+        },
+        "step2": {
+          "title": "可视化编辑",
+          "description": "通过可视化表单和关系图修改元数据，同时保留 typed source artifacts。"
+        },
+        "step3": {
+          "title": "预览运行时影响",
+          "description": "在交给 CLI 或 Cloud 发布前，检查生成的 API、UI 与工具表面。"
+        }
+      },
+      "cliPower": {
+        "title": "CLI 是独立工具",
+        "subtitle": "CLI 做自动化，Studio 做可视化理解。",
+        "description": "Studio 不应该被看成 CLI 外壳。它是元数据可视化环境。CLI 仍然是独立命令行界面，用于脚手架、校验、构建、部署与运维。",
+        "commands": {
+          "title": "相关 CLI 任务",
+          "examples": [
+            {
+              "command": "objectstack init",
+              "description": "从终端创建项目"
+            },
+            {
+              "command": "objectstack validate",
+              "description": "在 CI 中校验元数据"
+            },
+            {
+              "command": "objectstack build",
+              "description": "构建版本化工件"
+            },
+            {
+              "command": "objectstack deploy",
+              "description": "发布工件到运行时"
+            }
+          ]
+        }
+      },
+      "ecosystem": {
+        "title": "开发者工具链的可视化层",
+        "subtitle": "Studio 与 ObjectCloud、CLI 互补。",
+        "description": "团队需要可视化查看和编辑元数据时使用 Studio。需要自动化同一份元数据时使用 CLI。需要托管开发工作区和运行时预览时使用 ObjectCloud。",
+        "local": "元数据可视化开发",
+        "cloud": "与 ObjectCloud 工作区导入导出",
+        "selfHosted": "预览将发布到自托管 ObjectOS 的工件"
+      }
+    },
+    "cli": {
+      "hero": {
+        "label": "命令行工具",
+        "title": "ObjectStack CLI",
+        "subtitle": "面向 ObjectStack 开发、CI/CD 与运维的独立 CLI",
+        "description": "ObjectStack CLI 是面向开发者与平台团队的独立命令行工具。它用于创建项目、校验元数据、生成类型和工具契约、构建版本化工件、运行本地预览，并部署到 ObjectCloud 或自托管 ObjectOS。它与 Studio 独立，面向脚本、CI/CD 和 Agent 使用。",
+        "cta": "安装 CLI",
+        "secondaryCta": "查看文档"
+      },
+      "features": {
+        "title": "CLI 做什么",
+        "subtitle": "面向开发者、CI 管道和 Coding Agent 的稳定原语。",
+        "infrastructureAsCode": {
+          "title": "项目脚手架",
+          "description": "从可重复模板创建 ObjectStack 项目，添加对象、动作、视图、Agent、Driver 和运行时配置。"
+        },
+        "cicdIntegration": {
+          "title": "校验与生成",
+          "description": "在开发或 CI 中校验元数据，生成 TypeScript 类型、JSON Schema、SDK 契约和 MCP 工具定义。"
+        },
+        "multiEnvironment": {
+          "title": "构建与发布工件",
+          "description": "把元数据打包为版本化工件，并把同一份包推进到本地、云端、测试和生产运行时。"
+        },
+        "scriptableAutomation": {
+          "title": "可脚本化运维",
+          "description": "使用 JSON 输出、可预测退出码和可组合命令，支撑 CI/CD、GitOps、发布自动化与 Agent 驱动维护。"
+        }
+      },
+      "commands": {
+        "title": "代表性命令",
+        "subtitle": "命令名称会跟随开源 framework 仓库中的 CLI。",
+        "init": {
+          "command": "objectstack init <app>",
+          "description": "创建新的 ObjectStack 项目",
+          "details": "搭建对象、视图、动作、Agent、Driver 和运行时配置。"
+        },
+        "schema": {
+          "command": "objectstack validate",
+          "description": "校验项目元数据",
+          "details": "在构建或部署前检查对象、权限、视图、动作和 Agent 工具元数据。"
+        },
+        "migrate": {
+          "command": "objectstack generate",
+          "description": "生成派生工件",
+          "details": "生成类型、JSON Schema、SDK 契约与 MCP 工具定义。"
+        },
+        "deploy": {
+          "command": "objectstack build",
+          "description": "构建版本化工件包",
+          "details": "为 ObjectCloud 或自托管 ObjectOS 打包元数据。"
+        },
+        "env": {
+          "command": "objectstack deploy <target>",
+          "description": "部署到目标运行时",
+          "details": "把构建工件推进到本地、云端、测试、生产或自托管运行时。"
+        },
+        "driver": {
+          "command": "objectstack driver test",
+          "description": "验证 Driver 连接",
+          "details": "在运行时发布前检查数据源 Driver。"
+        }
+      },
+      "workflow": {
+        "title": "CLI 开发流程",
+        "subtitle": "Scaffold -> validate -> build -> deploy。",
+        "step1": {
+          "title": "Scaffold",
+          "description": "创建项目并添加对象、视图、动作、Agent 和 Driver 的 typed metadata 文件。"
+        },
+        "step2": {
+          "title": "Validate and Build",
+          "description": "检查元数据，生成派生类型和工具契约，并打包版本化工件。"
+        },
+        "step3": {
+          "title": "Run or Deploy",
+          "description": "启动本地预览，发布到 ObjectCloud，或部署到自托管 ObjectOS。"
+        }
+      },
+      "useCases": {
+        "title": "CLI 场景",
+        "subtitle": "独立命令行真正有价值的地方。",
+        "cicdPipelines": {
+          "title": "CI/CD 管道",
+          "description": "在每个 PR 或发布流程中运行元数据校验、类型生成、测试运行时启动和工件发布。"
+        },
+        "multiTenantSaaS": {
+          "title": "项目与环境自动化",
+          "description": "不用打开可视化工具，即可自动化环境设置、密钥、Driver 检查、工件导出与部署任务。"
+        },
+        "edgeDeployment": {
+          "title": "本地与自托管开发",
+          "description": "本地运行 ObjectStack，打包自托管 ObjectOS 工件，并管理不能依赖浏览器工作区的部署。"
+        },
+        "disasterRecovery": {
+          "title": "Agent 友好工具",
+          "description": "给 Coding Agent 提供可预测的 scaffold、validate、build、diff、deploy 命令。"
+        }
+      },
+      "installation": {
+        "title": "安装",
+        "subtitle": "分发方式会跟随 framework 仓库。",
+        "npm": {
+          "method": "npm",
+          "command": "npm install -g @objectstack/cli",
+          "description": "通过 npm 全局安装"
+        },
+        "homebrew": {
+          "method": "pnpm dlx",
+          "command": "pnpm dlx create-objectstack",
+          "description": "无需全局安装即可创建项目"
+        },
+        "docker": {
+          "method": "Source",
+          "command": "github.com/objectstack-ai/framework",
+          "description": "CLI 源码位于开源 framework 仓库"
+        },
+        "binary": {
+          "method": "即将开放",
+          "command": "objectstack --help",
+          "description": "计划提供独立二进制分发"
+        }
+      },
+      "ecosystem": {
+        "title": "工具链中的独立部分",
+        "subtitle": "CLI 不是 Studio，Studio 也不是 CLI。",
+        "description": "CLI 是 ObjectStack 的脚本化界面。Studio 是元数据可视化开发。ObjectCloud 是云端工作区和运行时预览。三者使用同一份元数据工件。",
+        "studio": "Studio 用于元数据可视化编辑",
+        "cloud": "ObjectCloud 用于托管工作区和运行时预览",
+        "selfHosted": "CLI 用于本地、CI/CD 与自托管运行时运维"
+      }
+    },
+    "objectstack": {
+      "hero": {
+        "label": "开源 Framework",
+        "title": "ObjectStack",
+        "subtitle": "这套技术栈背后的 AI 原生应用框架",
+        "description": "ObjectStack 是面向元数据定义业务应用的开源框架：对象、权限、流程、视图、动作、API、SDK 与 AI 工具。ObjectQL 会成为这里的实现细节——内部数据/查询引擎与 Driver 契约——而公开开发体验会围绕 ObjectStack 文档与 framework 仓库展开。",
+        "cta": "阅读文档",
+        "secondaryCta": "开源项目"
+      },
+      "features": {
+        "title": "ObjectStack 里有什么",
+        "subtitle": "AI 就绪元数据优先；数据/查询管道退到幕后。",
+        "zeroOverheadSecurity": {
+          "title": "业务元数据核心",
+          "description": "ObjectStack 用一套结构化模型定义对象、字段、权限、流程、动作、视图、Agent 与工具表面。运行时决定谁可以使用它们，以及每个动作如何暴露。"
+        },
+        "databaseAgnostic": {
+          "title": "基于 Driver 的存储",
+          "description": "同一份对象元数据可以跑在 SQL、MongoDB、内存、电子表格或自定义 Driver 上。内部数据/查询引擎服务于框架本身，而不是成为产品叙事中心。"
+        },
+        "virtualColumns": {
+          "title": "人和 AI 都能读懂",
+          "description": "对象、动作与查询表面结构化到足以让 Framework、REST、SDK、ObjectUI 与 MCP 工具派生行为，而不需要重复定义。"
+        },
+        "typeSafe": {
+          "title": "从 Zod 获得类型",
+          "description": "对象定义从 Zod-backed 元数据出发，让 TypeScript、JSON 工件、API 契约、UI 字段行为与 AI 工具签名保持一致。"
+        }
+      },
+      "useCases": {
+        "title": "用例",
+        "subtitle": "用 ObjectStack 作为开源基础；让 ObjectOS 运行它，让 ObjectUI 渲染它。",
+        "localFirst": {
+          "title": "AI 就绪应用模型",
+          "description": "先在本地原型化对象、流程、动作与 Agent 工具；需要认证、审计、API 与受治理执行时，把同一份元数据放进 ObjectOS。"
+        },
+        "enterprise": {
+          "title": "Driver 适配器",
+          "description": "把现有数据库、电子表格与专有系统包装成 ObjectStack 元数据，让 API、UI 与 AI 工具可以安全理解它们。"
+        },
+        "saas": {
+          "title": "产品元数据主干",
+          "description": "为生成的 REST API、SDK、UI 渲染器与 AI Agent 提供一致的过滤、分页、动作、权限与工具契约。"
+        }
+      },
+      "example": {
+        "title": "从 ObjectStack 元数据到运行时表面",
+        "subtitle": "ObjectStack 建模业务；ObjectOS 与 ObjectUI 把它变成可被 AI 操作的应用。",
+        "schemaTitle": "ObjectStack 元数据",
+        "sqlTitle": "运行时表面",
+        "schema": "// customer.object.ts\nimport { defineObject, z } from '@objectstack/spec';\n\nexport const Customer = defineObject({\n  name: 'customer',\n  label: 'Customer',\n  fields: {\n    companyName: z.string().min(1),\n    accountManagerId: z.lookup('user'),\n    annualRevenue: z.number().optional(),\n  },\n});",
+        "sql": "// ObjectStack runtime 派生：\n\n// 数据引擎 -> driver-backed CRUD/query\n// REST API -> /api/v1/data/customer\n// Client SDK -> client.data.find('customer', ...)\n// ObjectUI -> 表单、表格、仪表盘\n// MCP tools -> customer.list / customer.update\n\n// ObjectOS 统一执行认证、行/字段权限、\n// 校验、审计与请求归因。"
+      },
+      "comparison": {
+        "title": "ObjectStack vs. 只有 ORM 的后端",
+        "subtitle": "ObjectStack 是应用、API、UI 与 AI 工具的元数据主干；数据/查询引擎保持为内部能力。",
+        "objectqlColumn": "ObjectStack 元数据",
+        "ormColumn": "只有 ORM 的栈",
+        "runtimeOverhead": {
+          "category": "角色",
+          "objectql": "面向业务元数据、API、UI 与 AI 工具表面的开源框架。",
+          "orm": "通常只是数据抽象，周围还要补大量胶水。"
+        },
+        "security": {
+          "category": "治理",
+          "objectql": "ObjectOS 在每个动作外层执行认证、RBAC/RLS/FLS、审计与 Agent 身份。",
+          "orm": "治理要在每条 API 路由与每个 AI 集成里重写。"
+        },
+        "portability": {
+          "category": "可移植性",
+          "objectql": "元数据可以作为编译工件跨 Driver 与运行时移动。",
+          "orm": "模型经常绑定到特定方言、迁移栈或应用框架。"
+        },
+        "virtualColumns": {
+          "category": "AI 表面",
+          "objectql": "动作与对象元数据通过运行时喂给 MCP 工具。",
+          "orm": "Agent 工具通常手写，并逐渐偏离真实后端。"
+        }
+      },
+      "drivers": {
+        "title": "Driver 是数据边界",
+        "subtitle": "ObjectStack 负责通用对象/动作契约；真正的存储行为由 Driver 负责。",
+        "postgresql": {
+          "name": "PostgreSQL",
+          "description": "通过 SQL Driver 支持生产级关系存储。"
+        },
+        "mysql": {
+          "name": "MySQL",
+          "description": "用于常见 Web 与企业部署的关系存储。"
+        },
+        "sqlite": {
+          "name": "SQLite",
+          "description": "适合本地开发、嵌入式工具与 standalone 部署。"
+        },
+        "sqlserver": {
+          "name": "SQL Server",
+          "description": "通过自定义或商业 Driver 对接企业关系系统。"
+        },
+        "oracle": {
+          "name": "Oracle Database",
+          "description": "遗留企业系统可以先被挂载，而不是立刻迁移。"
+        },
+        "mongodb": {
+          "name": "MongoDB",
+          "description": "在合适场景下使用原生文档存储语义。"
+        },
+        "excel": {
+          "name": "Excel / CSV",
+          "description": "把电子表格包装成 API、UI 与 Agent 都能使用的受治理对象。"
+        }
+      }
+    }
+  },
+  "pricing": {
+    "title": "简单、坦诚的定价。",
+    "subtitle": "完整的 ObjectStack 运行时全部开源,生产可用,可自托管。ObjectCloud 是托管你项目的「家」。企业版面向受监管与大规模部署场景。",
+    "plans": {
+      "community": {
+        "title": "开源版",
+        "price": "免费",
+        "period": "永久",
+        "description": "完整的 ObjectStack 运行时。单团队即可生产可用,可在任何地方自托管。",
+        "features": [
+          "ObjectQL 与 ObjectOS（Apache-2.0）、ObjectUI（MIT）",
+          "全部 Driver：Postgres、MySQL、SQLite、Turso、MongoDB、Redis、in-memory",
+          "全部适配器：Express、Fastify、Hono、NestJS、Next.js、Nuxt、SvelteKit",
+          "Auth、OAuth / OIDC、RBAC、RLS、FLS、审计日志",
+          "Flow、自动化、与 MCP 工具自动生成",
+          "CLI、VS Code 扩展、Studio（自托管）",
+          "社区支持（GitHub、Discord）"
+        ],
+        "cta": "用 npx create-objectstack 开始",
+        "href": "https://github.com/objectstack-ai/framework"
+      },
+      "pro": {
+        "title": "ObjectCloud",
+        "price": "按用量",
+        "period": "含免费额度",
+        "description": "托管你项目的「家」:推送 artifact、多租户运行、按需扩缩。2026 年 7 月 GA。",
+        "features": [
+          "包含开源版全部能力",
+          "托管多租户运行时（org / project / version）",
+          "托管 Studio + 可回滚的 artifact registry",
+          "自动扩缩的边缘运行时与全球 CDN",
+          "用量分析与可观测性仪表盘",
+          "邮件支持"
+        ],
+        "cta": "申请抢先体验",
+        "href": "https://tally.so/r/2EeW0V"
+      },
+      "enterprise": {
+        "title": "企业版",
+        "price": "定制",
+        "period": "",
+        "description": "面向受监管与大规模部署场景:专属环境、采购流程支持、定制 SLA。",
+        "features": [
+          "包含 ObjectCloud 全部能力 —— 或完全自托管",
+          "专属单租户部署选项",
+          "采购、安全评审与合规文档支持",
+          "定制 SLA 与白手套上线服务",
+          "命名技术联系人与架构师直通"
+        ],
+        "cta": "联系销售",
+        "href": "/enterprise"
+      }
+    }
+  },
+  "enterprise": {
+    "hero": {
+      "label": "企业版",
+      "title": "私有部署的 AI 原生业务后端",
+      "subtitle": "在您的边界内运行 ObjectStack。同一份 Zod 元数据，同一套 MCP 工具，完整的数据主权。",
+      "description": "ObjectStack 企业版以自托管运行时的形态交付数据、控制与视图层，附带商业支持、加固的治理与合规能力。把业务定义为一份结构化的 Zod 元数据；让人类、服务与 AI agent 在同一个可审计的内核中安全运营它。",
+      "cta": "预约演示",
+      "secondaryCta": "查看架构"
+    },
+    "challenges": {
+      "title": "我们解决的战略挑战",
+      "subtitle": "为让 AI agent 与人类并肩运营业务的 CTO、CIO 与系统架构师而构建。",
+      "technicalDebt": {
+        "title": "Agent 安全运营",
+        "description": "别把原始 SQL 或截屏式 UI 交给 AI agent。ObjectStack 从同一份元数据中导出结构化、受权限约束、可审计的接口——REST、SDK、MCP 工具。copilot 继承用户权限，而不是绕开它。"
+      },
+      "vendorLockIn": {
+        "title": "无存储锁定",
+        "description": "Driver 把 Postgres、MongoDB、Redis、Excel 与专有系统包装到同一套 Zod 对象模型背后。包容存量而非迁移；换存储是换 Driver，不是重写业务。"
+      },
+      "dataGovernance": {
+        "title": "统一治理",
+        "description": "身份、权限、流程与审计共用一个控制平面。每一次操作——无论来自人还是 agent——都可归因到主体并端到端可追溯。"
+      },
+      "assetLongevity": {
+        "title": "元数据即 IP",
+        "description": "您的业务定义以 Zod 工件形式存在，而不是框架代码。运行时可以替换；对象、流程、策略与视图清单不会随之失效。"
+      }
+    },
+    "features": {
+      "title": "企业级能力",
+      "subtitle": "自托管基础设施，配套商业支持与加固治理。",
+      "selfHosted": {
+        "title": "自托管部署",
+        "description": "在您的边界内运行同一个 ObjectStack 内核——本地或私有云。数据不出域，提供商业 SLA。"
+      },
+      "multiTenant": {
+        "title": "多租户隔离",
+        "description": "租户路由、专用 schema、行级安全、传输与静态加密——都从元数据中派生，而不是外挂的管线。"
+      },
+      "auditCompliance": {
+        "title": "审计与合规",
+        "description": "每次 REST、SDK 或 MCP 工具调用都记录主体、意图与元数据变更。审计管道经过加固,可映射到你的 SOC 2 / HIPAA 证据要求。"
+      },
+      "customDrivers": {
+        "title": "定制 Driver 开发",
+        "description": "用 Driver 把专有遗留系统包装起来，而不是迁移。我们的团队为您的基础设施构建并维护 Driver。"
+      },
+      "sla": {
+        "title": "7×24 命名支持",
+        "description": "命名工程师、直达升级路径、定制 SLA；包含架构评审与 AI agent 落地规划。"
+      },
+      "professionalServices": {
+        "title": "专业服务",
+        "description": "现场架构研讨、迁移策略与团队赋能，帮助安全采用 AI 原生后端。"
+      }
+    },
+    "architecture": {
+      "title": "三层架构，一个可审计的运行时",
+      "subtitle": "数据、控制与视图——由 Zod 元数据驱动，被人类与 agent 共同操作。",
+      "dataLayer": {
+        "title": "数据层 (ObjectQL)",
+        "description": "业务对象、字段、关系、校验与权限作为 Zod 元数据；通过 Driver 与存储无关。"
+      },
+      "controlLayer": {
+        "title": "控制层 (ObjectOS)",
+        "description": "微内核运行时：加载 Driver、服务与工件；执行权限；导出 REST、SDK 与 MCP 工具。"
+      },
+      "viewLayer": {
+        "title": "视图层 (ObjectUI)",
+        "description": "把元数据投影为应用、面板与操作——权限感知、与 agent 接口对齐。"
+      }
+    },
+    "comparison": {
+      "title": "企业为何选择 ObjectStack",
+      "subtitle": "对比我们的做法与传统平台",
+      "traditional": "传统平台",
+      "objectstack": "ObjectStack 企业版",
+      "items": {
+        "migration": {
+          "traditional": "强制迁移到供应商的数据模型",
+          "objectstack": "通过 Driver 把现有系统包装在 Zod 对象背后"
+        },
+        "lockin": {
+          "traditional": "专有 API 与设计层面的锁定",
+          "objectstack": "开放元数据；随时导出工件包"
+        },
+        "frameworks": {
+          "traditional": "业务逻辑黏在框架代码里",
+          "objectstack": "业务逻辑是元数据——运行时可替换"
+        },
+        "governance": {
+          "traditional": "各数据源各自一套安全模型，逐渐漂移",
+          "objectstack": "一套权限模型，在 UI、API、SDK 与 MCP 上统一执行"
+        },
+        "deployment": {
+          "traditional": "仅 SaaS，对数据驻留含糊其辞",
+          "objectstack": "自托管运行时，完整数据主权"
+        }
+      }
+    },
+    "useCases": {
+      "title": "企业用例",
+      "subtitle": "AI 原生且权限感知的后端能在哪里产生回报。",
+      "shadowIT": {
+        "title": "可治理的影子 IT",
+        "description": "通过 Driver 把关键电子表格与 SaaS API 挂载为 ObjectStack 对象，加上企业级权限与审计——不打断业务流。"
+      },
+      "legacy": {
+        "title": "遗留系统现代化",
+        "description": "把主机、ERP、专有存储包装在 Zod 对象背后；暴露现代 API、SDK 与 MCP 工具，遗留代码完全不动。"
+      },
+      "multiRegion": {
+        "title": "多区域数据驻留",
+        "description": "同一份元数据，区域锁定的存储。在欧盟、美国、亚太部署相同的内核，路由策略写在清单里。"
+      },
+      "acquisition": {
+        "title": "并购整合",
+        "description": "通过 Driver 接入被并购方的系统，而非强制迁移。合并后的整体共享同一套治理与 MCP 接口。"
+      }
+    },
+    "cta": {
+      "title": "准备好让 agent 安全地运营您的业务了吗？",
+      "subtitle": "与我们的架构团队预约技术深度交流。",
+      "primary": "预约演示",
+      "secondary": "查看文档"
+    }
+  },
+  "marketplace": {
+    "hero": {
+      "title": "探索 ObjectStack 生态系统",
+      "subtitle": "发现应用程序、插件和通用驱动程序，为您的平台增添动力。",
+      "searchPlaceholder": "搜索市场..."
+    },
+    "tabs": {
+      "all": "全部",
+      "apps": "应用",
+      "plugins": "插件",
+      "drivers": "驱动"
+    },
+    "categories": {
+      "app": "应用",
+      "plugin": "插件",
+      "driver": "驱动",
+      "database": "数据库",
+      "performance": "性能",
+      "productivity": "生产力",
+      "business": "商业",
+      "identity": "身份",
+      "cache": "缓存",
+      "storage": "存储",
+      "integration": "集成"
+    },
+    "badges": {
+      "official": "官方",
+      "verified": "已验证",
+      "community": "社区"
+    },
+    "stats": {
+      "downloads": "下载",
+      "stars": "星标"
+    },
+    "emptyState": {
+      "title": "未找到结果",
+      "description": "尝试调整您的搜索或过滤器以找到您要查找的内容。",
+      "cta": "构建此驱动程序"
+    },
+    "items": {
+      "postgresDriver": {
+        "name": "ObjectQL Postgres 驱动",
+        "description": "企业级 PostgreSQL 驱动程序，支持本机协议和高级查询优化。",
+        "author": "ObjectStack",
+        "category": "database"
+      },
+      "redisCache": {
+        "name": "Redis 缓存加速器",
+        "description": "高性能缓存层，具有自动失效和分布式锁支持。",
+        "author": "社区",
+        "category": "performance"
+      },
+      "excelMounter": {
+        "name": "Excel 数据挂载器",
+        "description": "将 Excel 电子表格转换为可查询的数据源，具有实时同步功能。",
+        "author": "ObjectStack",
+        "category": "productivity"
+      },
+      "salesCRM": {
+        "name": "销售 CRM 专业版",
+        "description": "完整的客户关系管理解决方案，具有管道跟踪和预测功能。",
+        "author": "Enterprise Corp",
+        "category": "business"
+      },
+      "larkSSO": {
+        "name": "飞书 SSO",
+        "description": "飞书单点登录集成，具有自动用户配置功能。",
+        "author": "社区",
+        "category": "identity"
+      },
+      "mongoDriver": {
+        "name": "MongoDB 驱动",
+        "description": "本机 MongoDB 驱动程序，支持聚合管道和架构验证。",
+        "author": "ObjectStack",
+        "category": "database"
+      },
+      "mysqlDriver": {
+        "name": "MySQL 驱动",
+        "description": "高性能 MySQL 驱动程序，具有连接池和预处理语句。",
+        "author": "ObjectStack",
+        "category": "database"
+      },
+      "projectManager": {
+        "name": "项目管理器",
+        "description": "敏捷项目管理，包含冲刺、待办事项和燃尽图。",
+        "author": "ObjectStack",
+        "category": "business"
+      },
+      "auditLog": {
+        "name": "审计日志插件",
+        "description": "全面的审计跟踪，具有合规报告和保留策略。",
+        "author": "ObjectStack",
+        "category": "identity"
+      },
+      "s3Storage": {
+        "name": "S3 存储驱动",
+        "description": "Amazon S3 兼容存储驱动程序，具有分段上传和 CDN 集成。",
+        "author": "社区",
+        "category": "storage"
+      },
+      "slackIntegration": {
+        "name": "Slack 集成",
+        "description": "为您的 Slack 工作区提供实时通知和交互式命令。",
+        "author": "社区",
+        "category": "integration"
+      },
+      "emailPlugin": {
+        "name": "电子邮件服务插件",
+        "description": "多提供商电子邮件服务，具有模板、跟踪和分析功能。",
+        "author": "ObjectStack",
+        "category": "integration"
+      }
+    }
+  },
+  "solutions": {
+    "hero": {
+      "title": "面向每个行业与场景的解决方案",
+      "subtitle": "AI 原生后端适配您的实际形态——受监管行业、遗留系统、全新 SaaS、多区域运营。"
+    },
+    "byIndustry": {
+      "title": "按行业划分的解决方案",
+      "subtitle": "面向人类与 agent 并肩运营的受监管与关键任务部门。",
+      "financial": {
+        "title": "金融服务",
+        "description": "用元数据驱动的审计、字段级控制与自托管运行时满足 SOX 与 PCI-DSS。让 copilot 在与人类相同的权限下操作同一份后端。",
+        "features": [
+          "UI、API、SDK、MCP 每一步操作均可端到端审计",
+          "字段级加密与 PII 控制声明在 Zod 中",
+          "本地内核支持气隙运营",
+          "受护栏约束的 Agent 驱动 KYC 与反欺诈流程"
+        ]
+      },
+      "government": {
+        "title": "政府与公共部门",
+        "description": "无需大爆炸迁移。通过 Driver 把 Oracle / SAP / 主机系统包装在 Zod 对象背后；让人与受约束的 AI agent 在 FedRAMP 就绪的控制下运营同一后端。",
+        "features": [
+          "用 Driver 接入遗留系统，而非启动迁移项目",
+          "气隙部署，承载机密工作负载",
+          "公民身份联邦 (SAML/OIDC)",
+          "从同一份元数据投影多语言 UI"
+        ]
+      },
+      "healthcare": {
+        "title": "医疗与生命科学",
+        "description": "HIPAA 就绪：权限活在元数据中，审计是内建属性，患者数据不出基础设施。AI copilot 继承临床医生权限——绝不绕开。",
+        "features": [
+          "审计与同意写在 Zod 元数据中",
+          "患者数据不出您的边界",
+          "通过 Driver 集成 HL7/FHIR",
+          "细粒度同意流程同时面向应用与 agent"
+        ]
+      },
+      "education": {
+        "title": "教育与科研",
+        "description": "把 SIS、LMS、HR 与科研系统统一到同一套 Zod 对象模型背后。本地优先的运行时适配偏远校园；多租户晋升适配学区。",
+        "features": [
+          "本地优先运行时支持偏远校园",
+          "Driver 原地包装遗留 SIS",
+          "学生数据隐私 (FERPA) 写在元数据里",
+          "通过租户路由实现多机构联邦"
+        ]
+      },
+      "cta": "联系企业销售"
+    },
+    "byScenario": {
+      "title": "按场景划分的解决方案",
+      "subtitle": "AI agent 时代下，常见企业挑战的架构模式。",
+      "legacyModernization": {
+        "title": "遗留系统现代化",
+        "tagline": "包装，而非重写",
+        "description": "别丢弃数十年的业务逻辑。给 Oracle、SAP 或主机系统写一个 Driver，通过 Zod 对象、REST、SDK 与 MCP 工具对外提供——遗留代码不动。",
+        "approach": "通过 Driver 实现渐进式绞杀者模式",
+        "steps": [
+          "为遗留存储 / 系统编写 Driver",
+          "用 Zod 对象描述业务形状",
+          "从元数据生成 REST、SDK 与 MCP 工具",
+          "随信心建立逐步把流程迁入 ObjectStack"
+        ],
+        "outcome": "零停机。现代化进行的同时业务持续运行。"
+      },
+      "greenfieldSaaS": {
+        "title": "全新 SaaS 开发",
+        "tagline": "首日即 Agent 就绪",
+        "description": "从第一天起就具备多租户、权限、审计与 MCP 接口。在垂直 SaaS 中让 AI copilot 作为一等公民运营系统——与用户共享同一套治理。",
+        "approach": "元数据优先开发",
+        "steps": [
+          "把领域建模为 Zod 对象",
+          "在元数据中声明租户隔离与权限",
+          "从同一来源投影视图与 MCP 工具",
+          "部署到 ObjectCloud 或自托管内核"
+        ],
+        "outcome": "企业就绪、Agent 就绪的 SaaS，不必再搭一套并行自动化栈。"
+      },
+      "shadowIT": {
+        "title": "影子 IT 治理",
+        "tagline": "治理而不破坏",
+        "description": "营销团队搭了一个关键电子表格。通过 Driver 把它挂载为 ObjectStack 对象——加上权限与审计，但不打断流程。AI 工具可通过同一个 MCP 接口安全操作。",
+        "approach": "逐步吸纳",
+        "steps": [
+          "把 Excel/Sheets 挂载为 Driver",
+          "用 Zod 对象与策略包装",
+          "自动获得审计与 MCP 工具",
+          "条件成熟时再迁移存储"
+        ],
+        "outcome": "业务继续运行。IT 与 AI 工具都得到了一个安全接口。"
+      },
+      "multiRegion": {
+        "title": "多区域数据驻留",
+        "tagline": "GDPR、CCPA 与区域主权",
+        "description": "同一份 Zod 元数据；区域锁定的存储与运行时。路由策略写在清单里，跨区域访问由同一个内核治理。",
+        "approach": "元数据声明的拓扑",
+        "steps": [
+          "为每个区域定义 Driver",
+          "在清单中声明路由策略",
+          "按辖区设置保留规则",
+          "通过内核做只读跨区查询联邦"
+        ],
+        "outcome": "合规即元数据；不需要为驻留写定制代码。"
+      },
+      "approachLabel": "方法",
+      "outcomeLabel": "成果",
+      "cta": "阅读实施指南"
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：2025年2月",
+    "intro": "ObjectStack AI（「我们」）致力于保护您的隐私。本隐私政策说明了当您访问我们的网站 objectstack.ai 并使用我们的服务时，我们如何收集、使用、披露和保护您的信息。",
+    "sections": [
+      {
+        "title": "我们收集的信息",
+        "content": "我们可能通过多种方式收集有关您的信息，包括：",
+        "items": [
+          "个人数据：您在注册服务、订阅通讯或联系我们时自愿提供的姓名、电子邮件地址和其他联系信息。",
+          "使用数据：有关您如何访问和使用我们网站及服务的信息，包括您的 IP 地址、浏览器类型、操作系统、来源 URL、浏览页面以及访问日期/时间。",
+          "Cookie 和跟踪技术：我们使用 Cookie 和类似的跟踪技术来跟踪网站上的活动并保存某些信息。您可以设置浏览器拒绝所有 Cookie 或在发送 Cookie 时提示您。"
+        ]
+      },
+      {
+        "title": "我们如何使用您的信息",
+        "content": "我们将收集的信息用于以下目的：",
+        "items": [
+          "提供、运营和维护我们的网站和服务。",
+          "改进、个性化和扩展我们的网站和服务。",
+          "了解和分析您如何使用我们的网站和服务。",
+          "与您沟通，包括客户服务、更新和营销目的。",
+          "处理交易并管理您的账户。",
+          "检测、预防和解决技术问题及安全漏洞。"
+        ]
+      },
+      {
+        "title": "数据共享与披露",
+        "content": "我们不会出售您的个人信息。我们可能在以下情况下共享信息：",
+        "items": [
+          "服务提供商：我们可能会与代表我们执行服务的第三方服务提供商共享您的信息，例如托管、分析和电子邮件发送。",
+          "法律要求：如果法律要求或公共机构提出有效请求，我们可能会披露您的信息。",
+          "业务转让：在合并、收购或资产出售的情况下，您的信息可能会作为交易的一部分被转移。"
+        ]
+      },
+      {
+        "title": "数据安全",
+        "content": "我们采取适当的技术和组织措施来保护您的个人信息免受未经授权的访问、更改、披露或销毁。但是，通过互联网传输或电子存储的方法没有 100% 安全的保证。",
+        "items": []
+      },
+      {
+        "title": "数据保留",
+        "content": "我们仅在实现本隐私政策中概述目的所需的时间内保留您的个人信息，除非法律要求或允许更长的保留期限。",
+        "items": []
+      },
+      {
+        "title": "您的权利",
+        "content": "根据您所在的地区，您可能拥有以下关于个人数据的权利：",
+        "items": [
+          "访问我们持有的关于您的个人数据的权利。",
+          "要求更正不准确个人数据的权利。",
+          "要求删除您的个人数据的权利。",
+          "反对或限制处理您的个人数据的权利。",
+          "数据可携带权。"
+        ]
+      },
+      {
+        "title": "第三方链接",
+        "content": "我们的网站可能包含指向第三方网站和服务的链接。我们不对这些第三方网站的隐私实践或内容负责。我们建议您查看您访问的任何第三方网站的隐私政策。",
+        "items": []
+      },
+      {
+        "title": "政策变更",
+        "content": "我们可能会不时更新本隐私政策。我们将通过在本页面上发布新的隐私政策并更新「最后更新」日期来通知您任何更改。在更改发布后继续使用我们的服务即表示您接受修订后的政策。",
+        "items": []
+      },
+      {
+        "title": "联系我们",
+        "content": "如果您对本隐私政策有任何疑问，请通过 privacy@objectstack.ai 与我们联系。",
+        "items": []
+      }
+    ]
+  },
+  "terms": {
+    "title": "服务条款",
+    "lastUpdated": "最后更新：2025年2月",
+    "intro": "欢迎使用 ObjectStack AI。通过访问或使用我们的网站 objectstack.ai 及我们的服务，即表示您同意受这些服务条款（「条款」）的约束。请仔细阅读。",
+    "sections": [
+      {
+        "title": "条款接受",
+        "content": "通过访问或使用我们的网站和服务，即表示您同意遵守并受这些条款的约束。如果您不同意这些条款，则不应使用我们的服务。",
+        "items": []
+      },
+      {
+        "title": "服务描述",
+        "content": "ObjectStack AI 为 AI 原生业务应用提供开源的、元数据驱动的后端，包括：",
+        "items": [
+          "ObjectStack Framework：用于业务对象、字段、关系、校验、权限、流程、视图、动作、Agent 与工具的 Zod 元数据框架。",
+          "ObjectQL：ObjectStack Framework 内部的数据/查询引擎与 Driver 契约。",
+          "ObjectOS：自托管运行时；权限、自动化、插件、租户、工件加载、API、审计与 AI 工具执行。",
+          "ObjectUI：用于应用、视图、仪表盘、表单、动作与展示元数据的 Schema 驱动 UI 引擎。",
+          "Object Cloud：ObjectStack 应用的托管运行时。",
+          "Object Marketplace：Driver、插件与应用的市场。"
+        ]
+      },
+      {
+        "title": "用户账户",
+        "content": "要访问某些功能，您可能需要创建账户。您有责任：",
+        "items": [
+          "维护账户凭据的保密性。",
+          "对您账户下发生的所有活动负责。",
+          "在发现任何未经授权使用您账户的情况时立即通知我们。"
+        ]
+      },
+      {
+        "title": "可接受的使用",
+        "content": "您同意不使用我们的服务进行以下行为：",
+        "items": [
+          "违反任何适用的法律、法规或第三方权利。",
+          "分发恶意软件、病毒或其他有害代码。",
+          "试图未经授权访问我们的系统或其他用户的账户。",
+          "干扰或破坏我们服务的完整性或性能。",
+          "将我们的服务用于任何非法、欺诈或未经授权的目的。"
+        ]
+      },
+      {
+        "title": "知识产权",
+        "content": "ObjectStack 的开源组件采用 Apache License 2.0（ObjectQL 与 ObjectOS）与 MIT License（ObjectUI）授权。我们的专有组件、品牌和文档受知识产权法保护。未经我们事先书面同意,您不得使用我们的商标、标志或品牌名称。",
+        "items": []
+      },
+      {
+        "title": "开源许可证",
+        "content": "ObjectStack 的开源部分采用 Apache License 2.0（ObjectQL 与 ObjectOS）与 MIT License（ObjectUI）提供。您可以根据相应许可证的条款自由使用、修改和分发它们。完整的许可证文本可在我们的 GitHub 仓库中获取。",
+        "items": []
+      },
+      {
+        "title": "责任限制",
+        "content": "在法律允许的最大范围内，ObjectStack AI 及其关联公司、管理人员、员工、代理和许可方不对任何间接、附带、特殊、后果性或惩罚性损害，或因您使用我们的服务而直接或间接产生的任何利润或收入损失、数据丢失、使用损失、商誉或其他无形损失承担责任。",
+        "items": []
+      },
+      {
+        "title": "免责声明",
+        "content": "我们的服务按「原样」和「可用」基础提供，不提供任何形式的明示或暗示保证，包括但不限于对适销性、特定用途适用性和非侵权的暗示保证。",
+        "items": []
+      },
+      {
+        "title": "终止",
+        "content": "我们保留随时暂停或终止您对我们服务的访问的权利，无论是否有原因，是否提前通知。终止后，您使用我们服务的权利将立即终止。",
+        "items": []
+      },
+      {
+        "title": "适用法律",
+        "content": "这些条款应受 ObjectStack AI 注册所在地法律管辖并据其解释，不考虑法律冲突条款。",
+        "items": []
+      },
+      {
+        "title": "条款变更",
+        "content": "我们保留随时修改这些条款的权利。我们将通过在本页面上发布更新的条款并更新「最后更新」日期来通知您重大更改。在更改生效后继续使用我们的服务即表示您接受修订后的条款。",
+        "items": []
+      },
+      {
+        "title": "联系我们",
+        "content": "如果您对这些条款有任何疑问，请通过 legal@objectstack.ai 与我们联系。",
+        "items": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,228 @@
+---
+import { navGroups, pathFor, type Lang } from '../lib/site';
+
+const { lang } = Astro.props as { lang: Lang };
+const otherLang = lang === 'en' ? 'zh' : 'en';
+const currentPath = Astro.url.pathname.replace(/^\/(en|zh)/, '') || '/';
+const directLinks = [
+  { label: lang === 'zh' ? '价格' : 'Pricing', href: '/pricing' },
+  { label: lang === 'zh' ? '博客' : 'Blog', href: '/blog' },
+];
+
+const isActive = (href: string) => {
+  if (href.startsWith('http')) return false;
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+};
+
+const groupActive = (items: readonly { href: string }[]) => items.some((item) => isActive(item.href));
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={pathFor(lang, '/')}>
+      <img src="/logo.svg" alt="ObjectStack" />
+      <span>ObjectStack</span>
+    </a>
+    <nav aria-label="Main navigation" class="site-nav">
+      {navGroups.map((group) => (
+        <details class:list={['nav-group', groupActive(group.items) && 'active']}>
+          <summary>{group.label[lang]}</summary>
+          <div class="nav-popover">
+            {group.items.map((item) => (
+              <a href={pathFor(lang, item.href)}>
+                <strong>{item.label}</strong>
+                <span>{item.description[lang]}</span>
+              </a>
+            ))}
+          </div>
+        </details>
+      ))}
+      {directLinks.map((item) => (
+        <a class={isActive(item.href) ? 'active direct-link' : 'direct-link'} href={pathFor(lang, item.href)}>{item.label}</a>
+      ))}
+    </nav>
+    <div class="header-actions">
+      <a class="docs" href="https://docs.objectstack.ai">Docs</a>
+      <a class="start" href={pathFor(lang, '/cloud')}>{lang === 'zh' ? '开始构建' : 'Start Building'}</a>
+      <a class="lang" href={pathFor(otherLang, currentPath)}>{otherLang.toUpperCase()}</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    z-index: 20;
+    top: 0;
+    border-bottom: 1px solid rgba(23, 24, 18, 0.12);
+    background: rgba(251, 249, 241, 0.86);
+    backdrop-filter: blur(18px) saturate(120%);
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 22px;
+    align-items: center;
+    min-height: 68px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 820;
+    letter-spacing: -0.01em;
+  }
+
+  .brand img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .site-nav {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    border: 1px solid rgba(23, 24, 18, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 253, 246, 0.55);
+    padding: 4px;
+  }
+
+  .direct-link,
+  summary,
+  .docs,
+  .lang,
+  .start {
+    border-radius: 8px;
+    padding: 8px 11px;
+    color: var(--muted);
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.93rem;
+    font-weight: 650;
+  }
+
+  summary {
+    display: flex;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    margin-left: 6px;
+    color: var(--subtle);
+    content: "▾";
+    font-size: 0.75rem;
+  }
+
+  .nav-group {
+    position: relative;
+  }
+
+  .nav-group[open] summary,
+  .nav-group.active summary,
+  .direct-link.active {
+    background: #171812;
+    color: #fffdf6;
+  }
+
+  .nav-popover {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    display: grid;
+    width: 330px;
+    transform: translateX(-50%);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow);
+    padding: 8px;
+  }
+
+  .nav-popover a {
+    display: grid;
+    gap: 3px;
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  .nav-popover a:hover {
+    background: var(--panel-2);
+  }
+
+  .nav-popover strong {
+    color: var(--ink);
+    font-size: 0.94rem;
+  }
+
+  .nav-popover span {
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+
+  .direct-link:hover,
+  summary:hover,
+  .docs:hover,
+  .lang:hover,
+  .start:hover {
+    background: rgba(23, 24, 18, 0.06);
+    color: var(--ink);
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .docs {
+    border: 1px solid var(--line);
+    background: rgba(255, 253, 247, 0.78);
+    color: var(--ink);
+  }
+
+  .start {
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: #fffdf6;
+  }
+
+  .start:hover {
+    background: var(--accent-strong);
+    color: #fffdf6;
+  }
+
+  @media (max-width: 940px) {
+    .header-inner {
+      grid-template-columns: 1fr auto;
+    }
+
+    .site-nav {
+      grid-column: 1 / -1;
+      justify-content: flex-start;
+      overflow-x: auto;
+      width: 100%;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      padding: 0 0 12px;
+    }
+
+    .nav-popover {
+      left: 0;
+      width: min(330px, calc(100vw - 28px));
+      transform: none;
+    }
+  }
+</style>

@@ -1,0 +1,325 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { formatDate, getDict, languages, splitBlogId, type Lang } from '../../../lib/site';
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const dict = getDict(lang);
+const posts = (await getCollection('blog'))
+  .filter((entry) => {
+    const info = splitBlogId(entry.id);
+    return entry.id !== 'index' && info.lang === lang && !!entry.data.date;
+  })
+  .sort((a, b) => Number(b.data.date) - Number(a.data.date));
+const featured = posts[0];
+const rest = posts.slice(1);
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].slice(0, 12);
+---
+
+<Base lang={lang} title={`${dict.nav?.blog ?? 'Blog'} | ObjectStack`} description="ObjectStack essays and product updates.">
+  <section class="blog-hero">
+    <div class="container blog-hero-grid">
+      <div>
+        <p class="eyebrow">ObjectStack Journal</p>
+        <h1>{lang === 'zh' ? '为 AI 原生业务系统写作。' : 'Notes for AI-native business systems.'}</h1>
+        <p class="lead">{lang === 'zh' ? '关于数据主权、协议化开发、业务运行时与 AI agent 安全边界的产品和架构文章。' : 'Product and architecture essays on data sovereignty, protocol-driven development, business runtimes, and safe AI agent boundaries.'}</p>
+      </div>
+      <aside class="journal-mark">
+        <span>Current series</span>
+        <strong>ObjectStack / ObjectOS / ObjectUI</strong>
+        <p>{lang === 'zh' ? '一个元数据定义业务、运行时执行业务、前端渲染业务的技术栈。' : 'One stack for defining, operating, and rendering business systems from metadata.'}</p>
+      </aside>
+    </div>
+  </section>
+
+  {featured && (
+    <section class="featured-section">
+      <div class="container featured-grid">
+        <article class="featured-card">
+          <a href={`/${lang}/blog/${splitBlogId(featured.id).slug}`}>
+            <div class="issue-label">
+              <span>{lang === 'zh' ? '最新文章' : 'Latest essay'}</span>
+              <time>{formatDate(featured.data.date, lang)}</time>
+            </div>
+            <h2>{featured.data.title}</h2>
+            <p>{featured.data.description}</p>
+            <ul class="tag-list">
+              {featured.data.tags.map((tag) => <li>{tag}</li>)}
+            </ul>
+          </a>
+        </article>
+        <aside class="topic-panel">
+          <h2>{lang === 'zh' ? '主题索引' : 'Topic index'}</h2>
+          <div class="topic-cloud">
+            {tags.map((tag) => <span>{tag}</span>)}
+          </div>
+        </aside>
+      </div>
+    </section>
+  )}
+
+  <section class="archive-section">
+    <div class="container">
+      <div class="archive-heading">
+        <p class="eyebrow">{lang === 'zh' ? '全部文章' : 'Archive'}</p>
+        <h2>{lang === 'zh' ? '继续阅读' : 'Continue reading'}</h2>
+      </div>
+      <div class="post-grid">
+      {rest.map((post, index) => {
+        const { slug } = splitBlogId(post.id);
+        return (
+          <article class="post-card">
+            <a href={`/${lang}/blog/${slug}`}>
+              <div class="post-number">{String(index + 2).padStart(2, '0')}</div>
+              <div>
+                <time>{formatDate(post.data.date, lang)}</time>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+              </div>
+              <ul class="tag-list">
+                {post.data.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </a>
+          </article>
+        );
+      })}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .blog-hero {
+    padding: 92px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .blog-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 42px;
+    align-items: end;
+  }
+
+  .blog-hero h1 {
+    max-width: 880px;
+    margin-bottom: 20px;
+    font-size: clamp(3.2rem, 7.5vw, 6.4rem);
+  }
+
+  .journal-mark {
+    border-top: 4px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+
+  .journal-mark span,
+  .issue-label,
+  time,
+  .post-number {
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .journal-mark span {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--accent-strong);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .journal-mark strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+    line-height: 1.05;
+  }
+
+  .journal-mark p {
+    color: var(--muted);
+  }
+
+  .featured-section,
+  .archive-section {
+    padding: 54px 0 86px;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .featured-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+  }
+
+  .featured-card a {
+    display: grid;
+    min-height: 420px;
+    grid-template-rows: auto 1fr auto auto;
+    padding: 34px;
+  }
+
+  .issue-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+    color: var(--accent-strong);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .featured-card h2 {
+    align-self: end;
+    max-width: 860px;
+    margin: 42px 0 22px;
+    font-size: clamp(2.25rem, 5vw, 4.8rem);
+    line-height: 0.98;
+  }
+
+  .featured-card p {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: 1.14rem;
+  }
+
+  .topic-panel {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(217, 243, 106, 0.22), transparent 46%),
+      #171812;
+    color: #fffdf6;
+    padding: 26px;
+  }
+
+  .topic-panel h2 {
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+  }
+
+  .topic-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .topic-cloud span {
+    border: 1px solid rgba(255, 253, 246, 0.16);
+    border-radius: 999px;
+    padding: 7px 10px;
+    color: rgba(255, 253, 246, 0.78);
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.86rem;
+  }
+
+  .archive-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+    border-top: 1px solid var(--line);
+    padding-top: 34px;
+  }
+
+  .archive-heading h2 {
+    margin-bottom: 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .post-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 253, 246, 0.78);
+    transition:
+      transform 160ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .post-card a {
+    display: grid;
+    min-height: 260px;
+    grid-template-columns: 52px 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 18px 20px;
+    padding: 24px;
+  }
+
+  .post-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-strong);
+    background: var(--panel);
+  }
+
+  .post-number {
+    color: var(--line-strong);
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  time {
+    color: var(--accent-strong);
+    font-size: 0.86rem;
+    font-weight: 760;
+  }
+
+  h3 {
+    margin: 10px 0;
+    font-size: clamp(1.28rem, 2vw, 1.75rem);
+    line-height: 1.1;
+  }
+
+  p {
+    max-width: 760px;
+    color: var(--muted);
+  }
+
+  .post-card .tag-list {
+    grid-column: 2;
+    align-self: end;
+  }
+
+  @media (max-width: 900px) {
+    .blog-hero-grid,
+    .featured-grid,
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-card a {
+      min-height: auto;
+    }
+
+    .post-card a {
+      grid-template-columns: 1fr;
+    }
+
+    .post-card .tag-list {
+      grid-column: 1;
+    }
+  }
+</style>

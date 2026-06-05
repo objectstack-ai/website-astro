@@ -1,0 +1,179 @@
+---
+import Base from '../../layouts/Base.astro';
+import { languages, pathFor, type Lang } from '../../lib/site';
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const copy = lang === 'zh'
+  ? {
+      eyebrow: 'AI Development',
+      title: '为企业业务系统构建受治理的 AI Agent。',
+      lead: 'ObjectStack 让开发者把对象、权限、动作、视图和 MCP 工具定义为同一份元数据。Agent 不需要原始 SQL，也不需要截屏式 UI 自动化；它们通过受权限约束、可审计的业务动作工作。',
+      primary: '开始构建',
+      secondary: '查看 Framework',
+      blocks: [
+        ['业务对象即上下文', '对象、字段、关系、权限和动作保持结构化，足够小，AI 可以读懂完整业务模型。'],
+        ['动作即工具', '经过批准的动作可以生成 MCP tools，让 Agent 调用真实业务能力，而不是操作数据库。'],
+        ['运行时即护栏', 'ObjectOS 在每次调用时执行 RBAC、RLS、FLS、租户隔离、审计和请求归因。'],
+      ],
+      sections: [
+        ['metadata-context', 'Metadata as Context', '企业应用通常有大量分散代码。ObjectStack 把业务定义压缩为 typed metadata，让 AI agent 可以在上下文窗口中理解对象、权限、视图、动作和工具边界。'],
+        ['mcp-tools', 'MCP Tools', 'ObjectStack 可以把对象动作和查询表面暴露为 MCP tools。工具输入来自同一份 schema，执行经过运行时权限检查，并留下审计日志。'],
+        ['guardrails', 'Guardrails', 'Agent 继承用户身份和权限，不绕过业务系统。运行时统一处理租户、字段脱敏、审批、审计和策略。'],
+      ],
+    }
+  : {
+      eyebrow: 'AI Development',
+      title: 'Build governed AI agents for enterprise business systems.',
+      lead: 'ObjectStack lets developers define objects, permissions, actions, views, and MCP tools as one metadata model. Agents do not need raw SQL or screen-scraped UI automation; they work through permission-aware, auditable business actions.',
+      primary: 'Start Building',
+      secondary: 'View Framework',
+      blocks: [
+        ['Business objects become context', 'Objects, fields, relationships, permissions, and actions stay structured and compact enough for AI to understand the business model.'],
+        ['Actions become tools', 'Approved actions can become MCP tools, letting agents call real business capabilities instead of touching the database directly.'],
+        ['Runtime becomes guardrails', 'ObjectOS enforces RBAC, RLS, FLS, tenant isolation, audit, and request attribution on every call.'],
+      ],
+      sections: [
+        ['metadata-context', 'Metadata as Context', 'Enterprise apps usually scatter intent across code, SQL, forms, routes, and permissions. ObjectStack compresses the business definition into typed metadata so an AI agent can understand objects, policies, views, actions, and tool boundaries in context.'],
+        ['mcp-tools', 'MCP Tools', 'ObjectStack can expose object actions and query surfaces as MCP tools. Tool inputs come from the same schema, execution passes through runtime permissions, and each invocation leaves an audit trail.'],
+        ['guardrails', 'Guardrails', 'Agents inherit user identity and permissions instead of bypassing the system. The runtime handles tenancy, field redaction, approvals, audit, and policy enforcement consistently.'],
+      ],
+    };
+---
+
+<Base lang={lang} title={`${copy.eyebrow} | ObjectStack`} description={copy.lead}>
+  <section class="agents-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">{copy.eyebrow}</p>
+        <h1>{copy.title}</h1>
+        <p class="lead">{copy.lead}</p>
+        <div class="button-row">
+          <a class="button" href={pathFor(lang, '/cloud')}>{copy.primary}</a>
+          <a class="button secondary" href={pathFor(lang, '/objectstack')}>{copy.secondary}</a>
+        </div>
+      </div>
+      <aside class="tool-surface" aria-label="MCP tool surface">
+        <span>mcp.tool.customer.update</span>
+        <pre>{`{
+  "input": "typed schema",
+  "identity": "current user",
+  "policy": "runtime enforced",
+  "audit": "request scoped"
+}`}</pre>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container block-grid">
+      {copy.blocks.map(([title, text]) => (
+        <article class="card">
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="container detail-list">
+      {copy.sections.map(([id, title, text]) => (
+        <article id={id}>
+          <span>{id}</span>
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .agents-hero {
+    padding: 92px 0 72px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .tool-surface {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #151a18;
+    box-shadow: var(--shadow);
+    color: #f7f8f4;
+    padding: 24px;
+  }
+
+  .tool-surface span {
+    color: var(--acid);
+    font-size: 0.86rem;
+    font-weight: 760;
+  }
+
+  .tool-surface pre {
+    overflow: auto;
+    margin: 24px 0 0;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+  }
+
+  .block-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .block-grid h2 {
+    font-size: 1.35rem;
+  }
+
+  .detail-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .detail-list article {
+    display: grid;
+    grid-template-columns: 190px minmax(220px, 0.45fr) minmax(0, 1fr);
+    gap: 28px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    padding: 24px;
+  }
+
+  .detail-list span {
+    color: var(--accent-strong);
+    font-size: 0.82rem;
+    font-weight: 780;
+  }
+
+  .detail-list h2 {
+    margin: 0;
+    font-size: 1.45rem;
+  }
+
+  .detail-list p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .block-grid,
+    .detail-list article {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

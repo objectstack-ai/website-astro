@@ -1,0 +1,120 @@
+---
+import { getDict, pathFor, type Lang } from '../lib/site';
+
+const { lang } = Astro.props as { lang: Lang };
+const dict = getDict(lang);
+const footer = dict.footer;
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-intro">
+      <a class="brand" href={pathFor(lang, '/')}>
+        <img src="/logo.svg" alt="" />
+        <span>ObjectStack</span>
+      </a>
+      <p>{footer.tagline}</p>
+      <a class="footer-cta" href="https://github.com/objectstack-ai/framework">objectstack-ai/framework</a>
+    </div>
+    <div>
+      <h2>{footer.product}</h2>
+      <a href={pathFor(lang, '/objectstack')}>{footer.data ?? 'ObjectStack'}</a>
+      <a href={pathFor(lang, '/objectql')}>ObjectQL</a>
+      <a href={pathFor(lang, '/objectos')}>{footer.control ?? 'ObjectOS'}</a>
+      <a href={pathFor(lang, '/objectui')}>{footer.view ?? 'ObjectUI'}</a>
+      <a href={pathFor(lang, '/pricing')}>{footer.pricing}</a>
+    </div>
+    <div>
+      <h2>{footer.ecosystem}</h2>
+      <a href={pathFor(lang, '/integrations')}>{footer.integrations}</a>
+      <a href={pathFor(lang, '/market')}>{footer.marketplace}</a>
+      <a href={pathFor(lang, '/solutions')}>{dict.nav?.solutionsLabel ?? 'Solutions'}</a>
+      <a href={pathFor(lang, '/blog')}>{dict.nav?.blog ?? 'Blog'}</a>
+    </div>
+    <div>
+      <h2>{footer.resources}</h2>
+      <a href="https://docs.objectstack.ai">{footer.docs}</a>
+      <a href="https://github.com/objectstack-ai/framework">GitHub</a>
+      <a href={pathFor(lang, '/privacy')}>{footer.privacy}</a>
+      <a href={pathFor(lang, '/terms')}>{footer.terms}</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid rgba(23, 24, 18, 0.12);
+    padding: 64px 0;
+    background:
+      linear-gradient(135deg, rgba(217, 243, 106, 0.1), transparent 34%),
+      #171812;
+    color: #fffdf7;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(3, 1fr);
+    gap: 34px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 820;
+  }
+
+  .brand img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1) contrast(1.2);
+  }
+
+  p {
+    max-width: 360px;
+    color: rgba(255, 253, 247, 0.65);
+  }
+
+  h2 {
+    margin: 0 0 14px;
+    color: rgba(255, 253, 247, 0.88);
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  a {
+    display: block;
+    margin: 8px 0;
+    color: rgba(255, 253, 247, 0.68);
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.95rem;
+  }
+
+  a:hover {
+    color: #fffdf7;
+  }
+
+  .footer-cta {
+    display: inline-flex;
+    margin-top: 14px;
+    border: 1px solid rgba(255, 253, 247, 0.18);
+    border-radius: 8px;
+    padding: 9px 11px;
+    background: rgba(255, 253, 247, 0.06);
+    color: #d9f36a;
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 860px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
