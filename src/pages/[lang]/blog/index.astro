@@ -25,13 +25,13 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].slice(0, 12);
     <div class="container blog-hero-grid">
       <div>
         <p class="eyebrow">ObjectStack Journal</p>
-        <h1>{isChinese(lang) ? zhText(lang, '为 AI 原生业务系统写作。') : 'Notes for AI-native business systems.'}</h1>
-        <p class="lead">{isChinese(lang) ? zhText(lang, '关于数据主权、协议化开发、业务运行时与 AI agent 安全边界的产品和架构文章。') : 'Product and architecture essays on data sovereignty, protocol-driven development, business runtimes, and safe AI agent boundaries.'}</p>
+        <h1>{isChinese(lang) ? zhText(lang, '为 AI 原生应用开发与运行写作。') : 'Notes for AI-native application development and runtime.'}</h1>
+        <p class="lead">{isChinese(lang) ? zhText(lang, '关于源码开发、在线开发、ObjectOS 运行时、数据主权与 AI 交互安全边界的产品和架构文章。') : 'Product and architecture essays on source-code development, online development, ObjectOS runtime, data sovereignty, and safe AI interaction boundaries.'}</p>
       </div>
       <aside class="journal-mark">
         <span>Current series</span>
         <strong>ObjectStack / ObjectOS / ObjectUI</strong>
-        <p>{isChinese(lang) ? zhText(lang, '一个元数据定义业务、运行时执行业务、前端渲染业务的技术栈。') : 'One stack for defining, operating, and rendering business systems from metadata.'}</p>
+        <p>{isChinese(lang) ? zhText(lang, '一个用元数据开发应用、运行应用，并让应用安全连接 AI 的技术栈。') : 'One stack for developing applications from metadata, running them, and connecting them safely to AI.'}</p>
       </aside>
     </div>
   </section>

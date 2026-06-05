@@ -9,7 +9,7 @@ export const GET: APIRoute = () => {
     ...contentSections.map((section) => `/${lang}/${section}`),
   ]);
   return new Response(
-    ['# ObjectStack', 'AI-native business framework website.', '', ...routes].join('\n'),
+    ['# ObjectStack', 'AI-native application development and runtime platform website.', '', ...routes].join('\n'),
     { headers: { 'content-type': 'text/plain; charset=utf-8' } },
   );
 };

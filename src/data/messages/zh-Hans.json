@@ -12,9 +12,9 @@
     "joinWaitlist": "加入候补名单",
     "toggleTheme": "切换主题",
     "platformLabel": "ObjectOS",
-    "platformTooltip": "面向业务团队的内部工具、审批与 AI 协作运行平台",
+    "platformTooltip": "让每个应用都能和 AI 交互的 AI 原生应用运行平台",
     "engineLabel": "ObjectStack",
-    "engineTooltip": "开源 AI 原生应用框架与文档",
+    "engineTooltip": "支持源码开发与在线开发的 AI 原生应用开发平台",
     "componentsLabel": "ObjectUI",
     "componentsTooltip": "面向前端开发者的 Schema 驱动 React UI 引擎",
     "marketplaceLabel": "应用市场",
@@ -27,11 +27,11 @@
         "title": "核心项目",
         "data": {
           "title": "ObjectStack Framework",
-          "description": "AI 就绪元数据、Driver、API、工具、开源框架"
+          "description": "AI 原生应用开发、源码、在线工作区"
         },
         "control": {
           "title": "面向业务团队的 ObjectOS",
-          "description": "内部工具、审批、审计、AI 运营"
+          "description": "运行平台、应用运营、AI 交互"
         },
         "view": {
           "title": "面向前端开发的 ObjectUI",
@@ -95,19 +95,19 @@
   "hero": {
     "comingSoon": "抢先体验",
     "launchDate": "2026 年 7 月发布",
-    "title": "AI 原生时代的",
-    "titleHighlight": "业务操作系统",
-    "description": "ObjectStack 是开源 AI 原生业务框架：把对象、权限、流程、API、UI 元数据与 Agent 工具一次性定义为结构化 Zod 元数据；用 ObjectOS 运行受治理的业务操作，用 ObjectUI 渲染可控界面，并把带权限边界的工具交给 AI Agent，而不是给它原始数据库访问。",
+    "title": "AI 原生应用",
+    "titleHighlight": "开发平台",
+    "description": "ObjectStack 是面向团队的 AI 原生应用开发平台，支持使用 AI 开发应用。你可以从源码出发使用开源框架和 CLI，也可以在 ObjectCloud 与 Studio 中在线开发。对象、权限、UI、API、动作与 AI 工具表面只定义一次，然后运行在 ObjectOS 上，让每个应用都能在同一套治理模型下和 AI 交互。",
     "cta": "加入候补名单",
     "ctaPrimary": "⭐ 查看 GitHub 开源版",
     "ctaSecondary": "申请抢先体验"
   },
   "builtForAi": {
     "eyebrow": "百倍压缩",
-    "title": "为 AI 而生,不是事后改造。",
-    "lead": "一个典型的企业级系统,是分散在十几个文件中的数万行 CRUD、表单、查询、权限和 API 胶水代码。ObjectStack 把同样的能力压缩到几百行带类型的元数据 —— 开发者要写和维护的代码量,少了大约两个数量级。",
-    "pullquote": "重点不是代码行数,重点是能整体放进 Agent 的上下文窗口。",
-    "closer": "当整个业务系统足够小、强类型、且是声明式的,AI Agent 就能端到端地加载它、推理每一处依赖,并在一次变更里安全地跨数据、API、UI 与权限同步重构。这才让 AI 从\"自动补全工具\",真正成为生产级业务系统的协同维护者。",
+    "title": "用 AI 开发应用，而不是只给应用加 AI。",
+    "lead": "典型企业应用会把数据模型、表单、API、权限和自动化散落在许多文件和工具里。ObjectStack 把应用变成带类型的元数据，让开发者和 AI Coding Agent 都能读取、修改、校验和交付。",
+    "pullquote": "重点不只是更少代码，而是让 AI 能端到端理解应用模型。",
+    "closer": "当源码开发、在线编辑、运行时执行、UI 表面与 AI 工具都指向同一份元数据时，AI 才真正成为构建和运营应用的协作者。",
     "statBeforeLabel": "传统企业系统",
     "statBeforeValue": "~50,000 行代码",
     "statBeforeMeta": "命令式代码 × 十几个文件",
@@ -116,50 +116,50 @@
     "statAfterMeta": "带类型元数据 × 一份 schema × 一个上下文窗口"
   },
   "ecosystem": {
-    "title": "ObjectStack Core，业务运行时，前端 UI。",
-    "subtitle": "ObjectStack 正在收束到一个更清晰的中心：开源 AI 原生框架，让业务元数据、API、UI 表面与 Agent 工具共享一个真相源。ObjectQL 仍是内部数据/查询引擎，但不再是产品主标题。",
+    "title": "用 ObjectStack 开发，用 ObjectOS 运行，用 ObjectUI 渲染。",
+    "subtitle": "ObjectStack 是 AI 原生应用开发平台。ObjectOS 是 AI 原生应用运行平台，让应用、用户与 AI Agent 通过受治理动作交互。ObjectUI 从同一份元数据生成可控界面。ObjectQL 留在基础设施层，作为查询与 Driver 引擎。",
     "protocol": {
-      "label": "开源 AI 框架",
+      "label": "AI 原生应用开发平台",
       "name": "ObjectStack",
-      "description": "如果你想了解开源项目，从这里开始：对象、权限、流程、视图、动作、Agent、API、SDK、MCP 工具与 Driver 的 Zod 元数据框架。ObjectQL 是 ObjectStack 内部的数据/查询引擎，会被刻意放在更大的框架叙事后面。"
+      "description": "从这里开始用 AI 开发应用。ObjectStack 同时支持通过 Framework/CLI 的源码开发，也支持通过 ObjectCloud/Studio 的在线开发。对象、权限、视图、动作、API、SDK 与 MCP 工具共享一套元数据模型。"
     },
     "runtime": {
-      "label": "业务运行平台",
+      "label": "AI 原生应用运行平台",
       "name": "ObjectOS",
-      "description": "ObjectOS 面向业务用户与运营团队：在自己的环境里运行内部工具、审批流程、审计日志与 AI 协作。AI Agent 通过受治理动作执行工作，与人类共享同一套身份、权限和审计模型。"
+      "description": "ObjectOS 运行 AI 原生应用。每个应用都可以暴露受治理动作与 MCP 工具，让人和 AI 在同一套身份、权限、审计与策略控制下交互。"
     },
     "view": {
-      "label": "前端 UI 引擎",
+      "label": "开发者 UI 引擎",
       "name": "ObjectUI",
-      "description": "ObjectUI 面向前端开发者：用 Schema 驱动 React 界面，但保留控制权。它渲染的元数据与 API、AI 工具共享同源，让人类界面和 Agent 动作保持一致。"
+      "description": "ObjectUI 帮助前端开发者从 ObjectStack 元数据渲染可控 React 界面，同时保留产品自己的布局、组件和交互设计。"
     }
   },
   "features": {
-    "title": "为 AI 原生业务运营而生",
-    "subtitle": "ObjectStack 把业务系统显式化到足以让人、服务和 AI Agent 在同一套权限模型下安全操作。",
+    "title": "一个平台，覆盖 AI 原生应用开发与运行时 AI 交互。",
+    "subtitle": "ObjectStack 让团队用 AI 开发应用；ObjectOS 让应用运行后可以安全地和 AI 交互。",
     "localFirst": {
-      "title": "运行在你的边界内",
-      "description": "ObjectOS 可以跑在本机、私有云、本地集群或气隙网络中。业务数据、身份、会话、审计日志、文件与提示词都留在你控制的基础设施里。"
+      "title": "源码开发或在线开发",
+      "description": "可以用 Framework 和 CLI 从仓库开发，也可以在 ObjectCloud 和 Studio 中在线开发。两条路径都会产出同一套版本化 ObjectStack 元数据工件。"
     },
     "databaseAgnostic": {
-      "title": "Driver，而不是迁移表演",
-      "description": "Postgres、MySQL、SQLite、MongoDB、电子表格、SaaS API 与自定义系统都可以通过 Driver 挂载。数据/查询引擎退到幕后；业务契约保持为 ObjectStack 元数据。"
+      "title": "应用包容存量系统",
+      "description": "Driver 挂载数据库、电子表格、SaaS API 和专有系统，无需强制迁移。AI 通过受治理应用动作交互，而不是直接访问原始存储。"
     },
     "protocolDriven": {
-      "title": "Agent 真正能读懂的元数据",
-      "description": "对象、流程、权限、视图、仪表盘、动作、Agent 与包会编译成版本化工件。它们可 diff、可评审、可热加载，也足够小，能让 AI Agent 端到端理解。"
+      "title": "AI 能读懂的应用模型",
+      "description": "对象、流程、权限、视图、仪表盘、动作、Agent 与包会编译成结构化工件，开发者和 AI Coding Agent 都能检查和维护。"
     },
     "typeSafe": {
       "title": "UI、API 与 AI 工具同源",
-      "description": "ObjectStack 从 Zod Schema 出发，派生 TypeScript 类型、JSON Schema、REST 契约、UI 元数据、SDK 与 MCP 工具签名。"
+      "description": "ObjectStack 从带类型元数据出发，派生 TypeScript 类型、JSON Schema、REST 契约、ObjectUI 行为、SDK 与 MCP 工具签名。"
     },
     "scale": {
-      "title": "一个运行时，多种能力",
-      "description": "微内核按需加载认证、安全、审计、存储、任务、队列、Webhook、AI 与 Driver 插件。一个小型 ObjectOS 进程既能跑单应用，也能服务多个项目内核。"
+      "title": "ObjectOS 运行应用",
+      "description": "ObjectOS 把项目工件、Driver、认证、审计、任务、Webhook、AI 与策略服务加载为运行时，让每个应用都能暴露受控 AI 交互。"
     },
     "aiNative": {
-      "title": "带运行时护栏的 AI 工具",
-      "description": "每个被允许的对象/动作都能变成 MCP 工具，并继承登录用户的同一套权限。Agent 通过 ObjectOS 做真实工作，有请求 ID、审计日志、策略检查，而不是拿到原始 SQL。"
+      "title": "带运行时护栏的 AI 交互",
+      "description": "被批准的动作会变成带用户身份、权限、校验和审计的 MCP 工具。AI 可以操作应用，但不会绕过应用。"
     }
   },
   "protocolLongevity": {
@@ -214,47 +214,47 @@
     ]
   },
   "howItWorks": {
-    "title": "元数据驱动架构实战",
-    "subtitle": "从 ObjectStack 元数据，到编译工件，再到带 API、Console UI 与 AI 工具的自托管运行时。",
+    "title": "从源码或在线开发，到 AI 可交互运行时",
+    "subtitle": "在 ObjectStack 中构建应用模型，校验并打包，然后运行在 ObjectOS 上，让 UI、API 与 AI 工具共享治理。",
     "demoTitle": "从元数据到生产",
-    "demoDescription": "看 ObjectStack 元数据如何变成可被 AI 安全操作的受治理应用",
+    "demoDescription": "看 ObjectStack 开发如何变成可被 AI 安全交互的 ObjectOS 应用",
     "demoStep1Label": "Zod 元数据定义",
     "demoStep2Label": "内核执行",
     "demoStep2Subtitle": "ObjectOS 运行时",
     "demoStep3Label": "应用、API 与 Agent 工具",
     "nextStep": "下一层",
     "step1": {
-      "title": "定义：ObjectStack 中的业务元数据",
-      "description": "对象、字段、关系、校验、权限、视图、流程、Agent 与包都写成结构化元数据。数据/查询引擎是内部管道；公开契约是 ObjectStack。",
+      "title": "开发：源码或在线工作区",
+      "description": "通过 CLI 在源码中定义对象、字段、关系、校验、权限、视图、流程、动作、Agent 与包，或通过 ObjectCloud 和 Studio 在线编辑同一套模型。",
       "code": "// users.object.ts\nexport const User = object({\n  name: 'User',\n  fields: {\n    email: z.string().email(),\n    role: z.enum(['admin', 'user']),\n  },\n  permissions: {\n    read: 'authenticated',\n    write: 'role:admin',\n  },\n});\n\n// 通过 Driver 与存储无关"
     },
     "step2": {
-      "title": "执行：微内核运行时",
-      "description": "ObjectOS 从编译工件启动项目内核，只加载启用能力，并统一执行认证、RBAC、行级规则、字段脱敏、校验、AI 工具边界与审计。",
+      "title": "打包：版本化应用工件",
+      "description": "ObjectStack 把应用模型编译为带类型、可评审的工件，其中包含 UI、API、SDK、Driver 与 AI 工具需要的契约。",
       "code": "// 自动生成的接口（全部受权限保护）\nREST   /api/users\nSDK    client.users.create(...)\nMCP    tool: users.create\n\n// 内核统一执行：\n// ✓ 权限与租户隔离\n// ✓ 复用同一份 Zod schema 校验\n// ✓ 每次操作都有审计记录"
     },
     "step3": {
-      "title": "投影：应用、API 与 Agent 工具",
-      "description": "同一份工件驱动 REST 端点、SDK 调用、ObjectUI 视图、Console 表面与 MCP 工具。人类用户和 AI Agent 操作的是同一个受治理后端。",
+      "title": "运行：ObjectOS AI 原生运行平台",
+      "description": "ObjectOS 运行工件，执行身份与权限，输出 API 和 ObjectUI 表面，并暴露受治理 MCP 工具，让应用可以安全地和 AI 交互。",
       "code": "// view.manifest.json\n{\n  \"type\": \"form\",\n  \"object\": \"User\",\n  \"fields\": [\"email\", \"role\"]\n}\n\n// MCP 工具自动注册：\n// ✓ 输入类型来自同一份 Zod schema\n// ✓ 执行受权限约束\n// ✓ 每次调用都可审计"
     }
   },
   "useCases": {
-    "title": "从原型到关键任务系统",
-    "subtitle": "用同一套元数据模型构建本地内部工具、自托管企业应用与 AI 操作的流程。",
+    "title": "用 AI 开发，用 AI 交互。",
+    "subtitle": "同一套平台覆盖源码项目、在线开发、自托管企业应用与 AI 操作流程。",
     "individualDevelopers": {
-      "title": "内部工具与本地优先应用",
-      "description": "用 SQLite 启动本地 ObjectOS，马上获得生成的 REST、Console、Account、审计与元数据驱动 UI。无需等待云基础设施即可做内部工具原型。",
+      "title": "源码应用开发",
+      "description": "使用开源 Framework 和 CLI 在本地建模应用、校验元数据、生成类型，并让 AI Coding Agent 维护同一份真相源。",
       "stats": "零基础设施开销"
     },
     "enterpriseIT": {
-      "title": "异构数据统一与影子 IT",
-      "description": "把现有数据库、电子表格与 SaaS API 包装成受治理对象。无需大爆炸迁移，即可施加 RBAC、行级规则、字段脱敏、审计与 MCP 暴露。",
+      "title": "企业应用在线开发",
+      "description": "使用 ObjectCloud 和 Studio 协作建模应用、评审元数据、测试运行时行为，并在不先搭基础设施的情况下发布工件。",
       "stats": "包容存量，而非迁移"
     },
     "saasStartups": {
-      "title": "面向 Agent 的 SaaS 基础",
-      "description": "从第一版开始就具备租户、权限、生成 API、React Console 与 AI 工具。托管、自托管或气隙部署都使用同一套工件模型。",
+      "title": "AI 可交互 SaaS 运行时",
+      "description": "在 ObjectOS 上运行 SaaS 应用，让用户、服务和 AI Agent 通过同一套受治理动作、权限、审计与工具契约交互。",
       "stats": "多租户 + Agent 就绪，开箱即用"
     },
     "lowCodeVendors": {
@@ -303,9 +303,9 @@
   },
   "cta": {
     "badge": "早期访问计划",
-    "headline1": "把业务定义一次。",
-    "headline2": "让人类与 Agent 安全地一起运营。",
-    "description": "别再把业务逻辑散落在 SQL、JavaScript 与 UI 状态里。让对象、权限、工作流、API、UI 元数据与 Agent 工具,成为同一份结构化的 Zod 真相源——可分析、版本化、端到端可审计。2026 年 7 月发布。",
+    "headline1": "构建 AI 原生应用。",
+    "headline2": "运行在 AI 可以安全交互的地方。",
+    "description": "用 ObjectStack 从源码或在线工作区开发，再把应用运行在 ObjectOS 上，获得受治理的 UI、API、SDK 与 MCP 工具。2026 年 7 月发布。",
     "primaryButton": "申请早期访问",
     "secondaryButton": "在 GitHub 上查看",
     "noCreditCard": "无需承诺",
@@ -313,7 +313,7 @@
     "earlyAccess": "技术团队优先访问"
   },
   "footer": {
-    "tagline": "AI 原生时代的业务操作系统。",
+    "tagline": "AI 原生应用开发与运行平台。",
     "product": "平台",
     "ecosystem": "生态系统",
     "resources": "资源",
@@ -341,13 +341,13 @@
   "integrations": {
     "hero": {
       "badge": "驱动注册表",
-      "headline": "任意数据源，统一 API。",
-      "subheadline": "现代商业数据的通用适配器",
-      "description": "ObjectStack 充当通用适配器。在 ObjectQL 中一次编写业务逻辑，即可在 Postgres、Redis、MongoDB 或 Excel 上运行。如果您有遗留的专有系统，请编写驱动程序，而不是迁移脚本。"
+      "headline": "任意数据源，一个应用契约。",
+      "subheadline": "面向 AI 原生应用开发与运行时的 Driver",
+      "description": "Driver 让 ObjectStack 应用包装已有数据库、电子表格、SaaS API 与专有系统。ObjectQL 负责查询转换；ObjectOS 通过权限、审计和被批准动作治理应用与 AI 交互。"
     },
     "driverRegistry": {
       "title": "驱动注册表",
-      "subtitle": "这不仅仅是一堆 Logo。这是一个将任何数据源连接到统一 API 的驱动注册表。",
+      "subtitle": "用于把存量系统连接到 ObjectStack 应用和 ObjectOS 运行时治理的 Driver Registry。",
       "relational": {
         "title": "关系型数据库",
         "postgres": {
@@ -391,7 +391,7 @@
       },
       "custom": {
         "title": "自定义：使用 TypeScript 构建这自己的驱动",
-        "description": "使用自定义驱动程序为专有系统、遗留数据库或 SaaS API 扩展 ObjectStack。一次使用 TypeScript 编写，随处部署。"
+        "description": "为专有系统、遗留数据库或 SaaS API 扩展自定义 Driver，让应用和 AI 工具都通过受治理动作交互。"
       }
     },
     "categories": {
@@ -401,7 +401,7 @@
     },
     "customDriver": {
       "title": "构建您自己的驱动",
-      "subtitle": "使用自定义驱动扩展 ObjectStack，支持任何数据源——遗留系统、专有数据库或第三方 API。",
+      "subtitle": "为任意数据源扩展 ObjectStack 应用，同时保持 ObjectOS 治理和 AI 工具边界。",
       "steps": {
         "step1": {
           "title": "实现驱动接口",
@@ -423,16 +423,16 @@
   "products": {
     "objectql": {
       "hero": {
-        "label": "查询引擎",
+        "label": "查询与 Driver 引擎",
         "title": "ObjectQL",
-        "subtitle": "ObjectStack 内部的查询与 Driver 引擎",
-        "description": "ObjectQL 是 ObjectStack 使用的内部查询引擎与 Driver 契约。它把过滤、排序、分页、聚合、关系展开和数据源 Driver 标准化，让业务对象可以跨 SQL 数据库、文档库、电子表格、SaaS API 与专有系统运行，而不改变应用元数据。",
+        "subtitle": "ObjectStack 内部的基础设施查询引擎",
+        "description": "ObjectQL 是 ObjectStack 使用的内部查询引擎与 Driver 契约。它帮助 ObjectStack 应用读取和搜索异构数据源，同时由 ObjectOS 执行身份、权限、审计和 AI 工具边界。它是开发平台和运行平台的基础设施，不是产品中心。",
         "cta": "阅读 ObjectQL 文档",
         "secondaryCta": "查看 Framework 仓库"
       },
       "features": {
         "title": "ObjectQL 做什么",
-        "subtitle": "面向企业异构数据源的可移植查询契约。",
+        "subtitle": "面向 ObjectStack 应用和 ObjectOS 运行时执行的可移植数据访问。",
         "queryModel": {
           "title": "统一查询形态",
           "description": "过滤、排序、分页、关联展开、聚合和投影都表达为结构化查询元数据，而不是分散在各个路由里的 SQL 字符串。"
@@ -443,16 +443,16 @@
         },
         "permissionAware": {
           "title": "权限感知执行",
-          "description": "ObjectOS 可以围绕每一次 ObjectQL-backed 操作执行租户隔离、行级规则、字段脱敏、审计与 Agent 身份。"
+          "description": "ObjectOS 在每个 ObjectQL 支撑的操作周围执行租户隔离、行级规则、字段脱敏、审计和 AI 身份。"
         },
         "aiReadable": {
           "title": "AI 工具可读",
-          "description": "查询结构足够清晰，可供 SDK、REST API、ObjectUI 视图与 MCP 工具生成安全数据访问能力，而不是把原始 SQL 交给 Agent。"
+          "description": "结构化查询让 REST API、ObjectUI 视图、SDK 与 MCP 工具可以暴露安全数据访问，而不是把原始 SQL 交给 AI。"
         }
       },
       "useCases": {
         "title": "ObjectQL 放在哪里",
-        "subtitle": "ObjectQL 是基础设施，不是完整框架。它适合需要可移植、受治理数据访问的地方。",
+        "subtitle": "当 ObjectStack 应用需要跨数据源的可移植、受治理数据访问时使用 ObjectQL。",
         "federatedData": {
           "title": "企业异构数据联邦",
           "description": "把 Postgres、MongoDB、Excel 与遗留系统挂载到同一个查询契约背后，让应用通过一致对象元数据读取。"
@@ -535,10 +535,10 @@
     },
     "objectos": {
       "hero": {
-        "label": "业务运行平台",
+        "label": "AI 原生应用运行平台",
         "title": "ObjectOS",
-        "subtitle": "运行在你自己环境里的业务平台",
-        "description": "ObjectOS 面向业务用户、运营团队与 IT 团队：在不把业务系统交给第三方云的前提下，获得内部工具、审批流程、受治理的 AI 动作、审计日志与数据主权。AI 助手通过和人相同的受控业务动作执行工作。",
+        "subtitle": "运行每个都能和 AI 交互的应用",
+        "description": "ObjectOS 是 AI 原生应用运行平台。它在同一个受治理运行时中运行 ObjectStack 应用，提供身份、权限、审计、流程、数据 Driver、UI 表面与 AI 工具执行。每个应用都可以通过被批准的动作暴露 AI 交互，而不是让 AI 直接访问数据库或屏幕。",
         "cta": "阅读 ObjectOS 文档",
         "secondaryCta": "查看 GitHub"
       },
@@ -556,7 +556,7 @@
         },
         "workflowOrchestration": {
           "title": "审批与内部工具",
-          "description": "工单、合同、报销、入职、库存与自定义流程都可以成为带治理的业务应用，并自动获得 API 与 Console 表面。"
+          "description": "工单、合同、报销、入职、库存与自定义流程都可以成为带治理的应用，并自动获得 API 与 Console 表面。"
         },
         "localFirstSync": {
           "title": "数据留在你的环境里",
@@ -608,19 +608,39 @@
         "integration": "ObjectOS 是你运营的运行时；Framework 元数据与 ObjectUI 渲染器插入其中。"
       },
       "useCases": {
-        "title": "从原型到关键任务系统",
-        "subtitle": "从单用户工具扩展到多租户平台的架构。",
+        "title": "从应用运行时到 AI 可交互运营",
+        "subtitle": "ObjectOS 把 ObjectStack 应用变成部署后可被 AI 安全交互的受治理系统。",
         "fieldOperations": {
-          "title": "现场作业与离线工作",
-          "description": "为现场技术人员、检查员或销售团队配备在连接恢复时同步的本地优先工具。即使离线也能实现零延迟数据输入、自动冲突解决和完整的审计跟踪。"
+          "title": "AI 可交互内部工具",
+          "description": "运行内部应用，让运营人员和 AI 助手共享同一套审批、审计与受控业务动作。"
         },
         "enterpriseApps": {
-          "title": "企业应用套件",
-          "description": "构建具有统一治理的 ERP、CRM 或 HRM 系统。跨模块单点登录。集中审计日志以确保合规性。用于审批和自动化的工作流编排。部署在本地或您的云端。"
+          "title": "企业应用运行平台",
+          "description": "运行 ERP、CRM、HR、财务与运营模块，并统一身份、策略、审计与 AI 交互表面。"
         },
         "multiTenantSaaS": {
-          "title": "多租户 SaaS 平台",
-          "description": "推出内置租户隔离、基于角色的访问控制和使用分析的 SaaS 产品。无需架构重写即可从 10 个租户扩展到 10,000 个租户。"
+          "title": "AI 原生 SaaS 运行时",
+          "description": "运行多租户 SaaS，让每个租户获得受治理 UI、API、SDK 与 MCP 工具，并遵守租户级权限。"
+        }
+      },
+      "features": {
+        "title": "ObjectOS 运行什么",
+        "subtitle": "让应用、人、服务与 AI Agent 操作同一个系统的运行平台。",
+        "governedActions": {
+          "title": "受治理 AI 交互",
+          "description": "应用暴露被批准的动作和 MCP 工具。AI 继承用户身份、权限、校验和审计，而不是绕过应用。"
+        },
+        "appRuntime": {
+          "title": "应用运行内核",
+          "description": "ObjectOS 为每个应用环境加载 ObjectStack 工件、Driver、认证、审计、任务、Webhook、流程和策略服务。"
+        },
+        "humanAndAi": {
+          "title": "人和 AI 共用一套表面",
+          "description": "用户通过 ObjectUI 与 API 工作，AI Agent 通过工具契约工作，两者命中同一套运行时检查和业务动作。"
+        },
+        "deployment": {
+          "title": "托管或自托管",
+          "description": "使用同一套工件模型，把 ObjectOS 运行在本地、ObjectCloud、私有云、本地机房或气隙网络中。"
         }
       }
     },
@@ -628,25 +648,25 @@
       "hero": {
         "label": "前端开发工具包",
         "title": "ObjectUI",
-        "subtitle": "面向专业前端团队的 Schema 驱动 React 界面",
-        "description": "ObjectUI 面向前端开发者：从 ObjectStack 元数据渲染对象、表单、仪表盘、页面与插件视图，同时保留 React、Tailwind、Shadcn、自定义路由、自定义认证与自有后端的控制权。同一份元数据也会驱动 API 与 AI 工具。",
+        "subtitle": "面向 AI 原生应用的开发者可控界面",
+        "description": "ObjectUI 帮助前端开发者把 ObjectStack 应用元数据渲染为 React 表单、表格、仪表盘、动作和 App Shell，同时保留路由、布局、组件和产品体验控制权。同一份元数据也驱动 API 与 AI 工具，所以用户界面和 AI 动作保持一致。",
         "cta": "阅读 ObjectUI 文档",
         "secondaryCta": "查看 GitHub"
       },
       "features": {
         "title": "为什么选择 ObjectUI？",
-        "subtitle": "模块化前端工具包：需要时用完整 Console，不需要时把 app-shell/provider 包组合进自己的 React 应用。",
+        "subtitle": "面向人和 AI 都会操作的应用的前端工具包。",
         "theStack": {
           "title": "为 React 团队构建",
           "description": "使用熟悉的 React 原语、Tailwind 工具类、Radix/Shadcn 组件和现有设计系统。ObjectUI 从元数据渲染，但不会把你关进黑盒。"
         },
         "serverDriven": {
-          "title": "元数据，但不失去控制",
-          "description": "视图、页面、仪表盘、表单、字段与动作可以来自元数据；路由、认证、布局边界与组件覆盖仍留在你的前端代码里。"
+          "title": "UI 映射应用契约",
+          "description": "表单、视图、仪表盘和动作来自同一份定义 API、SDK、权限与 MCP 工具的 ObjectStack 元数据。"
         },
         "enterpriseReady": {
-          "title": "完整 Console 或嵌入式 Shell",
-          "description": "运行完整 ObjectStack Console，或嵌入 @object-ui/app-shell 与 @object-ui/providers，构建连接到 REST、GraphQL 或 ObjectOS 后端的小型自定义界面。"
+          "title": "面向真实产品团队",
+          "description": "可以使用完整 Console，也可以嵌入 App Shell，或在自己的 React 应用中覆盖字段和组件。"
         },
         "extensible": {
           "title": "前端插件表面",
@@ -655,18 +675,18 @@
       },
       "useCases": {
         "title": "用例",
-        "subtitle": "从快速原型到生产级企业系统。",
+        "subtitle": "从开发者应用到 AI 感知运营控制台。",
         "admin": {
           "title": "管理仪表板与内部工具",
-          "description": "从 Schema 生成完整的管理界面。CRUD 操作、高级过滤、批量操作——全部声明性定义。在几小时内而不是几周内交付内部工具。"
+          "description": "从 ObjectOS 和 AI 工具表面共用的应用模型渲染完整 CRUD 和评审界面。"
         },
         "forms": {
           "title": "动态表单与工作流",
-          "description": "多步向导、条件逻辑、复杂验证。构建无需编写状态管理代码即可适应用户输入的入职流程、调查和数据收集表单。"
+          "description": "把同一个被批准的业务动作通过表单暴露给用户，通过 MCP 工具暴露给 AI，共用校验和审计路径。"
         },
         "dataViz": {
           "title": "数据密集型应用",
-          "description": "具有虚拟化、实时更新、导出功能的表格。可流畅处理数百万行的仪表板小部件、分析面板和报告界面。"
+          "description": "为运营人员和 AI Copilot 提供一致、受权限约束的数据密集型工作流视图。"
         }
       },
       "magicTrick": {
@@ -679,7 +699,7 @@
       },
       "architecture": {
         "title": "如何工作",
-        "subtitle": "Metadata -> Providers -> App Shell/Renderers，可接入你的后端或 ObjectOS。",
+        "subtitle": "面向 AI 原生应用的 UI 层，可接入你的后端或 ObjectOS。",
         "step1": {
           "title": "步骤 1：元数据",
           "description": "对象、视图、仪表盘、页面、字段、标签与动作都是结构化定义，可以懒加载，并按约定做本地化。"
@@ -704,7 +724,7 @@
       },
       "ecosystem": {
         "title": "ObjectStack 的一部分",
-        "subtitle": "完整的协议驱动开发平台。",
+        "subtitle": "面向 AI 原生应用的 UI 层，可接入你的后端或 ObjectOS。",
         "description": "ObjectUI 可以通过 providers 独立接入任何后端，但它与 ObjectOS 和 ObjectStack 元数据天然对齐。ObjectQL 只是部分对象背后的数据引擎，并不是每个 UI 集成都必须围绕它。",
         "standalone": "用 @object-ui/app-shell + @object-ui/providers 接入自有后端",
         "integrated": "完整 ObjectOS Console 与 ObjectStack 元数据集成"
@@ -712,23 +732,23 @@
     },
     "cloud": {
       "hero": {
-        "label": "云端开发",
+        "label": "在线开发",
         "title": "ObjectCloud",
-        "subtitle": "用 ObjectStack 构建企业 AI 应用的云端工作区",
-        "description": "ObjectCloud 是即将开放的 ObjectStack 云端开发与运行环境。开发者可以创建项目、管理元数据、预览 ObjectOS 运行时、测试 MCP 工具，并把版本化工件发布到托管或自托管环境。早期团队即将开放。",
+        "subtitle": "用 AI 构建 ObjectStack 应用的在线工作区",
+        "description": "ObjectCloud 是即将开放的 ObjectStack 在线开发工作区。团队可以创建应用、编辑元数据、与 AI 协作、预览 ObjectOS 运行时、测试 AI 工具，并把版本化工件发布到托管或自托管环境。即将开放。",
         "cta": "加入早期访问",
         "secondaryCta": "阅读文档"
       },
       "features": {
         "title": "ObjectCloud 将提供什么",
-        "subtitle": "首先是开发者工作区，同时提供生产运行选项。",
+        "subtitle": "ObjectStack 应用的在线开发路径。",
         "hostedWorkspace": {
-          "title": "托管 ObjectStack 工作区",
-          "description": "在浏览器中创建 ObjectStack 项目，管理环境，并把元数据版本、密钥和部署工件放在一个受治理工作区中。"
+          "title": "在线 ObjectStack 工作区",
+          "description": "在浏览器中创建和编辑应用元数据，管理环境，并把版本、密钥和部署工件放在一个受治理工作区。"
         },
         "runtimePreview": {
-          "title": "运行时预览",
-          "description": "为每个项目版本启动 ObjectOS 预览运行时，在发布前检查 API、权限、审计日志、ObjectUI 页面和 MCP 工具。"
+          "title": "ObjectOS 运行时预览",
+          "description": "在发布前预览运行中的应用、生成 API、ObjectUI 界面、审计日志、权限和 MCP 工具。"
         },
         "artifactPromotion": {
           "title": "工件发布",
@@ -736,7 +756,7 @@
         },
         "openingSoon": {
           "title": "即将开放",
-          "description": "ObjectCloud 尚未正式开放。早期访问会优先面向构建 AI 操作型内部工具和企业 SaaS 后端的开发团队。"
+          "description": "ObjectCloud 尚未正式开放。早期访问会聚焦需要在线开发和运行时预览的 AI 原生应用团队。"
         }
       },
       "useCases": {
@@ -789,21 +809,21 @@
       "hero": {
         "label": "元数据可视化 IDE",
         "title": "Object Studio",
-        "subtitle": "ObjectStack 元数据可视化开发环境",
-        "description": "Object Studio 面向希望直接建模 ObjectStack 元数据的开发者和架构师：对象、字段、关系、权限、视图、动作与 Agent 工具。它不是 CLI，也不是云平台；它是理解和编辑业务系统元数据的可视化工作区。",
+        "subtitle": "ObjectStack 应用可视化开发环境",
+        "description": "Object Studio 是 ObjectStack 元数据的可视化开发环境。开发者和架构师可以检查和编辑对象、字段、关系、权限、视图、动作与 AI 工具表面。它补充源码开发和 CLI 自动化，不是云平台。",
         "cta": "了解 Studio",
         "secondaryCta": "查看 CLI"
       },
       "features": {
         "title": "Studio 用来做什么",
-        "subtitle": "让元数据可见、可评审、可推理。",
+        "subtitle": "让应用模型可见，使人和 AI 都能推理。",
         "visualDesigner": {
           "title": "元数据可视化建模",
-          "description": "查看并编辑对象 Schema、字段、关系、权限、视图元数据和动作定义，同时保留底层 typed source of truth。"
+          "description": "检查和编辑对象、字段、关系、权限、视图、动作与 AI 工具表面背后的应用模型，同时保留带类型真相源。"
         },
         "localFirst": {
           "title": "本地 / 工作区预览",
-          "description": "预览元数据如何变成 ObjectOS 运行时表面、生成 API、ObjectUI 页面和 MCP 工具，再发布版本化工件。"
+          "description": "在发布版本化工件前，预览元数据如何变成 ObjectOS 运行时、ObjectUI 界面、生成 API 和 AI 工具。"
         },
         "integratedCLI": {
           "title": "配合 CLI，而不是替代 CLI",
@@ -885,17 +905,17 @@
       "hero": {
         "label": "命令行工具",
         "title": "ObjectStack CLI",
-        "subtitle": "面向 ObjectStack 开发、CI/CD 与运维的独立 CLI",
-        "description": "ObjectStack CLI 是面向开发者与平台团队的独立命令行工具。它用于创建项目、校验元数据、生成类型和工具契约、构建版本化工件、运行本地预览，并部署到 ObjectCloud 或自托管 ObjectOS。它与 Studio 独立，面向脚本、CI/CD 和 Agent 使用。",
+        "subtitle": "面向 ObjectStack 源码开发、CI/CD 与 Agent 的工作流",
+        "description": "ObjectStack CLI 是 ObjectStack 的源码开发和自动化工具。它用于创建项目、校验元数据、生成类型与 AI 工具契约、构建版本化工件、运行本地预览，并部署到 ObjectCloud 或自托管 ObjectOS。它与 Studio 独立，面向脚本、CI/CD 和 AI Coding Agent。",
         "cta": "安装 CLI",
         "secondaryCta": "查看文档"
       },
       "features": {
         "title": "CLI 做什么",
-        "subtitle": "面向开发者、CI 管道和 Coding Agent 的稳定原语。",
+        "subtitle": "面向开发者、CI 管道和 AI Coding Agent 的稳定源码原语。",
         "infrastructureAsCode": {
           "title": "项目脚手架",
-          "description": "从可重复模板创建 ObjectStack 项目，添加对象、动作、视图、Agent、Driver 和运行时配置。"
+          "description": "从可重复源码模板创建 ObjectStack 应用，添加对象、动作、视图、Agent、Driver 与运行时配置。"
         },
         "cicdIntegration": {
           "title": "校验与生成",
@@ -907,7 +927,7 @@
         },
         "scriptableAutomation": {
           "title": "可脚本化运维",
-          "description": "使用 JSON 输出、可预测退出码和可组合命令，支撑 CI/CD、GitOps、发布自动化与 Agent 驱动维护。"
+          "description": "为开发者和 AI Coding Agent 提供可预测的 scaffold、validate、build、diff、preview 和 deploy 命令。"
         }
       },
       "commands": {
@@ -1015,47 +1035,47 @@
     },
     "objectstack": {
       "hero": {
-        "label": "开源 Framework",
+        "label": "AI 原生应用开发平台",
         "title": "ObjectStack",
-        "subtitle": "这套技术栈背后的 AI 原生应用框架",
-        "description": "ObjectStack 是面向元数据定义业务应用的开源框架：对象、权限、流程、视图、动作、API、SDK 与 AI 工具。ObjectQL 会成为这里的实现细节——内部数据/查询引擎与 Driver 契约——而公开开发体验会围绕 ObjectStack 文档与 framework 仓库展开。",
+        "subtitle": "从源码或在线工作区用 AI 构建应用",
+        "description": "ObjectStack 是用 AI 构建企业应用的 AI 原生应用开发平台。开发者可以用开源 Framework 和 CLI 从源码开发，也可以通过 ObjectCloud 和 Studio 在线开发。对象、权限、视图、动作、API、SDK 与 MCP 工具共享一套元数据模型。",
         "cta": "阅读文档",
         "secondaryCta": "开源项目"
       },
       "features": {
-        "title": "ObjectStack 里有什么",
-        "subtitle": "AI 就绪元数据优先；数据/查询管道退到幕后。",
+        "title": "ObjectStack 提供什么",
+        "subtitle": "让人类开发者和 AI Coding Agent 在同一份应用模型上工作的开发平台。",
         "zeroOverheadSecurity": {
-          "title": "业务元数据核心",
-          "description": "ObjectStack 用一套结构化模型定义对象、字段、权限、流程、动作、视图、Agent 与工具表面。运行时决定谁可以使用它们，以及每个动作如何暴露。"
+          "title": "应用元数据核心",
+          "description": "在一套结构化模型中定义对象、字段、权限、流程、动作、视图、Agent 与工具表面，可从源码或在线编辑。"
         },
         "databaseAgnostic": {
-          "title": "基于 Driver 的存储",
-          "description": "同一份对象元数据可以跑在 SQL、MongoDB、内存、电子表格或自定义 Driver 上。内部数据/查询引擎服务于框架本身，而不是成为产品叙事中心。"
+          "title": "源码开发路径",
+          "description": "使用 Framework、CLI 与仓库工作流创建、校验、生成、测试和打包 ObjectStack 应用工件。"
         },
         "virtualColumns": {
-          "title": "人和 AI 都能读懂",
-          "description": "对象、动作与查询表面结构化到足以让 Framework、REST、SDK、ObjectUI 与 MCP 工具派生行为，而不需要重复定义。"
+          "title": "在线开发路径",
+          "description": "使用 ObjectCloud 和 Studio 可视化建模应用、预览运行时行为、测试 AI 工具，并协作管理元数据版本。"
         },
         "typeSafe": {
-          "title": "从 Zod 获得类型",
-          "description": "对象定义从 Zod-backed 元数据出发，让 TypeScript、JSON 工件、API 契约、UI 字段行为与 AI 工具签名保持一致。"
+          "title": "AI 可读应用契约",
+          "description": "带类型元数据为 AI Coding Agent 提供覆盖数据、UI、权限、API 与工具的紧凑可评审应用模型。"
         }
       },
       "useCases": {
-        "title": "用例",
-        "subtitle": "用 ObjectStack 作为开源基础；让 ObjectOS 运行它，让 ObjectUI 渲染它。",
+        "title": "ObjectStack 场景",
+        "subtitle": "用 ObjectStack 作为开发平台；让 ObjectOS 运行它，让 ObjectUI 渲染它。",
         "localFirst": {
-          "title": "AI 就绪应用模型",
-          "description": "先在本地原型化对象、流程、动作与 Agent 工具；需要认证、审计、API 与受治理执行时，把同一份元数据放进 ObjectOS。"
+          "title": "AI 辅助源码开发",
+          "description": "让 Coding Agent 在仓库中创建和维护对象、权限、视图、动作与 MCP 工具，并通过稳定校验和生成流程控制质量。"
         },
         "enterprise": {
-          "title": "Driver 适配器",
-          "description": "把现有数据库、电子表格与专有系统包装成 ObjectStack 元数据，让 API、UI 与 AI 工具可以安全理解它们。"
+          "title": "在线应用建模",
+          "description": "使用 Studio 和 ObjectCloud 设计应用元数据、预览运行时行为，并与架构师和平台团队评审变更。"
         },
         "saas": {
-          "title": "产品元数据主干",
-          "description": "为生成的 REST API、SDK、UI 渲染器与 AI Agent 提供一致的过滤、分页、动作、权限与工具契约。"
+          "title": "工件化交付",
+          "description": "把同一套 ObjectStack 模型打包到本地预览、ObjectCloud、自托管 ObjectOS 或私有企业环境。"
         }
       },
       "example": {
@@ -1183,26 +1203,26 @@
   "enterprise": {
     "hero": {
       "label": "企业版",
-      "title": "私有部署的 AI 原生业务后端",
-      "subtitle": "在您的边界内运行 ObjectStack。同一份 Zod 元数据，同一套 MCP 工具，完整的数据主权。",
-      "description": "ObjectStack 企业版以自托管运行时的形态交付数据、控制与视图层，附带商业支持、加固的治理与合规能力。把业务定义为一份结构化的 Zod 元数据；让人类、服务与 AI agent 在同一个可审计的内核中安全运营它。",
+      "title": "企业级 AI 原生应用平台",
+      "subtitle": "用 ObjectStack 开发，用 ObjectOS 运行，把数据与 AI 交互留在你的边界内。",
+      "description": "ObjectStack Enterprise 为受监管环境提供 AI 原生应用开发平台与 AI 原生运行平台。你可以从源码或在线工作区构建，打包版本化工件，并运行在 ObjectOS 上，让每个 UI、API、SDK 与 AI 工具动作都受治理、可审计。",
       "cta": "预约演示",
       "secondaryCta": "查看架构"
     },
     "challenges": {
-      "title": "我们解决的战略挑战",
-      "subtitle": "为让 AI agent 与人类并肩运营业务的 CTO、CIO 与系统架构师而构建。",
+      "title": "AI 原生应用交付中的企业挑战",
+      "subtitle": "面向需要让 AI 构建和运营应用、同时不失控的 CTO、CIO 与架构师。",
       "technicalDebt": {
-        "title": "Agent 安全运营",
-        "description": "别把原始 SQL 或截屏式 UI 交给 AI agent。ObjectStack 从同一份元数据中导出结构化、受权限约束、可审计的接口——REST、SDK、MCP 工具。copilot 继承用户权限，而不是绕开它。"
+        "title": "AI 辅助开发不产生漂移",
+        "description": "ObjectStack 给开发者和 AI Coding Agent 一份带类型应用模型，而不是分散的 SQL、路由、表单和权限。变更可评审，生成表面保持一致，运行时行为在部署前可验证。"
       },
       "vendorLockIn": {
         "title": "无存储锁定",
         "description": "Driver 把 Postgres、MongoDB、Redis、Excel 与专有系统包装到同一套 Zod 对象模型背后。包容存量而非迁移；换存储是换 Driver，不是重写业务。"
       },
       "dataGovernance": {
-        "title": "统一治理",
-        "description": "身份、权限、流程与审计共用一个控制平面。每一次操作——无论来自人还是 agent——都可归因到主体并端到端可追溯。"
+        "title": "运行时治理下的 AI 交互",
+        "description": "ObjectOS 让应用通过受治理动作、MCP 工具、身份、权限、字段控制、租户规则和审计与 AI 交互。AI 操作应用，但不会绕过应用。"
       },
       "assetLongevity": {
         "title": "元数据即 IP",
@@ -1211,10 +1231,10 @@
     },
     "features": {
       "title": "企业级能力",
-      "subtitle": "自托管基础设施，配套商业支持与加固治理。",
+      "subtitle": "源码与在线开发，加上自托管运行时治理。",
       "selfHosted": {
         "title": "自托管部署",
-        "description": "在您的边界内运行同一个 ObjectStack 内核——本地或私有云。数据不出域，提供商业 SLA。"
+        "description": "在你的边界内运行 ObjectOS，同时从源码或在线工作区开发 ObjectStack 应用。业务数据不需要离开你的基础设施。"
       },
       "multiTenant": {
         "title": "多租户隔离",
@@ -1222,7 +1242,7 @@
       },
       "auditCompliance": {
         "title": "审计与合规",
-        "description": "每次 REST、SDK 或 MCP 工具调用都记录主体、意图与元数据变更。审计管道经过加固,可映射到你的 SOC 2 / HIPAA 证据要求。"
+        "description": "每个 UI 动作、API 调用、SDK 调用和 MCP 工具执行都会记录主体、意图、输入、策略结果和执行结果。"
       },
       "customDrivers": {
         "title": "定制 Driver 开发",
@@ -1234,7 +1254,7 @@
       },
       "professionalServices": {
         "title": "专业服务",
-        "description": "现场架构研讨、迁移策略与团队赋能，帮助安全采用 AI 原生后端。"
+        "description": "架构工作坊、AI 辅助开发落地、运行时部署规划，以及安全采用 ObjectStack 和 ObjectOS 的团队赋能。"
       }
     },
     "architecture": {
@@ -1424,15 +1444,15 @@
   },
   "solutions": {
     "hero": {
-      "title": "面向每个行业与场景的解决方案",
-      "subtitle": "AI 原生后端适配您的实际形态——受监管行业、遗留系统、全新 SaaS、多区域运营。"
+      "title": "AI 原生应用开发与运行解决方案",
+      "subtitle": "用 AI 构建应用，然后运行在 ObjectOS 上，让每个应用都能安全地和 AI 交互。"
     },
     "byIndustry": {
       "title": "按行业划分的解决方案",
-      "subtitle": "面向人类与 agent 并肩运营的受监管与关键任务部门。",
+      "subtitle": "面向受监管和关键任务行业，让应用、人和 AI Agent 并行工作。",
       "financial": {
         "title": "金融服务",
-        "description": "用元数据驱动的审计、字段级控制与自托管运行时满足 SOX 与 PCI-DSS。让 copilot 在与人类相同的权限下操作同一份后端。",
+        "description": "用源码或在线流程构建金融应用，然后在 ObjectOS 上运行，获得元数据驱动审计、字段级控制和受治理 AI 交互。",
         "features": [
           "UI、API、SDK、MCP 每一步操作均可端到端审计",
           "字段级加密与 PII 控制声明在 Zod 中",
@@ -1442,7 +1462,7 @@
       },
       "government": {
         "title": "政府与公共部门",
-        "description": "无需大爆炸迁移。通过 Driver 把 Oracle / SAP / 主机系统包装在 Zod 对象背后；让人与受约束的 AI agent 在 FedRAMP 就绪的控制下运营同一后端。",
+        "description": "无需大爆炸迁移即可现代化公共部门系统。用 Driver 包装遗留系统，开发 ObjectStack 应用，并在 ObjectOS 中以受约束 AI 交互运行。",
         "features": [
           "用 Driver 接入遗留系统，而非启动迁移项目",
           "气隙部署，承载机密工作负载",
@@ -1452,7 +1472,7 @@
       },
       "healthcare": {
         "title": "医疗与生命科学",
-        "description": "HIPAA 就绪：权限活在元数据中，审计是内建属性，患者数据不出基础设施。AI copilot 继承临床医生权限——绝不绕开。",
+        "description": "把权限与同意声明在元数据中开发医疗应用。运行在 ObjectOS 上时，AI 助手继承临床人员权限，不能绕过患者数据控制。",
         "features": [
           "审计与同意写在 Zod 元数据中",
           "患者数据不出您的边界",
@@ -1474,7 +1494,7 @@
     },
     "byScenario": {
       "title": "按场景划分的解决方案",
-      "subtitle": "AI agent 时代下，常见企业挑战的架构模式。",
+      "subtitle": "用 AI 开发应用，并运行在 AI 可以安全交互环境中的常见模式。",
       "legacyModernization": {
         "title": "遗留系统现代化",
         "tagline": "包装，而非重写",
@@ -1491,7 +1511,7 @@
       "greenfieldSaaS": {
         "title": "全新 SaaS 开发",
         "tagline": "首日即 Agent 就绪",
-        "description": "从第一天起就具备多租户、权限、审计与 MCP 接口。在垂直 SaaS 中让 AI copilot 作为一等公民运营系统——与用户共享同一套治理。",
+        "description": "从同一套 ObjectStack 模型开始内置多租户、权限、审计、UI、API 与 MCP 工具。运行在 ObjectOS 上，让 AI Copilot 成为受治理的一等操作者。",
         "approach": "元数据优先开发",
         "steps": [
           "把领域建模为 Zod 对象",
@@ -1612,12 +1632,12 @@
     "sections": [
       {
         "title": "条款接受",
-        "content": "通过访问或使用我们的网站和服务，即表示您同意遵守并受这些条款的约束。如果您不同意这些条款，则不应使用我们的服务。",
+        "content": "ObjectStack AI 提供 AI 原生应用开发与运行平台，包括：",
         "items": []
       },
       {
         "title": "服务描述",
-        "content": "ObjectStack AI 为 AI 原生业务应用提供开源的、元数据驱动的后端，包括：",
+        "content": "ObjectStack AI 提供 AI 原生应用开发与运行平台，包括：",
         "items": [
           "ObjectStack Framework：用于业务对象、字段、关系、校验、权限、流程、视图、动作、Agent 与工具的 Zod 元数据框架。",
           "ObjectQL：ObjectStack Framework 内部的数据/查询引擎与 Driver 契约。",

@@ -10,36 +10,36 @@ const lang = Astro.params.lang as Lang;
 const copy = isChinese(lang)
   ? {
       eyebrow: 'AI Development',
-      title: zhText(lang, '为企业业务系统构建受治理的 AI Agent。'),
-      lead: zhText(lang, 'ObjectStack 让开发者把对象、权限、动作、视图和 MCP 工具定义为同一份元数据。Agent 不需要原始 SQL，也不需要截屏式 UI 自动化；它们通过受权限约束、可审计的业务动作工作。'),
+      title: zhText(lang, '用 AI 开发应用，并让应用安全地和 AI 交互。'),
+      lead: zhText(lang, 'ObjectStack 是 AI 原生应用开发平台：开发者可以从源码或在线工作区使用 AI 构建应用。ObjectOS 是 AI 原生应用运行平台：每个应用都可以通过受治理动作和 MCP 工具与 AI 交互，而不是把原始 SQL 或屏幕控制权交给 Agent。'),
       primary: zhText(lang, '开始构建'),
-      secondary: zhText(lang, '查看 Framework'),
+      secondary: zhText(lang, '查看 ObjectStack'),
       blocks: [
-        [zhText(lang, '业务对象即上下文'), zhText(lang, '对象、字段、关系、权限和动作保持结构化，足够小，AI 可以读懂完整业务模型。')],
-        [zhText(lang, '动作即工具'), zhText(lang, '经过批准的动作可以生成 MCP tools，让 Agent 调用真实业务能力，而不是操作数据库。')],
-        [zhText(lang, '运行时即护栏'), zhText(lang, 'ObjectOS 在每次调用时执行 RBAC、RLS、FLS、租户隔离、审计和请求归因。')],
+        [zhText(lang, '应用模型即上下文'), zhText(lang, '对象、字段、关系、权限、视图和动作保持结构化，让 AI Coding Agent 能端到端理解应用。')],
+        [zhText(lang, '动作即 AI 交互'), zhText(lang, '经过批准的应用动作可以生成 MCP tools，让 AI 调用真实业务能力，而不是绕过应用操作数据库。')],
+        [zhText(lang, 'ObjectOS 即运行护栏'), zhText(lang, 'ObjectOS 在每次人类或 AI 调用时执行 RBAC、RLS、FLS、租户隔离、审计和请求归因。')],
       ],
       sections: [
-        ['metadata-context', 'Metadata as Context', zhText(lang, '企业应用通常有大量分散代码。ObjectStack 把业务定义压缩为 typed metadata，让 AI agent 可以在上下文窗口中理解对象、权限、视图、动作和工具边界。')],
-        ['mcp-tools', 'MCP Tools', zhText(lang, 'ObjectStack 可以把对象动作和查询表面暴露为 MCP tools。工具输入来自同一份 schema，执行经过运行时权限检查，并留下审计日志。')],
-        ['guardrails', 'Guardrails', zhText(lang, 'Agent 继承用户身份和权限，不绕过业务系统。运行时统一处理租户、字段脱敏、审批、审计和策略。')],
+        ['metadata-context', 'Metadata as Context', zhText(lang, '企业应用通常把意图散落在源码、SQL、表单、路由和权限里。ObjectStack 把应用模型压缩为 typed metadata，让 AI 能理解对象、策略、视图、动作和工具边界。')],
+        ['mcp-tools', 'MCP Tools', zhText(lang, 'ObjectStack 可以把应用动作和查询表面暴露为 MCP tools。工具输入来自同一份 schema，执行经过 ObjectOS 权限检查，并留下审计日志。')],
+        ['guardrails', 'Guardrails', zhText(lang, 'AI 继承用户身份和权限，不绕过应用系统。ObjectOS 统一处理租户、字段脱敏、审批、审计和策略。')],
       ],
     }
   : {
       eyebrow: 'AI Development',
-      title: 'Build governed AI agents for enterprise business systems.',
-      lead: 'ObjectStack lets developers define objects, permissions, actions, views, and MCP tools as one metadata model. Agents do not need raw SQL or screen-scraped UI automation; they work through permission-aware, auditable business actions.',
+      title: 'Build applications with AI, then let applications interact with AI safely.',
+      lead: 'ObjectStack is the AI-native application development platform: developers build from source code or online workspaces with AI assistance. ObjectOS is the AI-native runtime platform: every application can interact with AI through governed actions and MCP tools instead of giving agents raw SQL or screen control.',
       primary: 'Start Building',
-      secondary: 'View Framework',
+      secondary: 'View ObjectStack',
       blocks: [
-        ['Business objects become context', 'Objects, fields, relationships, permissions, and actions stay structured and compact enough for AI to understand the business model.'],
-        ['Actions become tools', 'Approved actions can become MCP tools, letting agents call real business capabilities instead of touching the database directly.'],
-        ['Runtime becomes guardrails', 'ObjectOS enforces RBAC, RLS, FLS, tenant isolation, audit, and request attribution on every call.'],
+        ['The app model becomes context', 'Objects, fields, relationships, permissions, views, and actions stay structured enough for AI coding agents to understand the application end to end.'],
+        ['Actions become AI interaction', 'Approved application actions become MCP tools, letting AI call real business capabilities without bypassing the application or touching storage directly.'],
+        ['ObjectOS becomes runtime guardrails', 'ObjectOS enforces RBAC, RLS, FLS, tenant isolation, audit, and request attribution on every human or AI call.'],
       ],
       sections: [
-        ['metadata-context', 'Metadata as Context', 'Enterprise apps usually scatter intent across code, SQL, forms, routes, and permissions. ObjectStack compresses the business definition into typed metadata so an AI agent can understand objects, policies, views, actions, and tool boundaries in context.'],
-        ['mcp-tools', 'MCP Tools', 'ObjectStack can expose object actions and query surfaces as MCP tools. Tool inputs come from the same schema, execution passes through runtime permissions, and each invocation leaves an audit trail.'],
-        ['guardrails', 'Guardrails', 'Agents inherit user identity and permissions instead of bypassing the system. The runtime handles tenancy, field redaction, approvals, audit, and policy enforcement consistently.'],
+        ['metadata-context', 'Metadata as Context', 'Enterprise apps scatter intent across source code, SQL, forms, routes, and permissions. ObjectStack compresses the application model into typed metadata so AI can understand objects, policies, views, actions, and tool boundaries in context.'],
+        ['mcp-tools', 'MCP Tools', 'ObjectStack can expose application actions and query surfaces as MCP tools. Tool inputs come from the same schema, execution passes through ObjectOS permissions, and every invocation leaves an audit trail.'],
+        ['guardrails', 'Guardrails', 'AI inherits user identity and permissions instead of bypassing the app. ObjectOS handles tenancy, field redaction, approvals, audit, and policy enforcement consistently.'],
       ],
     };
 ---

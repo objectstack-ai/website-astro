@@ -35,6 +35,8 @@ const pageData: any =
 const hero: any = pageData?.hero ?? pageData;
 const pageTitle = hero?.title ?? pageData?.title ?? section;
 const description = hero?.description ?? hero?.subtitle ?? pageData?.subtitle ?? pageTitle;
+const documentTitle =
+  section === 'objectstack' ? 'ObjectStack | AI-Native App Development Platform' : `${pageTitle} | ObjectStack`;
 
 function hrefForPrimary() {
   if (isProduct) return productLinks[section as keyof typeof productLinks]?.docs ?? 'https://docs.objectstack.ai';
@@ -72,34 +74,34 @@ const scenarios: any[] =
 const solutionStats =
   isChinese(lang)
     ? [
-        { value: 'Self-hosted', label: zhText(lang, '可部署在私有云、本地或气隙环境') },
-        { value: 'MCP-ready', label: zhText(lang, 'AI agent 使用同一套权限与审计') },
-        { value: 'Driver-based', label: zhText(lang, '包装遗留系统，而不是推倒重来') },
-        { value: 'Metadata IP', label: zhText(lang, '对象、流程、策略和视图可版本化') },
+        { value: 'AI Dev', label: zhText(lang, '支持源码开发和在线开发') },
+        { value: 'AI Runtime', label: zhText(lang, '每个应用都能和 AI 交互') },
+        { value: 'Governed', label: zhText(lang, 'AI 继承同一套权限与审计') },
+        { value: 'Driver-based', label: zhText(lang, '包装存量系统，而不是推倒重来') },
       ]
     : [
-        { value: 'Self-hosted', label: 'Runs in private cloud, on-prem, or air-gapped networks' },
-        { value: 'MCP-ready', label: 'Agents inherit the same permissions and audit model' },
-        { value: 'Driver-based', label: 'Wrap legacy systems instead of replacing them' },
-        { value: 'Metadata IP', label: 'Version objects, flows, policies, and views' },
+        { value: 'AI Dev', label: 'Source-code and online development paths' },
+        { value: 'AI Runtime', label: 'Every application can interact with AI' },
+        { value: 'Governed', label: 'AI inherits the same permissions and audit model' },
+        { value: 'Driver-based', label: 'Wrap existing systems instead of replacing them' },
       ];
 const capabilityRows =
   isChinese(lang)
     ? [
-        [zhText(lang, '治理'), zhText(lang, 'RBAC、RLS、FLS、审计、租户隔离')],
+        [zhText(lang, '开发'), zhText(lang, '源码、CLI、Studio、ObjectCloud 在线工作区')],
+        [zhText(lang, '运行'), zhText(lang, 'ObjectOS 应用运行、权限、审计、租户隔离')],
+        ['AI', zhText(lang, '应用动作、MCP tools、请求追踪、策略检查')],
         [zhText(lang, '数据'), zhText(lang, 'Postgres、MongoDB、Excel、SaaS、专有系统 Driver')],
-        ['AI', zhText(lang, '权限感知 MCP tools、请求追踪、动作审计')],
-        [zhText(lang, '交付'), zhText(lang, '自托管、ObjectCloud、私有环境、区域驻留')],
       ]
     : [
-        ['Governance', 'RBAC, RLS, FLS, audit, tenant isolation'],
+        ['Develop', 'Source code, CLI, Studio, ObjectCloud online workspace'],
+        ['Run', 'ObjectOS app runtime, permissions, audit, tenant isolation'],
+        ['AI', 'Application actions, MCP tools, request tracing, policy checks'],
         ['Data', 'Postgres, MongoDB, Excel, SaaS, proprietary drivers'],
-        ['AI', 'Permission-aware MCP tools, request tracing, action audit'],
-        ['Delivery', 'Self-hosted, ObjectCloud, private regions, residency'],
       ];
 ---
 
-<Base lang={lang} title={`${pageTitle} | ObjectStack`} description={description}>
+<Base lang={lang} title={documentTitle} description={description}>
   {section !== 'solutions' && (
   <section class="page-hero">
     <div class="container hero-grid">

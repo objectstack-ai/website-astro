@@ -4,11 +4,11 @@ Guidance for AI agents working on this Astro marketing site.
 
 ## Product Positioning
 
-This website presents ObjectStack as an enterprise AI development tool for developers, architects, and platform teams.
+This website presents ObjectStack as an AI-native application development platform for developers, architects, and platform teams.
 
 Core message:
 
-> ObjectStack lets developers define enterprise AI applications as metadata: business objects, permissions, UI, APIs, actions, and MCP tools that run inside governed enterprise runtimes.
+> ObjectStack helps teams build AI-native applications with AI, either from source code or in an online development workspace. Developers define objects, permissions, UI, APIs, actions, and AI tool surfaces once; ObjectOS runs those applications so every app can interact with AI under governance.
 
 Write for technical buyers and builders first. Business users matter, but this site is not primarily a no-code product page.
 
@@ -16,9 +16,9 @@ Write for technical buyers and builders first. Business users matter, but this s
 
 Primary:
 - Backend developers building internal tools or enterprise SaaS.
-- Platform engineers standardizing AI-ready business backends.
+- Platform engineers standardizing AI-native application development and runtime platforms.
 - Architects evaluating governance, deployment, and data-source portability.
-- Developers using AI coding agents to generate and maintain business applications.
+- Developers using AI coding agents to generate, review, and maintain applications.
 
 Secondary:
 - CTOs and engineering leaders evaluating enterprise readiness.
@@ -38,9 +38,9 @@ Top navigation should stay organized around:
 - Use a language dropdown because more locales are expected.
 
 Important product distinctions:
-- ObjectStack: the open-source metadata framework and primary developer entry point.
+- ObjectStack: the AI-native application development platform and primary developer entry point. It supports source-code development through the framework/CLI and online development through ObjectCloud/Studio.
+- ObjectOS: the AI-native application runtime platform. All applications running on ObjectOS should be able to interact with AI through governed actions, MCP tools, audit, permissions, and shared identity.
 - ObjectQL: the query engine and driver contract. Do not describe it as the whole framework.
-- ObjectOS: the governed runtime for business operations, permissions, audit, and agent execution.
 - ObjectUI: the schema-driven frontend renderer for developers.
 - ObjectCloud: the soon-to-open cloud development workspace and runtime preview path. `Start Building` links to `/cloud`.
 - Object Studio: visual metadata development environment. It is not CLI and not ObjectCloud.
@@ -48,7 +48,11 @@ Important product distinctions:
 
 ## Copy Rules
 
-- Lead with developer workflow, then enterprise governance.
+- Lead with AI-native application development, then runtime AI interaction, then enterprise governance.
+- Say "AI-native application development platform" for ObjectStack.
+- Say "AI-native application runtime platform" for ObjectOS.
+- Make it clear ObjectStack supports both source-code development and online development.
+- Make it clear applications running on ObjectOS can interact with AI through governed actions/tools.
 - Be concrete: objects, permissions, actions, views, SDKs, APIs, MCP tools, audit, drivers, artifacts.
 - Avoid generic AI marketing: "transform your business", "unlock potential", "AI magic", and similar filler.
 - Do not overstate availability. ObjectCloud is opening soon; avoid implying it is GA unless copy explicitly says so.

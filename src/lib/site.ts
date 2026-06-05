@@ -60,7 +60,7 @@ export const navGroups = [
       {
         label: 'ObjectStack Framework',
         href: '/objectstack',
-        description: { en: 'Metadata framework for enterprise AI apps', 'zh-Hans': '企业 AI 应用元数据框架', 'zh-Hant': s2t('企业 AI 应用元数据框架') },
+        description: { en: 'AI-native app development platform', 'zh-Hans': 'AI 原生应用开发平台', 'zh-Hant': s2t('AI 原生应用开发平台') },
       },
       {
         label: 'ObjectQL',
@@ -70,7 +70,7 @@ export const navGroups = [
       {
         label: 'ObjectOS',
         href: '/objectos',
-        description: { en: 'Governed runtime for business operations', 'zh-Hans': '受治理的业务运行时', 'zh-Hant': s2t('受治理的业务运行时') },
+        description: { en: 'AI-native app runtime platform', 'zh-Hans': 'AI 原生应用运行平台', 'zh-Hant': s2t('AI 原生应用运行平台') },
       },
       {
         label: 'ObjectUI',
@@ -90,7 +90,7 @@ export const navGroups = [
       {
         label: 'Quickstart',
         href: 'https://docs.objectstack.ai/getting-started/quick-start',
-        description: { en: 'Create your first project', 'zh-Hans': '创建第一个项目', 'zh-Hant': s2t('创建第一个项目') },
+        description: { en: 'Build from source code', 'zh-Hans': '从源码开始开发', 'zh-Hant': s2t('从源码开始开发') },
       },
       {
         label: 'CLI',
@@ -100,7 +100,7 @@ export const navGroups = [
       {
         label: 'Studio',
         href: '/studio',
-        description: { en: 'Visual metadata development', 'zh-Hans': '元数据可视化开发环境', 'zh-Hant': s2t('元数据可视化开发环境') },
+        description: { en: 'Visual app development', 'zh-Hans': '可视化应用开发', 'zh-Hant': s2t('可视化应用开发') },
       },
       {
         label: 'GitHub',
@@ -115,7 +115,7 @@ export const navGroups = [
       {
         label: 'AI Agents',
         href: '/agents',
-        description: { en: 'Build governed business agents', 'zh-Hans': '构建受治理的业务 Agent', 'zh-Hant': s2t('构建受治理的业务 Agent') },
+        description: { en: 'Build and operate apps with AI', 'zh-Hans': '用 AI 开发和运行应用', 'zh-Hant': s2t('用 AI 开发和运行应用') },
       },
       {
         label: 'MCP Tools',
@@ -150,7 +150,7 @@ export const navGroups = [
       {
         label: 'Deployment',
         href: '/cloud',
-        description: { en: 'Cloud development and runtime options', 'zh-Hans': '云端开发与运行选项', 'zh-Hant': s2t('云端开发与运行选项') },
+        description: { en: 'Online development and runtime preview', 'zh-Hans': '在线开发与运行预览', 'zh-Hant': s2t('在线开发与运行预览') },
       },
       {
         label: 'Contact Sales',

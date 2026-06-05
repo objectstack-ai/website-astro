@@ -12,9 +12,9 @@
     "joinWaitlist": "Join Waitlist",
     "toggleTheme": "Toggle theme",
     "platformLabel": "ObjectOS",
-    "platformTooltip": "Business platform for internal tools, approvals, and AI-assisted operations",
+    "platformTooltip": "AI-native application runtime platform where every app can interact with AI",
     "engineLabel": "ObjectStack",
-    "engineTooltip": "Open-source AI-native application framework and docs",
+    "engineTooltip": "AI-native application development platform for source-code and online development",
     "componentsLabel": "ObjectUI",
     "componentsTooltip": "Schema-driven React UI engine for frontend developers",
     "marketplaceLabel": "Marketplace",
@@ -27,11 +27,11 @@
         "title": "Core Projects",
         "data": {
           "title": "ObjectStack Framework",
-          "description": "AI-ready metadata, drivers, APIs, tools, open source"
+          "description": "AI-native app development, source code, online workspace"
         },
         "control": {
           "title": "ObjectOS for Business Teams",
-          "description": "Internal tools, approvals, audit, AI operations"
+          "description": "Runtime platform, app operations, AI interaction"
         },
         "view": {
           "title": "ObjectUI for Frontend Developers",
@@ -95,19 +95,19 @@
   "hero": {
     "comingSoon": "Early Access",
     "launchDate": "Launching July 2026",
-    "title": "The Operating System for",
-    "titleHighlight": "AI-Native Business",
-    "description": "ObjectStack is the open-source AI-native business framework: define objects, permissions, workflows, APIs, UI metadata, and agent tools once as structured Zod metadata. Run governed business operations with ObjectOS, render developer-controlled interfaces with ObjectUI, and give AI agents permission-aware tools instead of raw database access.",
+    "title": "The AI-Native App",
+    "titleHighlight": "Development Platform",
+    "description": "ObjectStack is an AI-native application development platform for teams building applications with AI. Start from source code with the open-source framework and CLI, or develop online in ObjectCloud and Studio. Define objects, permissions, UI, APIs, actions, and AI tool surfaces once, then run them on ObjectOS where every application can interact with AI under the same governance model.",
     "cta": "Join Waitlist",
     "ctaPrimary": "⭐ View on GitHub",
     "ctaSecondary": "Join Early Access"
   },
   "builtForAi": {
     "eyebrow": "The 100× Compression",
-    "title": "Built for AI, not retrofitted.",
-    "lead": "A typical enterprise application is tens of thousands of lines of CRUD, forms, queries, permissions, and API glue spread across a dozen files. ObjectStack collapses the same surface into a few hundred lines of typed metadata — roughly two orders of magnitude less code for a developer to write and maintain.",
-    "pullquote": "The point isn't lines of code. The point is fit in an agent's context window.",
-    "closer": "When the entire business system is small, typed, and declarative, an AI agent can load it end-to-end, reason about every dependency, and safely refactor across data, API, UI, and permissions in a single change. That turns AI from an autocomplete tool into a real co-maintainer of production business software.",
+    "title": "Build applications with AI, not just around AI.",
+    "lead": "A typical enterprise application scatters data models, forms, APIs, permissions, and automation across many files and tools. ObjectStack turns the application into typed metadata that developers and AI coding agents can both read, edit, validate, and ship.",
+    "pullquote": "The point is not just less code. The point is an application model AI can understand end to end.",
+    "closer": "When source code, online editing, runtime execution, UI surfaces, and AI tools all point to the same metadata, AI becomes a practical collaborator for building and operating applications.",
     "statBeforeLabel": "Traditional enterprise app",
     "statBeforeValue": "~50,000 LOC",
     "statBeforeMeta": "imperative code × a dozen files",
@@ -116,50 +116,50 @@
     "statAfterMeta": "typed metadata × one schema × one context window"
   },
   "ecosystem": {
-    "title": "ObjectStack Core. Business Runtime. Frontend UI.",
-    "subtitle": "ObjectStack is moving toward one clearer center: an open-source AI-native framework where business metadata, APIs, UI surfaces, and agent tools share one source of truth. ObjectQL remains an internal data/query engine, not the product headline.",
+    "title": "Develop with ObjectStack. Run with ObjectOS. Render with ObjectUI.",
+    "subtitle": "ObjectStack is the AI-native application development platform. ObjectOS is the AI-native application runtime platform where applications, users, and AI agents interact through governed actions. ObjectUI gives developers controlled interfaces from the same metadata. ObjectQL stays in the infrastructure layer as the query and driver engine.",
     "protocol": {
-      "label": "Open-Source AI Framework",
+      "label": "AI-Native Development Platform",
       "name": "ObjectStack",
-      "description": "Start here when you want the open-source project: Zod metadata for objects, permissions, flows, views, actions, agents, APIs, SDKs, MCP tools, and drivers. ObjectQL is the underlying data/query engine inside ObjectStack, kept deliberately behind the broader framework story."
+      "description": "Start here to build applications with AI. ObjectStack supports source-code development through the framework and CLI, plus online development through ObjectCloud and Studio. Objects, permissions, views, actions, APIs, SDKs, and MCP tools share one metadata model."
     },
     "runtime": {
-      "label": "Business Runtime",
+      "label": "AI-Native Runtime Platform",
       "name": "ObjectOS",
-      "description": "ObjectOS is for business users and operators who need internal tools, approval flows, audit trails, and AI-assisted work running in their own environment. AI agents operate through governed actions with the same identity, permission, and audit model as people."
+      "description": "ObjectOS runs AI-native applications. Every app can expose governed actions and MCP tools so people and AI can interact with the same business system under identity, permission, audit, and policy controls."
     },
     "view": {
-      "label": "Frontend UI Engine",
+      "label": "Developer UI Engine",
       "name": "ObjectUI",
-      "description": "ObjectUI is for frontend developers who want schema-driven React interfaces without giving up control. It renders the same metadata that powers APIs and AI tools, so human screens and agent actions stay aligned."
+      "description": "ObjectUI helps frontend developers render controlled React interfaces from ObjectStack metadata while keeping product-specific layout, components, and interaction design in their own hands."
     }
   },
   "features": {
-    "title": "Built for AI-Native Business Operations",
-    "subtitle": "ObjectStack makes the business system explicit enough for humans, services, and AI agents to operate safely under one permission model.",
+    "title": "One platform for AI-native application development and runtime interaction.",
+    "subtitle": "ObjectStack lets teams build applications with AI; ObjectOS lets those applications interact with AI safely after they are running.",
     "localFirst": {
-      "title": "Runs Inside Your Boundary",
-      "description": "ObjectOS can run on your laptop, private cloud, on-prem cluster, or air-gapped network. Business records, identities, sessions, audit logs, files, and prompts stay on infrastructure you control."
+      "title": "Source-Code or Online Development",
+      "description": "Develop from a repository with the framework and CLI, or work online in ObjectCloud and Studio. Both paths produce the same versioned ObjectStack metadata artifacts."
     },
     "databaseAgnostic": {
-      "title": "Drivers Without Migration Theater",
-      "description": "Postgres, MySQL, SQLite, MongoDB, spreadsheets, SaaS APIs, and custom systems are mounted through drivers. The data/query engine stays behind the scenes; the business contract remains ObjectStack metadata."
+      "title": "Applications Over Existing Systems",
+      "description": "Drivers mount databases, spreadsheets, SaaS APIs, and proprietary systems without forcing migration. AI interacts through governed application actions, not raw storage access."
     },
     "protocolDriven": {
-      "title": "Metadata Agents Can Actually Read",
-      "description": "Objects, flows, permissions, views, dashboards, actions, agents, and packages compile into versioned artifacts. They are diffable, reviewable, reloadable, and small enough for AI agents to reason about end to end."
+      "title": "Application Models AI Can Read",
+      "description": "Objects, flows, permissions, views, dashboards, actions, agents, and packages compile into structured artifacts that developers and AI coding agents can inspect and maintain."
     },
     "typeSafe": {
       "title": "One Source for UI, APIs, and AI Tools",
-      "description": "ObjectStack starts from Zod schemas and derives TypeScript types, JSON Schema, REST contracts, UI metadata, SDKs, and MCP tool signatures from the same source of truth."
+      "description": "ObjectStack starts from typed metadata and derives TypeScript types, JSON Schema, REST contracts, ObjectUI behavior, SDKs, and MCP tool signatures from the same source."
     },
     "scale": {
-      "title": "One Runtime, Many Capabilities",
-      "description": "The microkernel loads plugins for auth, security, audit, storage, jobs, queues, webhooks, AI, and drivers only when needed. A small ObjectOS process can serve standalone apps or many project kernels."
+      "title": "ObjectOS Runs the Application",
+      "description": "ObjectOS loads project artifacts, drivers, auth, audit, jobs, webhooks, AI, and policy services into a runtime where every app can expose controlled AI interaction."
     },
     "aiNative": {
-      "title": "AI Tools With Runtime Guardrails",
-      "description": "Every approved object/action can become an MCP tool with the same permissions as the signed-in user. Agents do real work through ObjectOS with request IDs, audit logs, policy checks, and no raw SQL handoff."
+      "title": "AI Interaction With Runtime Guardrails",
+      "description": "Approved actions become MCP tools with user identity, permissions, validation, and audit. AI can operate the app, but it does not bypass the app."
     }
   },
   "protocolLongevity": {
@@ -214,47 +214,47 @@
     ]
   },
   "howItWorks": {
-    "title": "Metadata-Driven Architecture in Action",
-    "subtitle": "From ObjectStack metadata to compiled artifacts to a self-hosted runtime with APIs, Console UI, and AI tools.",
+    "title": "From source or online development to AI-operable runtime",
+    "subtitle": "Build the application model in ObjectStack, validate and package it, then run it in ObjectOS where UI, APIs, and AI tools share governance.",
     "demoTitle": "From Metadata to Production",
-    "demoDescription": "See how ObjectStack metadata becomes a governed AI-operable application",
+    "demoDescription": "See how ObjectStack development becomes an ObjectOS application that AI can interact with safely",
     "demoStep1Label": "Zod Metadata Definition",
     "demoStep2Label": "Kernel Execution",
     "demoStep2Subtitle": "ObjectOS Runtime",
     "demoStep3Label": "Apps, APIs & Agent Tools",
     "nextStep": "Next Layer",
     "step1": {
-      "title": "Define: Business Metadata in ObjectStack",
-      "description": "Objects, fields, relations, validation, permissions, views, flows, agents, and packages are written as structured metadata. The data/query engine is internal plumbing; the public contract is ObjectStack.",
+      "title": "Develop: Source Code or Online Workspace",
+      "description": "Define objects, fields, relations, validation, permissions, views, flows, actions, agents, and packages from code with CLI support, or edit the same model online through ObjectCloud and Studio.",
       "code": "// users.object.ts\nexport const User = object({\n  name: 'User',\n  fields: {\n    email: z.string().email(),\n    role: z.enum(['admin', 'user']),\n  },\n  permissions: {\n    read: 'authenticated',\n    write: 'role:admin',\n  },\n});\n\n// Storage-agnostic via Drivers"
     },
     "step2": {
-      "title": "Execute: The Microkernel Runtime",
-      "description": "ObjectOS boots a per-project kernel from the compiled artifact, loads only the enabled capabilities, and enforces auth, RBAC, row-level rules, field redaction, validation, AI tool boundaries, and audit uniformly.",
+      "title": "Package: Versioned Application Artifact",
+      "description": "ObjectStack compiles the application model into a typed, reviewable artifact. The artifact contains the contracts needed by UI, APIs, SDKs, drivers, and AI tools.",
       "code": "// Auto-generated surfaces (all permissioned)\nREST   /api/users\nSDK    client.users.create(...)\nMCP    tool: users.create\n\n// Kernel enforces uniformly:\n// ✓ Permissions & tenant isolation\n// ✓ Validation from the same Zod schema\n// ✓ Audit log for every action"
     },
     "step3": {
-      "title": "Render: Apps, APIs, and Agent Tools",
-      "description": "The same artifact powers generated REST endpoints, SDK calls, ObjectUI views, Console surfaces, and MCP tools. Human users and AI agents operate the same governed backend.",
+      "title": "Run: ObjectOS AI-Native Runtime",
+      "description": "ObjectOS runs the artifact, enforces identity and permissions, emits APIs and ObjectUI surfaces, and exposes governed MCP tools so applications can interact with AI safely.",
       "code": "// view.manifest.json\n{\n  \"type\": \"form\",\n  \"object\": \"User\",\n  \"fields\": [\"email\", \"role\"]\n}\n\n// MCP tool auto-registered:\n// ✓ Typed input from the Zod schema\n// ✓ Permission-aware execution\n// ✓ Auditable per invocation"
     }
   },
   "useCases": {
-    "title": "From Prototype to Mission-Critical Systems",
-    "subtitle": "Use the same metadata model for local internal tools, self-hosted enterprise apps, and AI-operated workflows.",
+    "title": "Build with AI. Run with AI interaction.",
+    "subtitle": "Use the same platform for source-code projects, online development, self-hosted enterprise applications, and AI-operated workflows.",
     "individualDevelopers": {
-      "title": "Internal Tools & Local-First Apps",
-      "description": "Start a local ObjectOS runtime with SQLite, generated REST, Console, Account, audit, and metadata-driven UI. Prototype internal tools without waiting on cloud infrastructure.",
+      "title": "Source-Code App Development",
+      "description": "Use the open-source framework and CLI to model an application locally, validate metadata, generate types, and let AI coding agents maintain the same source of truth.",
       "stats": "Zero infrastructure overhead"
     },
     "enterpriseIT": {
-      "title": "Heterogeneous Data Unification & Shadow IT",
-      "description": "Wrap existing databases, spreadsheets, and SaaS APIs as governed objects. Apply RBAC, row-level rules, field redaction, audit, and MCP exposure without forcing a big-bang migration.",
+      "title": "Online Development for Enterprise Apps",
+      "description": "Use ObjectCloud and Studio to model applications collaboratively, review metadata, test runtime behavior, and promote artifacts without first building infrastructure.",
       "stats": "Wrap existing systems, don't migrate"
     },
     "saasStartups": {
-      "title": "Agent-Ready SaaS Foundation",
-      "description": "Ship vertical SaaS with tenants, permissions, generated APIs, a React console, and AI tools from the first version. Run managed, self-hosted, or air-gapped using the same artifact model.",
+      "title": "AI-Interactive SaaS Runtime",
+      "description": "Run SaaS applications on ObjectOS so users, services, and AI agents interact through the same governed actions, permissions, audit trails, and tool contracts.",
       "stats": "Multi-tenant + agent-ready out of the box"
     },
     "lowCodeVendors": {
@@ -303,9 +303,9 @@
   },
   "cta": {
     "badge": "Early Access Program",
-    "headline1": "Define Your Business Once.",
-    "headline2": "Let Humans And Agents Operate It Safely.",
-    "description": "Stop scattering business logic across SQL, JavaScript, and UI state. Make objects, permissions, workflows, APIs, UI metadata, and agent tools one structured Zod source of truth — analyzable, versioned, and auditable end to end. Launch July 2026.",
+    "headline1": "Build AI-Native Applications.",
+    "headline2": "Run Them Where AI Can Safely Interact.",
+    "description": "Use ObjectStack to develop from source code or online workspaces, then run the application on ObjectOS with governed UI, APIs, SDKs, and MCP tools. Launch July 2026.",
     "primaryButton": "Request Early Access",
     "secondaryButton": "View on GitHub",
     "noCreditCard": "No commitment required",
@@ -313,7 +313,7 @@
     "earlyAccess": "Beta starts April 2026"
   },
   "footer": {
-    "tagline": "The operating system for AI-native business.",
+    "tagline": "AI-native application development and runtime platform.",
     "product": "Platform",
     "ecosystem": "Ecosystem",
     "resources": "Resources",
@@ -341,13 +341,13 @@
   "integrations": {
     "hero": {
       "badge": "Driver Registry",
-      "headline": "Any Data Source. One API.",
-      "subheadline": "The Universal Adapter for Modern Business Data",
-      "description": "ObjectStack acts as a universal adapter. Write your business logic once in ObjectQL, and run it on Postgres, Redis, MongoDB, or Excel. If you have a legacy proprietary system, write a Driver, not a migration script."
+      "headline": "Any Data Source. One Application Contract.",
+      "subheadline": "Drivers for AI-native application development and runtime",
+      "description": "Drivers let ObjectStack applications wrap existing databases, spreadsheets, SaaS APIs, and proprietary systems. ObjectQL handles query translation; ObjectOS governs application and AI interaction through permissions, audit, and approved actions."
     },
     "driverRegistry": {
       "title": "Driver Registry",
-      "subtitle": "This is NOT just a list of logos. It is a Driver Registry connecting any data source to one unified API.",
+      "subtitle": "A driver registry for connecting existing systems to ObjectStack applications and ObjectOS runtime governance.",
       "relational": {
         "title": "Relational Databases",
         "postgres": {
@@ -391,7 +391,7 @@
       },
       "custom": {
         "title": "Custom: Build Your Own Driver in TypeScript",
-        "description": "Extend ObjectStack with custom drivers for proprietary systems, legacy databases, or SaaS APIs. Write once in TypeScript, deploy anywhere."
+        "description": "Extend ObjectStack with custom drivers for proprietary systems, legacy databases, or SaaS APIs so applications and AI tools can interact through governed actions."
       }
     },
     "categories": {
@@ -401,7 +401,7 @@
     },
     "customDriver": {
       "title": "Build Your Own Driver",
-      "subtitle": "Extend ObjectStack with custom drivers for any data source—legacy systems, proprietary databases, or third-party APIs.",
+      "subtitle": "Extend ObjectStack applications with custom drivers for any data source while keeping ObjectOS governance and AI tool boundaries intact.",
       "steps": {
         "step1": {
           "title": "Implement the Driver Interface",
@@ -423,16 +423,16 @@
   "products": {
     "objectql": {
       "hero": {
-        "label": "Query Engine",
+        "label": "Query and Driver Engine",
         "title": "ObjectQL",
-        "subtitle": "The query and driver engine inside ObjectStack",
-        "description": "ObjectQL is the internal query engine and driver contract used by ObjectStack. It normalizes filtering, sorting, pagination, aggregation, relationship expansion, and data-source drivers so business objects can run across SQL databases, document stores, spreadsheets, SaaS APIs, and proprietary systems without changing the application metadata.",
+        "subtitle": "The infrastructure query engine inside ObjectStack",
+        "description": "ObjectQL is the internal query engine and driver contract used by ObjectStack. It helps ObjectStack applications read and search heterogeneous data sources while ObjectOS enforces identity, permissions, audit, and AI tool boundaries. It is infrastructure for the development and runtime platforms, not the product center.",
         "cta": "Read ObjectQL Docs",
         "secondaryCta": "View Framework Repo"
       },
       "features": {
         "title": "What ObjectQL Does",
-        "subtitle": "A portable query contract for heterogeneous enterprise data sources.",
+        "subtitle": "Portable data access for ObjectStack applications and ObjectOS runtime execution.",
         "queryModel": {
           "title": "Unified Query Shape",
           "description": "Filters, sorting, pagination, joins, expansion, aggregation, and projections are represented as structured query metadata instead of route-specific SQL strings."
@@ -443,16 +443,16 @@
         },
         "permissionAware": {
           "title": "Permission-Aware Execution",
-          "description": "ObjectOS can apply tenant isolation, row-level rules, field redaction, audit, and agent identity around every ObjectQL-backed operation."
+          "description": "ObjectOS applies tenant isolation, row-level rules, field redaction, audit, and AI identity around every ObjectQL-backed operation."
         },
         "aiReadable": {
           "title": "Readable for AI Tools",
-          "description": "Queries are structured enough for generated SDKs, REST APIs, ObjectUI views, and MCP tools to expose safe data access without handing agents raw SQL."
+          "description": "Structured queries let REST APIs, ObjectUI views, SDKs, and MCP tools expose safe data access without handing AI raw SQL."
         }
       },
       "useCases": {
         "title": "Where ObjectQL Fits",
-        "subtitle": "ObjectQL is infrastructure, not the whole framework. Use it where data access must remain portable and governed.",
+        "subtitle": "Use ObjectQL when ObjectStack applications need portable, governed data access across sources.",
         "federatedData": {
           "title": "Federated Enterprise Data",
           "description": "Mount Postgres, MongoDB, Excel, and legacy systems behind one query contract so applications can read them through consistent object metadata."
@@ -535,10 +535,10 @@
     },
     "objectos": {
       "hero": {
-        "label": "Business Runtime",
+        "label": "AI-Native App Runtime Platform",
         "title": "ObjectOS",
-        "subtitle": "A self-hosted business platform your team can operate",
-        "description": "ObjectOS is for business users, operators, and IT teams who need internal tools, approval workflows, governed AI actions, audit logs, and data ownership without sending the business system to a third-party cloud. AI assistants act through the same controlled business actions as people.",
+        "subtitle": "Run applications where every app can interact with AI",
+        "description": "ObjectOS is the AI-native application runtime platform. It runs ObjectStack applications with identity, permissions, audit, workflows, data drivers, UI surfaces, and AI tool execution in one governed runtime. Every application can expose AI interaction through approved actions instead of raw database or screen access.",
         "cta": "Read ObjectOS Docs",
         "secondaryCta": "View on GitHub"
       },
@@ -608,19 +608,39 @@
         "integration": "ObjectOS is the runtime you operate; Framework metadata and ObjectUI renderers plug into it."
       },
       "useCases": {
-        "title": "From Local-First Tools to Mission-Critical Platforms",
-        "subtitle": "One microkernel that scales from a single-user workstation to multi-tenant agent-operated platforms.",
+        "title": "From app runtime to AI-interactive operations",
+        "subtitle": "ObjectOS turns ObjectStack applications into governed systems that AI can interact with after deployment.",
         "fieldOperations": {
-          "title": "Field & Offline Operations",
-          "description": "Local-first apps for technicians, inspectors, and sales teams. The kernel handles offline writes, sync, and conflict resolution. Audit and attribution are preserved end to end, even when an AI assistant performs the action."
+          "title": "AI-Interactive Internal Tools",
+          "description": "Run internal applications where operators and assistants share the same approvals, audit trails, and controlled business actions."
         },
         "enterpriseApps": {
-          "title": "Enterprise Application Suite",
-          "description": "Run ERP / CRM / HRM modules as plugins on a single kernel. Unified identity, unified audit, unified MCP surface so internal copilots can safely act across modules with role-bound permissions."
+          "title": "Enterprise Application Runtime",
+          "description": "Run ERP, CRM, HR, finance, and operations modules with unified identity, policy, audit, and AI interaction surfaces."
         },
         "multiTenantSaaS": {
-          "title": "Agent-Operated Multi-Tenant SaaS",
-          "description": "Ship SaaS where every tenant gets the same auditable surface — REST, SDK, and MCP — backed by per-tenant policies in metadata. Scale from 10 to 10,000 tenants without parallel security or AI-tool implementations."
+          "title": "AI-Native SaaS Runtime",
+          "description": "Run multi-tenant SaaS where each tenant gets governed UI, APIs, SDKs, and MCP tools under tenant-specific permissions."
+        }
+      },
+      "features": {
+        "title": "What ObjectOS Runs",
+        "subtitle": "A runtime platform for applications, people, services, and AI agents operating the same system.",
+        "governedActions": {
+          "title": "Governed AI Interaction",
+          "description": "Applications expose approved actions and MCP tools. AI inherits user identity, permissions, validation, and audit instead of bypassing the app."
+        },
+        "appRuntime": {
+          "title": "Application Runtime Kernel",
+          "description": "ObjectOS loads ObjectStack artifacts, drivers, auth, audit, jobs, webhooks, flows, and policy services for each application environment."
+        },
+        "humanAndAi": {
+          "title": "One Surface for People and AI",
+          "description": "Users work through ObjectUI and APIs; AI agents work through tool contracts. Both hit the same runtime checks and business actions."
+        },
+        "deployment": {
+          "title": "Managed or Self-Hosted",
+          "description": "Run ObjectOS locally, in ObjectCloud, in a private cloud, on-premise, or in air-gapped networks using the same artifact model."
         }
       }
     },
@@ -628,25 +648,25 @@
       "hero": {
         "label": "Frontend Developer Toolkit",
         "title": "ObjectUI",
-        "subtitle": "Schema-driven React interfaces for serious frontend teams",
-        "description": "ObjectUI is for frontend developers: render objects, forms, dashboards, pages, and plugin views from ObjectStack metadata while keeping React, Tailwind, Shadcn, custom routing, custom auth, and your own backend under your control. The same metadata also powers APIs and AI tools.",
+        "subtitle": "Developer-controlled interfaces for AI-native applications",
+        "description": "ObjectUI helps frontend developers render ObjectStack application metadata as React forms, tables, dashboards, actions, and app shells while keeping control of routing, layout, components, and product experience. The same metadata powers APIs and AI tools, so user screens and AI actions stay aligned.",
         "cta": "Read ObjectUI Docs",
         "secondaryCta": "View on GitHub"
       },
       "features": {
         "title": "Why ObjectUI?",
-        "subtitle": "A modular frontend toolkit: use the full Console when useful, or compose app-shell/provider packages inside your own React application.",
+        "subtitle": "A frontend toolkit for applications that people and AI both operate.",
         "theStack": {
           "title": "Built for React Teams",
           "description": "Use familiar React primitives, Tailwind utilities, Radix/Shadcn components, and your existing design system. ObjectUI renders from metadata without trapping you in a black box."
         },
         "serverDriven": {
-          "title": "Metadata Without Losing Control",
-          "description": "Views, pages, dashboards, forms, fields, and actions can come from metadata, while routing, auth, layout boundaries, and component overrides stay in your frontend code."
+          "title": "UI Mirrors the App Contract",
+          "description": "Forms, views, dashboards, and actions come from the same ObjectStack metadata that defines APIs, SDKs, permissions, and MCP tools."
         },
         "enterpriseReady": {
-          "title": "Console or Embedded Shell",
-          "description": "Run the complete ObjectStack Console, or embed @object-ui/app-shell and @object-ui/providers for a small custom interface connected to your REST, GraphQL, or ObjectOS backend."
+          "title": "Built for Real Product Teams",
+          "description": "Use the full console, embed the app shell, or override fields and components inside your own React application."
         },
         "extensible": {
           "title": "Frontend Plugin Surface",
@@ -655,18 +675,18 @@
       },
       "useCases": {
         "title": "Use Cases",
-        "subtitle": "From admin panels to AI-operated dashboards.",
+        "subtitle": "From developer apps to AI-aware operator consoles.",
         "admin": {
           "title": "Admin Surfaces & Internal Tools",
-          "description": "Render complete CRUD and review interfaces from the same Zod-defined objects that back your APIs. Junior engineers and AI agents read from the same metadata — UI drift becomes impossible."
+          "description": "Render complete CRUD and review interfaces from the same application model used by ObjectOS and AI tool surfaces."
         },
         "forms": {
           "title": "Dynamic Forms & Approval Flows",
-          "description": "Multi-step wizards, conditional logic, and validation are metadata, not bespoke state machines. Forms surface the same business actions exposed to agents as MCP tools — same rules, same audit."
+          "description": "Expose the same approved business actions to users through forms and to AI through MCP tools, with one validation and audit path."
         },
         "dataViz": {
           "title": "Data-Heavy Operator Consoles",
-          "description": "Virtualized tables, dashboards, and analytics views that scale to millions of rows. Operators and agentic copilots share a consistent, permissioned view of the business."
+          "description": "Give operators and AI copilots a consistent, permissioned view of data-heavy workflows and decisions."
         }
       },
       "magicTrick": {
@@ -679,7 +699,7 @@
       },
       "architecture": {
         "title": "How It Works",
-        "subtitle": "Metadata -> providers -> app shell/renderers, with your own backend or ObjectOS.",
+        "subtitle": "The UI layer for AI-native applications running on your backend or ObjectOS.",
         "step1": {
           "title": "Step 1: Metadata",
           "description": "Objects, views, dashboards, pages, fields, labels, and actions are structured definitions that can be loaded lazily and localized by convention."
@@ -704,7 +724,7 @@
       },
       "ecosystem": {
         "title": "Part of ObjectStack",
-        "subtitle": "The View Layer of an AI-native business backend.",
+        "subtitle": "The UI layer for AI-native applications running on your backend or ObjectOS.",
         "description": "ObjectUI works independently with any backend via providers, but it aligns naturally with ObjectOS and ObjectStack metadata. ObjectQL is only the data engine behind some of those objects, not a requirement for every UI integration.",
         "standalone": "BYO backend with @object-ui/app-shell + @object-ui/providers",
         "integrated": "Full ObjectOS Console and ObjectStack metadata integration"
@@ -712,23 +732,23 @@
     },
     "cloud": {
       "hero": {
-        "label": "Cloud Development",
+        "label": "Online Development",
         "title": "ObjectCloud",
-        "subtitle": "Cloud workspace for building enterprise AI apps with ObjectStack",
-        "description": "ObjectCloud is the upcoming cloud development and runtime environment for ObjectStack. Developers will create projects, manage metadata, preview ObjectOS runtimes, test MCP tools, and promote versioned artifacts to managed or self-hosted environments. Opening soon for early teams.",
+        "subtitle": "Online workspace for building ObjectStack applications with AI",
+        "description": "ObjectCloud is the upcoming online development workspace for ObjectStack. Teams will create applications, edit metadata, collaborate with AI, preview ObjectOS runtimes, test AI tools, and promote versioned artifacts to managed or self-hosted environments. Opening soon.",
         "cta": "Join Early Access",
         "secondaryCta": "Read Docs"
       },
       "features": {
         "title": "What ObjectCloud Will Provide",
-        "subtitle": "A developer workspace first, with production runtime options behind it.",
+        "subtitle": "The online development path for ObjectStack applications.",
         "hostedWorkspace": {
-          "title": "Hosted ObjectStack Workspace",
-          "description": "Create ObjectStack projects in the browser, manage environments, and keep metadata versions, secrets, and deployment artifacts in one governed workspace."
+          "title": "Online ObjectStack Workspace",
+          "description": "Create and edit application metadata in the browser, manage environments, and keep versions, secrets, and deployment artifacts in one governed workspace."
         },
         "runtimePreview": {
-          "title": "Runtime Preview",
-          "description": "Launch a preview ObjectOS runtime for each project version. Inspect generated APIs, permissions, audit logs, ObjectUI screens, and MCP tools before promotion."
+          "title": "ObjectOS Runtime Preview",
+          "description": "Preview the running application, generated APIs, ObjectUI screens, audit logs, permissions, and MCP tools before promotion."
         },
         "artifactPromotion": {
           "title": "Artifact Promotion",
@@ -736,7 +756,7 @@
         },
         "openingSoon": {
           "title": "Opening Soon",
-          "description": "ObjectCloud is not generally available yet. Early access will focus on developer teams building AI-operated internal tools and enterprise SaaS backends."
+          "description": "ObjectCloud is not generally available yet. Early access focuses on teams building AI-native applications that need online development and runtime preview."
         }
       },
       "useCases": {
@@ -789,21 +809,21 @@
       "hero": {
         "label": "Visual Metadata IDE",
         "title": "Object Studio",
-        "subtitle": "Visual development environment for ObjectStack metadata",
-        "description": "Object Studio is a visual development environment for developers and architects who want to model ObjectStack metadata directly: objects, fields, relationships, permissions, views, actions, and agent tools. It is not the CLI and not the cloud platform; it is the visual workspace for understanding and editing the business system.",
+        "subtitle": "Visual development environment for ObjectStack applications",
+        "description": "Object Studio is the visual development environment for ObjectStack metadata. Developers and architects can inspect and edit objects, fields, relationships, permissions, views, actions, and AI tool surfaces. It complements source-code development and CLI automation; it is not the cloud platform.",
         "cta": "Explore Studio",
         "secondaryCta": "View CLI"
       },
       "features": {
         "title": "What Studio Is For",
-        "subtitle": "Make metadata visible, reviewable, and easier to reason about.",
+        "subtitle": "Make the application model visible so humans and AI can reason about it.",
         "visualDesigner": {
           "title": "Visual Metadata Modeling",
-          "description": "Inspect and edit object schemas, fields, relationships, permissions, view metadata, and action definitions without losing the underlying typed source of truth."
+          "description": "Inspect and edit the application model behind objects, fields, relationships, permissions, views, actions, and AI tool surfaces without losing the typed source of truth."
         },
         "localFirst": {
           "title": "Local / Workspace Preview",
-          "description": "Preview how metadata becomes ObjectOS runtime surfaces, generated APIs, ObjectUI screens, and MCP tools before shipping a versioned artifact."
+          "description": "Preview how the metadata becomes an ObjectOS runtime, ObjectUI screens, generated APIs, and AI tools before shipping a versioned artifact."
         },
         "integratedCLI": {
           "title": "Pairs With CLI, Not Replaces It",
@@ -885,17 +905,17 @@
       "hero": {
         "label": "Command-Line Tool",
         "title": "ObjectStack CLI",
-        "subtitle": "Independent CLI for ObjectStack development, CI/CD, and operations",
-        "description": "ObjectStack CLI is a standalone command-line tool for developers and platform teams. It scaffolds projects, validates metadata, generates types and tool contracts, builds versioned artifacts, runs local previews, and deploys to ObjectCloud or self-hosted ObjectOS. It is separate from Studio and designed for scripts, CI/CD, and agents.",
+        "subtitle": "Source-code workflow for ObjectStack development, CI/CD, and agents",
+        "description": "ObjectStack CLI is the source-code development and automation tool for ObjectStack. It scaffolds projects, validates metadata, generates types and AI tool contracts, builds versioned artifacts, runs local previews, and deploys to ObjectCloud or self-hosted ObjectOS. It is separate from Studio and designed for scripts, CI/CD, and AI coding agents.",
         "cta": "Install CLI",
         "secondaryCta": "View Documentation"
       },
       "features": {
         "title": "What CLI Does",
-        "subtitle": "Stable primitives for developers, CI pipelines, and coding agents.",
+        "subtitle": "Stable source-code primitives for developers, CI pipelines, and AI coding agents.",
         "infrastructureAsCode": {
           "title": "Project Scaffolding",
-          "description": "Create ObjectStack projects, add objects, actions, views, agents, drivers, and runtime configuration from repeatable templates."
+          "description": "Create ObjectStack applications, add objects, actions, views, agents, drivers, and runtime configuration from repeatable source-code templates."
         },
         "cicdIntegration": {
           "title": "Validate and Generate",
@@ -907,7 +927,7 @@
         },
         "scriptableAutomation": {
           "title": "Scriptable Operations",
-          "description": "Use JSON output, predictable exit codes, and composable commands for CI/CD, GitOps, release automation, and agent-driven maintenance."
+          "description": "Give developers and AI coding agents predictable commands for scaffold, validate, build, diff, preview, and deploy operations."
         }
       },
       "commands": {
@@ -1015,47 +1035,47 @@
     },
     "objectstack": {
       "hero": {
-        "label": "Open-Source Framework",
+        "label": "AI-Native App Development Platform",
         "title": "ObjectStack",
-        "subtitle": "The AI-native application framework behind the stack",
-        "description": "ObjectStack is the open-source framework for metadata-defined business applications: objects, permissions, flows, views, actions, APIs, SDKs, and AI tools. ObjectQL becomes an implementation detail here — the internal data/query engine and driver contract — while the public developer experience centers on ObjectStack docs and the framework repository.",
+        "subtitle": "Build applications with AI from source code or online workspaces",
+        "description": "ObjectStack is the AI-native application development platform for building enterprise applications with AI. Developers can work from source code with the open-source framework and CLI, or develop online through ObjectCloud and Studio. Objects, permissions, views, actions, APIs, SDKs, and MCP tools share one metadata model.",
         "cta": "Read Docs",
         "secondaryCta": "Open Source Project"
       },
       "features": {
-        "title": "What Lives in ObjectStack",
-        "subtitle": "AI-ready metadata first; data/query plumbing behind the scenes.",
+        "title": "What ObjectStack Provides",
+        "subtitle": "A development platform where human developers and AI coding agents work on the same application model.",
         "zeroOverheadSecurity": {
-          "title": "Business Metadata Core",
-          "description": "ObjectStack defines objects, fields, permissions, flows, actions, views, agents, and tool surfaces in one structured model. The runtime decides who can use them and how each action is exposed."
+          "title": "Application Metadata Core",
+          "description": "Define objects, fields, permissions, flows, actions, views, agents, and tool surfaces in one structured model that can be edited from code or online."
         },
         "databaseAgnostic": {
-          "title": "Driver-Based Storage",
-          "description": "Run the same object metadata through SQL, MongoDB, memory, spreadsheets, or custom drivers. The internal data/query engine serves the framework instead of becoming the product story."
+          "title": "Source-Code Development Path",
+          "description": "Use the framework, CLI, and repository workflow to scaffold, validate, generate, test, and package ObjectStack application artifacts."
         },
         "virtualColumns": {
-          "title": "Readable by Humans and AI",
-          "description": "Objects, actions, and query surfaces are structured enough for the framework, REST layer, SDKs, ObjectUI, and MCP tools to derive useful behavior without duplicate definitions."
+          "title": "Online Development Path",
+          "description": "Use ObjectCloud and Studio to model applications visually, preview runtime behavior, test AI tools, and collaborate on metadata versions."
         },
         "typeSafe": {
-          "title": "Typed from Zod",
-          "description": "Object definitions start as Zod-backed metadata so TypeScript, JSON artifacts, API contracts, UI field behavior, and AI tool signatures stay aligned."
+          "title": "AI-Readable App Contract",
+          "description": "Typed metadata gives AI coding agents a compact, reviewable model of the application across data, UI, permissions, APIs, and tools."
         }
       },
       "useCases": {
-        "title": "Use Cases",
-        "subtitle": "Use ObjectStack as the open-source foundation; let ObjectOS run it and ObjectUI render it.",
+        "title": "ObjectStack Use Cases",
+        "subtitle": "Use ObjectStack as the development platform; let ObjectOS run it and ObjectUI render it.",
         "localFirst": {
-          "title": "AI-Ready App Models",
-          "description": "Prototype objects, flows, actions, and agent tools locally; move the same metadata into ObjectOS when you need auth, audit, APIs, and governed execution."
+          "title": "AI-Assisted Source Development",
+          "description": "Let coding agents create and maintain objects, permissions, views, actions, and MCP tools in a repository with predictable validation and generation."
         },
         "enterprise": {
-          "title": "Driver Adapters",
-          "description": "Wrap existing databases, spreadsheets, and proprietary systems behind ObjectStack metadata so APIs, UI, and AI tools can reason about them safely."
+          "title": "Online Application Modeling",
+          "description": "Use Studio and ObjectCloud to design application metadata, preview runtime behavior, and review changes with architects and platform teams."
         },
         "saas": {
-          "title": "Product Metadata Spine",
-          "description": "Provide consistent filters, pagination, actions, permissions, and tool contracts for generated REST APIs, client SDKs, UI renderers, and AI agents."
+          "title": "Artifact-Based Delivery",
+          "description": "Package the same ObjectStack model for local preview, ObjectCloud, self-hosted ObjectOS, or private enterprise environments."
         }
       },
       "example": {
@@ -1183,26 +1203,26 @@
   "enterprise": {
     "hero": {
       "label": "Enterprise",
-      "title": "An AI-Native Business Backend, Self-Hosted",
-      "subtitle": "Run ObjectStack in your perimeter. Same Zod metadata, same MCP tools, full data sovereignty.",
-      "description": "ObjectStack Enterprise delivers the Data, Control, and View layers as a self-hosted runtime with commercial support, hardened governance, and certified compliance. Define your business once as structured Zod metadata; let humans, services, and AI agents operate it safely under one auditable kernel.",
+      "title": "Enterprise AI-Native Application Platform",
+      "subtitle": "Develop with ObjectStack. Run on ObjectOS. Keep data and AI interaction inside your perimeter.",
+      "description": "ObjectStack Enterprise gives teams an AI-native application development platform and an AI-native runtime platform for regulated environments. Build from source code or online workspaces, package versioned artifacts, and run applications on ObjectOS where every UI, API, SDK, and AI tool action is governed and auditable.",
       "cta": "Schedule a Demo",
       "secondaryCta": "View Architecture"
     },
     "challenges": {
-      "title": "The Strategic Challenges We Solve",
-      "subtitle": "Built for CTOs, CIOs, and System Architects deploying AI agents alongside humans.",
+      "title": "Enterprise challenges in AI-native application delivery",
+      "subtitle": "For CTOs, CIOs, and architects who need AI to build and operate applications without losing control.",
       "technicalDebt": {
-        "title": "Agent-Safe Operations",
-        "description": "Don't give AI agents raw SQL or a screen-scraped UI. ObjectStack exposes a structured, permissioned, audited surface — REST APIs, typed SDKs, and MCP tools — derived from the same metadata that powers your apps. Copilots inherit user permissions instead of bypassing them."
+        "title": "AI-Assisted Development Without Drift",
+        "description": "ObjectStack gives developers and AI coding agents one typed application model instead of scattered SQL, routes, forms, and permissions. Changes remain reviewable, generated surfaces stay aligned, and runtime behavior is validated before deployment."
       },
       "vendorLockIn": {
         "title": "No Storage Lock-in",
         "description": "Drivers connect Postgres, MongoDB, Redis, Excel, and proprietary systems behind one Zod-defined object model. Wrap existing investments instead of migrating them. Switch storage by swapping a Driver, not by rewriting the business."
       },
       "dataGovernance": {
-        "title": "Unified Governance",
-        "description": "One control plane for identity, permissions, flows, and audit across heterogeneous systems. Every action — human or agent — is attributable to a principal and traceable end to end."
+        "title": "AI Interaction Under Runtime Governance",
+        "description": "ObjectOS lets applications interact with AI through governed actions, MCP tools, identity, permissions, field controls, tenant rules, and audit. AI operates the app; it does not bypass it."
       },
       "assetLongevity": {
         "title": "Metadata as IP",
@@ -1211,10 +1231,10 @@
     },
     "features": {
       "title": "Enterprise-Grade Capabilities",
-      "subtitle": "Self-hosted infrastructure with commercial support and hardened governance.",
+      "subtitle": "Source-code and online development with self-hosted runtime governance.",
       "selfHosted": {
         "title": "Self-Hosted Deployment",
-        "description": "Run the same ObjectStack kernel inside your perimeter — on-premise or in your private cloud. No data leaves your boundary. Full sovereignty with commercial SLAs."
+        "description": "Run ObjectOS inside your perimeter while developing ObjectStack applications from source code or online workspaces. No business data needs to leave your boundary."
       },
       "multiTenant": {
         "title": "Multi-Tenant Isolation",
@@ -1222,7 +1242,7 @@
       },
       "auditCompliance": {
         "title": "Audit & Compliance",
-        "description": "Every REST call, SDK invocation, and MCP tool action is logged with principal, intent, and resulting metadata change. Hardened audit pipeline that maps to your SOC 2 / HIPAA evidence requirements."
+        "description": "Every UI action, API call, SDK invocation, and MCP tool execution is logged with principal, intent, input, policy result, and outcome."
       },
       "customDrivers": {
         "title": "Custom Driver Development",
@@ -1234,7 +1254,7 @@
       },
       "professionalServices": {
         "title": "Professional Services",
-        "description": "On-site architecture workshops, migration strategy, and team enablement for adopting an AI-native backend safely."
+        "description": "Architecture workshops, AI-assisted development rollout, runtime deployment planning, and team enablement for adopting ObjectStack and ObjectOS safely."
       }
     },
     "architecture": {
@@ -1424,15 +1444,15 @@
   },
   "solutions": {
     "hero": {
-      "title": "Solutions for Every Industry & Scenario",
-      "subtitle": "An AI-native backend that adapts to your reality — regulated industries, legacy estates, greenfield SaaS, and multi-region operations."
+      "title": "Solutions for AI-Native Application Development and Runtime",
+      "subtitle": "Build applications with AI, then run them on ObjectOS where every application can safely interact with AI."
     },
     "byIndustry": {
       "title": "Solutions by Industry",
-      "subtitle": "Built for regulated and mission-critical sectors where humans and agents operate side by side.",
+      "subtitle": "For regulated and mission-critical sectors where applications, humans, and AI agents operate side by side.",
       "financial": {
         "title": "Financial Services",
-        "description": "Meet SOX and PCI-DSS with metadata-driven audit, field-level controls, and self-hosted runtimes. Let copilots operate the same backend humans use — under the same permissions.",
+        "description": "Build finance applications with source-code or online workflows, then run them on ObjectOS with metadata-driven audit, field-level controls, and governed AI interaction.",
         "features": [
           "End-to-end audit of every UI, API, SDK, and MCP action",
           "Field-level encryption and PII controls in Zod schemas",
@@ -1442,7 +1462,7 @@
       },
       "government": {
         "title": "Government & Public Sector",
-        "description": "Modernize without big-bang migration. Wrap Oracle / SAP / mainframe behind Zod-defined objects via Drivers. Operate the same backend with humans and constrained AI agents under FedRAMP-ready controls.",
+        "description": "Modernize public-sector systems without big-bang migration. Wrap legacy systems with drivers, develop ObjectStack applications, and run them in ObjectOS under constrained AI interaction controls.",
         "features": [
           "Legacy integration via Drivers, not migration projects",
           "Air-gapped deployment for classified workloads",
@@ -1452,7 +1472,7 @@
       },
       "healthcare": {
         "title": "Healthcare & Life Sciences",
-        "description": "HIPAA-ready by construction. Permissions live in metadata; audit is intrinsic; patient data stays on your infrastructure. AI copilots inherit clinician permissions — never bypass them.",
+        "description": "Develop healthcare applications with permissions and consent in metadata. Run them on ObjectOS so AI assistants inherit clinician permissions and never bypass patient-data controls.",
         "features": [
           "Audit and consent declared in Zod metadata",
           "Patient data never leaves your perimeter",
@@ -1474,7 +1494,7 @@
     },
     "byScenario": {
       "title": "Solutions by Scenario",
-      "subtitle": "Architectural patterns for common enterprise challenges in an AI-agent era.",
+      "subtitle": "Patterns for developing applications with AI and running them where AI can interact safely.",
       "legacyModernization": {
         "title": "Legacy System Modernization",
         "tagline": "Wrap, Don't Rewrite",
@@ -1491,7 +1511,7 @@
       "greenfieldSaaS": {
         "title": "Greenfield SaaS Development",
         "tagline": "Agent-Ready from Day One",
-        "description": "Start with multi-tenancy, permissions, audit, and an MCP surface built in. Ship vertical SaaS where AI copilots are first-class operators under the same governance as your users.",
+        "description": "Start with multi-tenancy, permissions, audit, UI, APIs, and MCP tools from the same ObjectStack model. Run on ObjectOS so AI copilots are first-class governed operators.",
         "approach": "Metadata-First Development",
         "steps": [
           "Model the domain as Zod-defined objects",
@@ -1612,12 +1632,12 @@
     "sections": [
       {
         "title": "Acceptance of Terms",
-        "content": "By accessing or using our website and services, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, you should not use our services.",
+        "content": "ObjectStack AI provides an AI-native application development and runtime platform, including:",
         "items": []
       },
       {
         "title": "Description of Services",
-        "content": "ObjectStack AI provides an open-source, metadata-driven backend for AI-native business applications, including:",
+        "content": "ObjectStack AI provides an AI-native application development and runtime platform, including:",
         "items": [
           "ObjectStack Framework: Zod metadata for business objects, fields, relations, validation, permissions, flows, views, actions, agents, and tools.",
           "ObjectQL: the data/query engine and driver contract within the ObjectStack Framework.",
