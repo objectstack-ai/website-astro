@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
-import { formatDate, getDict, languages, splitBlogId, type Lang } from '../../../lib/site';
+import { formatDate, getDict, isChinese, languages, splitBlogId, zhText, type Lang } from '../../../lib/site';
 
 export function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang } }));
@@ -25,13 +25,13 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].slice(0, 12);
     <div class="container blog-hero-grid">
       <div>
         <p class="eyebrow">ObjectStack Journal</p>
-        <h1>{lang === 'zh' ? '为 AI 原生业务系统写作。' : 'Notes for AI-native business systems.'}</h1>
-        <p class="lead">{lang === 'zh' ? '关于数据主权、协议化开发、业务运行时与 AI agent 安全边界的产品和架构文章。' : 'Product and architecture essays on data sovereignty, protocol-driven development, business runtimes, and safe AI agent boundaries.'}</p>
+        <h1>{isChinese(lang) ? zhText(lang, '为 AI 原生业务系统写作。') : 'Notes for AI-native business systems.'}</h1>
+        <p class="lead">{isChinese(lang) ? zhText(lang, '关于数据主权、协议化开发、业务运行时与 AI agent 安全边界的产品和架构文章。') : 'Product and architecture essays on data sovereignty, protocol-driven development, business runtimes, and safe AI agent boundaries.'}</p>
       </div>
       <aside class="journal-mark">
         <span>Current series</span>
         <strong>ObjectStack / ObjectOS / ObjectUI</strong>
-        <p>{lang === 'zh' ? '一个元数据定义业务、运行时执行业务、前端渲染业务的技术栈。' : 'One stack for defining, operating, and rendering business systems from metadata.'}</p>
+        <p>{isChinese(lang) ? zhText(lang, '一个元数据定义业务、运行时执行业务、前端渲染业务的技术栈。') : 'One stack for defining, operating, and rendering business systems from metadata.'}</p>
       </aside>
     </div>
   </section>
@@ -42,7 +42,7 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].slice(0, 12);
         <article class="featured-card">
           <a href={`/${lang}/blog/${splitBlogId(featured.id).slug}`}>
             <div class="issue-label">
-              <span>{lang === 'zh' ? '最新文章' : 'Latest essay'}</span>
+              <span>{isChinese(lang) ? zhText(lang, '最新文章') : 'Latest essay'}</span>
               <time>{formatDate(featured.data.date, lang)}</time>
             </div>
             <h2>{featured.data.title}</h2>
@@ -53,7 +53,7 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].slice(0, 12);
           </a>
         </article>
         <aside class="topic-panel">
-          <h2>{lang === 'zh' ? '主题索引' : 'Topic index'}</h2>
+          <h2>{isChinese(lang) ? zhText(lang, '主题索引') : 'Topic index'}</h2>
           <div class="topic-cloud">
             {tags.map((tag) => <span>{tag}</span>)}
           </div>
@@ -65,8 +65,8 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))].slice(0, 12);
   <section class="archive-section">
     <div class="container">
       <div class="archive-heading">
-        <p class="eyebrow">{lang === 'zh' ? '全部文章' : 'Archive'}</p>
-        <h2>{lang === 'zh' ? '继续阅读' : 'Continue reading'}</h2>
+        <p class="eyebrow">{isChinese(lang) ? zhText(lang, '全部文章') : 'Archive'}</p>
+        <h2>{isChinese(lang) ? zhText(lang, '继续阅读') : 'Continue reading'}</h2>
       </div>
       <div class="post-grid">
       {rest.map((post, index) => {

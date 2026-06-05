@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import { contentSections, splitBlogId } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const zhHansPosts = posts
+    .map((post) => splitBlogId(post.id))
+    .filter((post) => post.lang === 'zh-Hans')
+    .map((post) => `blog/${post.slug}`);
+  const routes = [...contentSections, 'agents', 'blog', ...zhHansPosts];
+
+  return routes.map((path) => ({
+    params: { path },
+    props: { target: `/zh-Hans/${path}` },
+  }));
+}
+
+const { target } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>Redirecting to ObjectStack</title>
+    <script is:inline>{`location.replace(${JSON.stringify(target)});`}</script>
+  </head>
+  <body>
+    <a href={target}>Continue to ObjectStack</a>
+  </body>
+</html>

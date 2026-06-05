@@ -54,9 +54,13 @@ Important product distinctions:
 
 ## Localization
 
-English and Chinese are both maintained in `src/data/messages/`.
+English and Simplified Chinese are maintained in `src/data/messages/`.
 
-- Update English and Chinese together when changing product copy.
+- Maintain `en` and `zh-Hans` by hand.
+- `zh-Hant` is generated from `zh-Hans` with OpenCC by `scripts/gen-zh-hant.mjs`.
+- When adding Chinese blog content, write the `*.zh-Hans.mdx` source and let the script generate `*.zh-Hant.mdx`.
+- Do not edit generated `zh-Hant` files unless you remove the generated marker and intentionally hand-maintain that file.
+- Update English and Simplified Chinese together when changing product copy.
 - Keep terminology consistent:
   - Framework -> Framework / 框架
   - Query engine -> 查询引擎
@@ -68,7 +72,7 @@ English and Chinese are both maintained in `src/data/messages/`.
 
 ## Routes
 
-Keep localized routes under `/en/*` and `/zh/*`.
+Keep localized routes under `/en/*`, `/zh-Hans/*`, and `/zh-Hant/*`.
 
 Important routes:
 - `/objectstack` framework
@@ -111,4 +115,3 @@ pnpm build
 ```
 
 For route changes, verify the affected localized paths return 200 in the preview server.
-

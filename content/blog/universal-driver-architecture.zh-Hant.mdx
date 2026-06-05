@@ -1,0 +1,163 @@
+---
+# @generated zh-Hant from zh-Hans (s2twp) - edit the zh-Hans source; delete this line to hand-maintain.
+title: "消除供應商鎖定：通用驅動架構"
+description: ObjectStack 的通用驅動系統如何讓你連線任何資料來源——Postgres, Redis, MongoDB, Excel——而無需遷移指令碼或依賴特定供應商。
+author: ObjectStack Team
+date: 2026-01-12
+tags: [architecture, drivers, vendor-lock-in, objectql]
+---
+
+# 消除供應商鎖定：通用驅動架構
+
+想象一下：你的資料庫供應商剛剛宣佈續約價格上漲 40%。你的 SaaS CRM 將你鎖定在其專有 API 格式中。你的 ERP 系統以只有*他們*的軟體能讀取的格式儲存資料。你營銷團隊的關鍵預算電子表格存在 Excel 中，與你的“真實”資料庫隔離。
+
+**你被鎖定了。**
+
+不是因為你選擇了糟糕的技術。你被鎖定是因為行業就是這樣設計的。每個供應商都想成為你的**唯一**供應商。每個平臺都想成為你的**整個**技術棧。
+
+ObjectStack 採取了不同的方法：**通用驅動 (Universal Drivers)**。一種協議，無限資料來源。無遷移指令碼。無供應商鎖定。當經濟或需求變化時，無需強制重寫。
+
+## 問題：設計導致的資料孤島
+
+大多數企業系統都遭受**架構鎖定**：
+
+### 1. **資料庫供應商鎖定**
+你的應用程式與 PostgreSQL 的特定功能 (JSONB, CTEs, 視窗函式) 緊密耦合。切換到 MySQL 將需要：
+- 重寫查詢 (語法差異)
+- 更改 ORM 配置
+- 測試相容性 (資料型別, 事務)
+- 遷移生產資料 (停機, 風險)
+
+**總成本：** 數月的工程時間。不可接受的風險。結果：你支付供應商要求的任何費用。
+
+### 2. **SaaS 平臺鎖定**
+你的 CRM (Salesforce, HubSpot) 通過其專有 API 暴露資料。如果你想遷移：
+- 匯出資料為 CSV (有損, 無關係)
+- 對映到新 Schema (不同的欄位名, 型別)
+- 重建整合 (Webhooks, 自動化)
+- 重新培訓使用者 (不同的 UX)
+
+**總成本：** 耗時一年的遷移專案。業務中斷。結果：你是人質，不是客戶。
+
+### 3. **檔案格式鎖定**
+你的團隊使用 Excel 進行預算、庫存跟蹤和臨時報告。IT 部門想要“真正的資料庫”，但是：
+- 業務使用者喜歡 Excel (熟悉, 靈活)
+- 強制遷移意味著政治鬥爭
+- 資料重複出現 (影子 IT)
+
+**結果：** 資料孤島。沒有統一治理。合規噩夢。
+
+## ObjectStack 解決方案：通用驅動
+
+核心洞見：**不要強制遷移。建立一個通用介面卡。**
+
+ObjectStack 的**通用驅動系統**將所有資料來源視為一等公民：
+- **關係型資料庫** (Postgres, MySQL, SQL Server, Oracle)
+- **NoSQL 儲存** (MongoDB, Redis, Cassandra)
+- **基於檔案的系統** (Excel, CSV)
+- **遺留專有系統** (通過自定義驅動連線 SAP, Mainframe)
+
+你在 ObjectQL 中定義**一次**業務邏輯。驅動程式將其轉換為每個資料來源的本機格式。
+
+## 通用驅動如何工作
+
+### **步驟 1: 以協議格式定義業務邏輯**
+
+```yaml
+# customer.objectql.yml
+entity:
+  name: Customer
+  fields:
+    - name: company_name
+      type: text
+      required: true
+    - name: email
+      type: text
+      validation: email
+    - name: annual_revenue
+      type: number
+      virtual: true
+      expression: |
+        SELECT SUM(amount) FROM orders
+        WHERE orders.customer_id = customers.id
+```
+
+這是**協議**，不是程式碼。它與資料庫無關。
+
+### **步驟 2: 驅動編譯為本機格式**
+
+ObjectQL 的 **PostgreSQL** 驅動將其編譯為：
+
+```sql
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+  company_name TEXT NOT NULL,
+  email TEXT CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$'),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 虛擬列作為子查詢
+SELECT 
+  c.*,
+  (SELECT SUM(amount) FROM orders WHERE orders.customer_id = c.id) AS annual_revenue
+FROM customers c;
+```
+
+同時，ObjectQL 的 **MongoDB** 驅動將其編譯為 Mongoose Schema 和聚合管道。
+
+ObjectQL 的 **Excel** 驅動將其對映為：
+- 檔案：`customers.xlsx`
+- Sheet：`Sheet1`
+- 列驗證：Excel 資料驗證規則
+
+### **步驟 3: 執行時查詢轉換**
+
+當你執行查詢時：
+
+```typescript
+// 通用查詢 - 可以在任何驅動上執行
+await objectql.find('Customer', {
+  where: { annual_revenue: { gt: 1000000 } }
+});
+```
+
+- **Postgres 驅動**生成：`SELECT ... WHERE (SELECT SUM...) > 1000000`
+- **Excel 驅動**：解析 .xlsx，計算記憶體中的總和，過濾行。
+- **Redis 驅動**：掃描 Hash 鍵，反序列化，計算。
+
+## 為什麼這能改變遊戲規則
+
+### 1. **無需遷移的現代化**
+你在 Oracle 上有一個遺留資料庫？不要把它匯出來。**掛載它。**
+編寫一個 ObjectQL Schema 對映到現有的 Oracle 表。立即獲得現代 API、GraphQL 和 ObjectUI 管理面板。資料留在原本的地方。
+
+### 2. **Excel 作為生產資料來源**
+對於不需要每秒百萬次事務的資料（如年度預算），Excel 很好。
+- **業務使用者**保留他們的電子表格。
+- **ObjectStack** 掛載它並通過安全 API 暴露它。
+- 你可以聯接 Postgres 表和 Excel 表。
+
+### 3. **面向未來的架構**
+新資料庫技術出現（例如 CockroachDB 等分散式 SQL）？編寫一個驅動。你的業務邏輯（ObjectQL Schema）不變。**你對協議的投資比任何特定資料庫都長壽。**
+
+## 行動號召
+
+問問自己：
+- **如果我的資料庫供應商明天將價格提高 10 倍，我能否在不重寫的情況下切換？**
+- **我能否在統一治理下查詢團隊的 Excel 表格和生產資料庫？**
+- **我是否因為遷移風險太大而被鎖定在當前的技術棧中？**
+
+如果你對這些問題的回答是“否”，那麼你正在經歷供應商鎖定。
+
+**ObjectStack 打破了這種鎖定。**
+
+使用通用驅動：
+- 定義一次邏輯 (ObjectQL 協議)
+- 隨處執行 (Postgres, MySQL, MongoDB, Excel, 自定義系統)
+- 自由切換 (無遷移指令碼, 無供應商槓桿)
+
+**協議優於實現。自由優於鎖定。**
+
+---
+
+**準備好消除供應商鎖定了嗎？** [探索驅動市場](/integrations) 或 [閱讀 ObjectQL 規範](/docs/objectql)。

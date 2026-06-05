@@ -5,13 +5,13 @@
   "private": true,
   "packageManager": "pnpm@10.33.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/gen-zh-hant.mjs && astro dev",
     "dev:raw": "astro dev",
-    "content:lint": "astro check",
-    "seo:smoke": "astro build",
-    "build": "astro build",
+    "content:lint": "node scripts/gen-zh-hant.mjs && astro check",
+    "seo:smoke": "node scripts/gen-zh-hant.mjs && astro build",
+    "build": "node scripts/gen-zh-hant.mjs && astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "node scripts/gen-zh-hant.mjs && astro check"
   },
   "dependencies": {
     "@astrojs/mdx": "^4",

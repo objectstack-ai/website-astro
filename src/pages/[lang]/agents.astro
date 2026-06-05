@@ -1,28 +1,28 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { languages, pathFor, type Lang } from '../../lib/site';
+import { isChinese, languages, pathFor, zhText, type Lang } from '../../lib/site';
 
 export function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang } }));
 }
 
 const lang = Astro.params.lang as Lang;
-const copy = lang === 'zh'
+const copy = isChinese(lang)
   ? {
       eyebrow: 'AI Development',
-      title: '为企业业务系统构建受治理的 AI Agent。',
-      lead: 'ObjectStack 让开发者把对象、权限、动作、视图和 MCP 工具定义为同一份元数据。Agent 不需要原始 SQL，也不需要截屏式 UI 自动化；它们通过受权限约束、可审计的业务动作工作。',
-      primary: '开始构建',
-      secondary: '查看 Framework',
+      title: zhText(lang, '为企业业务系统构建受治理的 AI Agent。'),
+      lead: zhText(lang, 'ObjectStack 让开发者把对象、权限、动作、视图和 MCP 工具定义为同一份元数据。Agent 不需要原始 SQL，也不需要截屏式 UI 自动化；它们通过受权限约束、可审计的业务动作工作。'),
+      primary: zhText(lang, '开始构建'),
+      secondary: zhText(lang, '查看 Framework'),
       blocks: [
-        ['业务对象即上下文', '对象、字段、关系、权限和动作保持结构化，足够小，AI 可以读懂完整业务模型。'],
-        ['动作即工具', '经过批准的动作可以生成 MCP tools，让 Agent 调用真实业务能力，而不是操作数据库。'],
-        ['运行时即护栏', 'ObjectOS 在每次调用时执行 RBAC、RLS、FLS、租户隔离、审计和请求归因。'],
+        [zhText(lang, '业务对象即上下文'), zhText(lang, '对象、字段、关系、权限和动作保持结构化，足够小，AI 可以读懂完整业务模型。')],
+        [zhText(lang, '动作即工具'), zhText(lang, '经过批准的动作可以生成 MCP tools，让 Agent 调用真实业务能力，而不是操作数据库。')],
+        [zhText(lang, '运行时即护栏'), zhText(lang, 'ObjectOS 在每次调用时执行 RBAC、RLS、FLS、租户隔离、审计和请求归因。')],
       ],
       sections: [
-        ['metadata-context', 'Metadata as Context', '企业应用通常有大量分散代码。ObjectStack 把业务定义压缩为 typed metadata，让 AI agent 可以在上下文窗口中理解对象、权限、视图、动作和工具边界。'],
-        ['mcp-tools', 'MCP Tools', 'ObjectStack 可以把对象动作和查询表面暴露为 MCP tools。工具输入来自同一份 schema，执行经过运行时权限检查，并留下审计日志。'],
-        ['guardrails', 'Guardrails', 'Agent 继承用户身份和权限，不绕过业务系统。运行时统一处理租户、字段脱敏、审批、审计和策略。'],
+        ['metadata-context', 'Metadata as Context', zhText(lang, '企业应用通常有大量分散代码。ObjectStack 把业务定义压缩为 typed metadata，让 AI agent 可以在上下文窗口中理解对象、权限、视图、动作和工具边界。')],
+        ['mcp-tools', 'MCP Tools', zhText(lang, 'ObjectStack 可以把对象动作和查询表面暴露为 MCP tools。工具输入来自同一份 schema，执行经过运行时权限检查，并留下审计日志。')],
+        ['guardrails', 'Guardrails', zhText(lang, 'Agent 继承用户身份和权限，不绕过业务系统。运行时统一处理租户、字段脱敏、审批、审计和策略。')],
       ],
     }
   : {

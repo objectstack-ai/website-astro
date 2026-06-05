@@ -1,13 +1,13 @@
 ---
-import { navGroups, pathFor, type Lang } from '../lib/site';
+import { isChinese, languages, navGroups, pathFor, zhText, type Lang } from '../lib/site';
 
 const { lang } = Astro.props as { lang: Lang };
-const otherLang = lang === 'en' ? 'zh' : 'en';
-const currentPath = Astro.url.pathname.replace(/^\/(en|zh)/, '') || '/';
+const currentPath = Astro.url.pathname.replace(/^\/(en|zh-Hans|zh-Hant)/, '') || '/';
 const directLinks = [
-  { label: lang === 'zh' ? '价格' : 'Pricing', href: '/pricing' },
-  { label: lang === 'zh' ? '博客' : 'Blog', href: '/blog' },
+  { label: isChinese(lang) ? zhText(lang, '价格') : 'Pricing', href: '/pricing' },
+  { label: isChinese(lang) ? zhText(lang, '博客') : 'Blog', href: '/blog' },
 ];
+const langLabels: Record<Lang, string> = { en: 'EN', 'zh-Hans': '简', 'zh-Hant': '繁' };
 
 const isActive = (href: string) => {
   if (href.startsWith('http')) return false;
@@ -43,8 +43,12 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
     </nav>
     <div class="header-actions">
       <a class="docs" href="https://docs.objectstack.ai">Docs</a>
-      <a class="start" href={pathFor(lang, '/cloud')}>{lang === 'zh' ? '开始构建' : 'Start Building'}</a>
-      <a class="lang" href={pathFor(otherLang, currentPath)}>{otherLang.toUpperCase()}</a>
+      <a class="start" href={pathFor(lang, '/cloud')}>{isChinese(lang) ? zhText(lang, '开始构建') : 'Start Building'}</a>
+      <div class="lang-menu" aria-label="Language">
+        {languages.map((locale) => (
+          <a class={locale === lang ? 'active' : ''} href={pathFor(locale, currentPath)}>{langLabels[locale]}</a>
+        ))}
+      </div>
     </div>
   </div>
 </header>
@@ -52,10 +56,10 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
 <style>
   .site-header {
     position: sticky;
-    z-index: 20;
+    z-index: 40;
     top: 0;
     border-bottom: 1px solid rgba(23, 24, 18, 0.12);
-    background: rgba(251, 249, 241, 0.86);
+    background: rgba(247, 249, 244, 0.9);
     backdrop-filter: blur(18px) saturate(120%);
   }
 
@@ -64,7 +68,7 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
     grid-template-columns: auto 1fr auto;
     gap: 22px;
     align-items: center;
-    min-height: 68px;
+    min-height: 70px;
   }
 
   .brand {
@@ -89,7 +93,7 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
     gap: 3px;
     border: 1px solid rgba(23, 24, 18, 0.1);
     border-radius: 8px;
-    background: rgba(255, 253, 246, 0.55);
+    background: rgba(255, 255, 255, 0.58);
     padding: 4px;
   }
 
@@ -105,6 +109,7 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
       ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 0.93rem;
     font-weight: 650;
+    white-space: nowrap;
   }
 
   summary {
@@ -140,20 +145,21 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
     top: calc(100% + 12px);
     left: 50%;
     display: grid;
-    width: 330px;
+    z-index: 50;
+    width: 350px;
     transform: translateX(-50%);
     border: 1px solid var(--line);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.98);
     box-shadow: var(--shadow);
-    padding: 8px;
+    padding: 10px;
   }
 
   .nav-popover a {
     display: grid;
     gap: 3px;
     border-radius: 8px;
-    padding: 12px;
+    padding: 13px;
   }
 
   .nav-popover a:hover {
@@ -184,11 +190,34 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
     display: flex;
     gap: 6px;
     align-items: center;
+    white-space: nowrap;
+  }
+
+  .lang-menu {
+    display: flex;
+    gap: 2px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    padding: 2px;
+  }
+
+  .lang-menu a {
+    border-radius: 6px;
+    padding: 6px 8px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 760;
+  }
+
+  .lang-menu a.active {
+    background: var(--ink);
+    color: #fffdf6;
   }
 
   .docs {
     border: 1px solid var(--line);
-    background: rgba(255, 253, 247, 0.78);
+    background: rgba(255, 255, 255, 0.78);
     color: var(--ink);
   }
 
@@ -217,12 +246,54 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
       border-radius: 0;
       background: transparent;
       padding: 0 0 12px;
+      scrollbar-width: none;
+    }
+
+    .site-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-group,
+    .direct-link {
+      flex: 0 0 auto;
     }
 
     .nav-popover {
       left: 0;
       width: min(330px, calc(100vw - 28px));
       transform: none;
+    }
+
+    .header-actions {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .header-inner {
+      gap: 12px;
+    }
+
+    .brand span {
+      font-size: 0.98rem;
+    }
+
+    .brand img {
+      width: 26px;
+      height: 26px;
+    }
+
+    .docs {
+      display: none;
+    }
+
+    .start {
+      padding-inline: 10px;
+    }
+
+    .lang-menu a {
+      padding-inline: 7px;
     }
   }
 </style>

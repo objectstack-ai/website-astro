@@ -156,14 +156,14 @@ const faqs: any[] = dict.faq.items ?? [];
 
 <style>
   .home-hero {
-    padding: 90px 0 80px;
+    padding: 92px 0 78px;
   }
 
   .hero-grid,
   .split {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-    gap: 36px;
+    gap: 46px;
     align-items: center;
   }
 
@@ -175,8 +175,10 @@ const faqs: any[] = dict.faq.items ?? [];
     overflow: hidden;
     border: 1px solid #202522;
     border-radius: 8px;
-    background: #151716;
-    box-shadow: var(--shadow);
+    background:
+      linear-gradient(180deg, rgba(215, 238, 104, 0.06), transparent 30%),
+      #151917;
+    box-shadow: 0 30px 80px rgba(20, 25, 23, 0.18);
     color: #edf5e7;
   }
 
@@ -192,7 +194,7 @@ const faqs: any[] = dict.faq.items ?? [];
 
   pre {
     overflow: auto;
-    min-height: 420px;
+    min-height: 390px;
     margin: 0;
     padding: 22px;
     font-size: 0.84rem;
@@ -226,7 +228,10 @@ const faqs: any[] = dict.faq.items ?? [];
   }
 
   .metric.accent {
-    background: #dfeec1;
+    border-color: #bfd890;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.38), transparent 45%),
+      #dfeec1;
   }
 
   .product-triad .card {
@@ -270,7 +275,9 @@ const faqs: any[] = dict.faq.items ?? [];
   }
 
   .final-cta {
-    background: #dfeec1;
+    background:
+      linear-gradient(90deg, rgba(20, 25, 23, 0.05), transparent 38%),
+      #dfeec1;
   }
 
   @media (max-width: 900px) {
