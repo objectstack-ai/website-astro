@@ -277,9 +277,14 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
     }
 
     .nav-popover {
-      left: 0;
-      width: min(330px, calc(100vw - 28px));
+      position: fixed;
+      top: 114px;
+      right: 14px;
+      left: 14px;
+      width: auto;
+      max-height: calc(100vh - 132px);
       transform: none;
+      overflow: auto;
     }
 
     .header-actions {
@@ -312,6 +317,11 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
 
     .lang-popover {
       min-width: 138px;
+    }
+
+    .nav-popover {
+      top: 104px;
+      max-height: calc(100vh - 120px);
     }
   }
 </style>
