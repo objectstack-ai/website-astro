@@ -32,7 +32,10 @@ Top navigation should stay organized around:
 - Developers: Docs, Quickstart, CLI, Studio, GitHub.
 - AI Development: Agents, MCP tools, guardrails, metadata as context.
 - Enterprise: Solutions, security/runtime, deployment, contact sales.
-- Pricing and Blog as direct links.
+- Blog as a direct link.
+- Keep pricing hidden from primary navigation until pricing is decided.
+- Keep docs inside the developer navigation, not as a top-right CTA.
+- Use a language dropdown because more locales are expected.
 
 Important product distinctions:
 - ObjectStack: the open-source metadata framework and primary developer entry point.
@@ -84,6 +87,8 @@ Important routes:
 - `/cli` independent command-line tool
 - `/agents` AI development, MCP tools, guardrails
 - `/solutions`, `/enterprise`, `/pricing`, `/blog`
+
+Pricing may remain routable, but do not surface it in header or footer navigation until the offer is finalized.
 
 Do not create a new route if an existing route already matches the concept. For example, cloud development belongs on `/cloud`, not `/cloud-development`.
 

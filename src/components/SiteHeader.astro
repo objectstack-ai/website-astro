@@ -4,10 +4,10 @@ import { isChinese, languages, navGroups, pathFor, zhText, type Lang } from '../
 const { lang } = Astro.props as { lang: Lang };
 const currentPath = Astro.url.pathname.replace(/^\/(en|zh-Hans|zh-Hant)/, '') || '/';
 const directLinks = [
-  { label: isChinese(lang) ? zhText(lang, '价格') : 'Pricing', href: '/pricing' },
   { label: isChinese(lang) ? zhText(lang, '博客') : 'Blog', href: '/blog' },
 ];
-const langLabels: Record<Lang, string> = { en: 'EN', 'zh-Hans': '简', 'zh-Hant': '繁' };
+const langLabels: Record<Lang, string> = { en: 'English', 'zh-Hans': '简体中文', 'zh-Hant': '繁體中文' };
+const shortLangLabels: Record<Lang, string> = { en: 'EN', 'zh-Hans': '简体', 'zh-Hant': '繁體' };
 
 const isActive = (href: string) => {
   if (href.startsWith('http')) return false;
@@ -42,13 +42,15 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
       ))}
     </nav>
     <div class="header-actions">
-      <a class="docs" href="https://docs.objectstack.ai">Docs</a>
       <a class="start" href={pathFor(lang, '/cloud')}>{isChinese(lang) ? zhText(lang, '开始构建') : 'Start Building'}</a>
-      <div class="lang-menu" aria-label="Language">
-        {languages.map((locale) => (
-          <a class={locale === lang ? 'active' : ''} href={pathFor(locale, currentPath)}>{langLabels[locale]}</a>
-        ))}
-      </div>
+      <details class="lang-menu">
+        <summary aria-label="Language">{shortLangLabels[lang]}</summary>
+        <div class="lang-popover">
+          {languages.map((locale) => (
+            <a class={locale === lang ? 'active' : ''} href={pathFor(locale, currentPath)}>{langLabels[locale]}</a>
+          ))}
+        </div>
+      </details>
     </div>
   </div>
 </header>
@@ -99,7 +101,6 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
 
   .direct-link,
   summary,
-  .docs,
   .lang,
   .start {
     border-radius: 8px;
@@ -130,6 +131,10 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
   }
 
   .nav-group {
+    position: relative;
+  }
+
+  .lang-menu {
     position: relative;
   }
 
@@ -179,7 +184,6 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
 
   .direct-link:hover,
   summary:hover,
-  .docs:hover,
   .lang:hover,
   .start:hover {
     background: rgba(23, 24, 18, 0.06);
@@ -193,31 +197,45 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
     white-space: nowrap;
   }
 
-  .lang-menu {
-    display: flex;
-    gap: 2px;
+  .lang-menu summary {
     border: 1px solid var(--line);
     border-radius: 8px;
     background: var(--panel);
-    padding: 2px;
+    color: var(--ink-soft);
+    padding: 8px 11px;
   }
 
-  .lang-menu a {
-    border-radius: 6px;
-    padding: 6px 8px;
-    color: var(--muted);
-    font-size: 0.82rem;
-    font-weight: 760;
-  }
-
-  .lang-menu a.active {
+  .lang-menu[open] summary {
+    border-color: var(--ink);
     background: var(--ink);
     color: #fffdf6;
   }
 
-  .docs {
+  .lang-popover {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 55;
+    display: grid;
+    min-width: 150px;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.78);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow);
+    padding: 6px;
+  }
+
+  .lang-popover a {
+    border-radius: 6px;
+    padding: 9px 10px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 720;
+  }
+
+  .lang-popover a:hover,
+  .lang-popover a.active {
+    background: var(--panel-2);
     color: var(--ink);
   }
 
@@ -284,16 +302,16 @@ const groupActive = (items: readonly { href: string }[]) => items.some((item) =>
       height: 26px;
     }
 
-    .docs {
-      display: none;
-    }
-
     .start {
       padding-inline: 10px;
     }
 
-    .lang-menu a {
-      padding-inline: 7px;
+    .lang-menu summary {
+      padding-inline: 9px;
+    }
+
+    .lang-popover {
+      min-width: 138px;
     }
   }
 </style>
