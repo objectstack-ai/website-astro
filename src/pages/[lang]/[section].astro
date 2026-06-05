@@ -99,6 +99,199 @@ const capabilityRows =
         ['AI', 'Application actions, MCP tools, request tracing, policy checks'],
         ['Data', 'Postgres, MongoDB, Excel, SaaS, proprietary drivers'],
       ];
+
+const productVisuals = {
+  objectstack: {
+    eyebrow: isChinese(lang) ? zhText(lang, '元数据主干') : 'Metadata spine',
+    title: isChinese(lang) ? zhText(lang, '一次定义，多处运行') : 'Define once, run everywhere',
+    center: 'ObjectStack',
+    centerNote: isChinese(lang) ? zhText(lang, '应用模型') : 'Application model',
+    inputs: isChinese(lang)
+      ? ['源码', 'CLI', 'Studio', 'ObjectCloud']
+      : ['Source code', 'CLI', 'Studio', 'ObjectCloud'],
+    outputs: isChinese(lang)
+      ? ['ObjectOS', 'ObjectUI', 'API / SDK', 'MCP 工具']
+      : ['ObjectOS', 'ObjectUI', 'API / SDK', 'MCP tools'],
+    spine: isChinese(lang)
+      ? ['对象', '权限', '视图', '动作', 'Agent']
+      : ['Objects', 'Permissions', 'Views', 'Actions', 'Agents'],
+    flowTitle: isChinese(lang) ? zhText(lang, 'ObjectStack 如何把模型变成产品表面') : 'How ObjectStack turns models into product surfaces',
+    flowSubtitle: isChinese(lang)
+      ? zhText(lang, '开发者和 AI Coding Agent 编辑同一份元数据；运行时和 UI 从同一份工件派生。')
+      : 'Developers and AI coding agents edit one metadata model; runtime and UI surfaces derive from the same artifact.',
+    lanes: isChinese(lang)
+      ? [
+          ['输入', '源码仓库、Studio、ObjectCloud'],
+          ['编译', '校验元数据、生成类型、打包工件'],
+          ['运行', 'ObjectOS 执行权限、审计、Driver 与动作'],
+          ['表面', 'ObjectUI、REST、SDK、MCP 工具'],
+        ]
+      : [
+          ['Input', 'Repository, Studio, ObjectCloud'],
+          ['Compile', 'Validate metadata, generate types, package artifact'],
+          ['Run', 'ObjectOS enforces permissions, audit, drivers, actions'],
+          ['Surface', 'ObjectUI, REST, SDK, MCP tools'],
+        ],
+  },
+  objectql: {
+    eyebrow: isChinese(lang) ? zhText(lang, '查询层') : 'Query layer',
+    title: isChinese(lang) ? zhText(lang, '一个查询形态，多种数据源') : 'One query shape, many sources',
+    center: 'ObjectQL',
+    centerNote: isChinese(lang) ? zhText(lang, 'Driver 契约') : 'Driver contract',
+    inputs: ['Postgres', 'MongoDB', 'Excel', 'SaaS API'],
+    outputs: isChinese(lang) ? ['对象列表', '搜索', '聚合', 'AI 查询工具'] : ['Object lists', 'Search', 'Aggregates', 'AI query tools'],
+    spine: isChinese(lang) ? ['过滤', '排序', '分页', '展开', '投影'] : ['Filter', 'Sort', 'Page', 'Expand', 'Project'],
+    flowTitle: isChinese(lang) ? zhText(lang, 'ObjectQL 留在基础设施层') : 'ObjectQL stays in the infrastructure layer',
+    flowSubtitle: isChinese(lang)
+      ? zhText(lang, '它描述数据访问意图，由 Driver 翻译到原生系统，再由 ObjectOS 包住权限与审计。')
+      : 'It describes data-access intent, lets drivers translate to native systems, and stays wrapped by ObjectOS permissions and audit.',
+    lanes: isChinese(lang)
+      ? [
+          ['请求', '视图、API、SDK 或 MCP 工具发起结构化查询'],
+          ['查询契约', 'ObjectQL 表达过滤、分页、关联与投影'],
+          ['Driver', '翻译到 SQL、文档库、电子表格或 SaaS API'],
+          ['治理', 'ObjectOS 执行租户、字段、行级权限与审计'],
+        ]
+      : [
+          ['Request', 'Views, APIs, SDKs, or MCP tools issue structured queries'],
+          ['Query contract', 'ObjectQL represents filters, paging, joins, projections'],
+          ['Driver', 'Translate to SQL, documents, spreadsheets, or SaaS APIs'],
+          ['Governance', 'ObjectOS applies tenant, field, row permissions, audit'],
+        ],
+  },
+  objectos: {
+    eyebrow: isChinese(lang) ? zhText(lang, '运行时边界') : 'Runtime boundary',
+    title: isChinese(lang) ? zhText(lang, '人、服务和 AI 命中同一套检查') : 'People, services, and AI hit the same checks',
+    center: 'ObjectOS',
+    centerNote: isChinese(lang) ? zhText(lang, '受治理运行时') : 'Governed runtime',
+    inputs: isChinese(lang) ? ['用户', '服务', 'Agent', 'Webhook'] : ['Users', 'Services', 'Agents', 'Webhooks'],
+    outputs: isChinese(lang) ? ['API', 'UI', '任务', 'MCP 工具'] : ['APIs', 'UI', 'Jobs', 'MCP tools'],
+    spine: isChinese(lang) ? ['身份', '权限', '审计', '策略', 'Driver'] : ['Identity', 'Permissions', 'Audit', 'Policy', 'Drivers'],
+    flowTitle: isChinese(lang) ? zhText(lang, 'ObjectOS 是应用运行与 AI 交互的治理层') : 'ObjectOS is the governance layer for app runtime and AI interaction',
+    flowSubtitle: isChinese(lang)
+      ? zhText(lang, '每次 UI、API、SDK 或 MCP 调用都会带身份、权限、校验和审计记录。')
+      : 'Every UI, API, SDK, or MCP call carries identity, permission checks, validation, and an audit trail.',
+    lanes: isChinese(lang)
+      ? [
+          ['主体', '用户、服务账号、AI Agent'],
+          ['运行时', '加载应用工件、Driver、任务、Webhook 与策略'],
+          ['执行', '校验动作、行级/字段级权限、租户边界'],
+          ['记录', '审计日志、请求归因、运行时事件'],
+        ]
+      : [
+          ['Actor', 'Users, service accounts, AI agents'],
+          ['Runtime', 'Load app artifacts, drivers, jobs, webhooks, policy'],
+          ['Execute', 'Validate actions, row/field permissions, tenancy'],
+          ['Record', 'Audit logs, request attribution, runtime events'],
+        ],
+  },
+  objectui: {
+    eyebrow: isChinese(lang) ? zhText(lang, '界面渲染层') : 'Interface rendering layer',
+    title: isChinese(lang) ? zhText(lang, '同一份元数据，渲染人用界面') : 'Same metadata, human interface',
+    center: 'ObjectUI',
+    centerNote: isChinese(lang) ? zhText(lang, 'React 渲染器') : 'React renderer',
+    inputs: isChinese(lang) ? ['对象', '视图', '动作', '权限'] : ['Objects', 'Views', 'Actions', 'Permissions'],
+    outputs: isChinese(lang) ? ['表格', '表单', '仪表盘', 'App Shell'] : ['Tables', 'Forms', 'Dashboards', 'App shell'],
+    spine: isChinese(lang) ? ['Providers', 'Renderers', 'Widgets', 'Theme', 'Overrides'] : ['Providers', 'Renderers', 'Widgets', 'Theme', 'Overrides'],
+    flowTitle: isChinese(lang) ? zhText(lang, 'ObjectUI 让屏幕和 AI 工具不再漂移') : 'ObjectUI keeps screens and AI tools from drifting',
+    flowSubtitle: isChinese(lang)
+      ? zhText(lang, '前端仍可控制组件和体验，但字段、动作、权限来自同一份应用契约。')
+      : 'Frontend teams keep control of components and experience while fields, actions, and permissions come from the same app contract.',
+    lanes: isChinese(lang)
+      ? [
+          ['元数据', '对象、视图、页面、动作、字段标签'],
+          ['Providers', '连接 ObjectOS 或自有 REST/GraphQL API'],
+          ['Renderers', '渲染表格、表单、仪表盘与页面'],
+          ['覆盖', '用产品自己的 React 组件替换字段和区域'],
+        ]
+      : [
+          ['Metadata', 'Objects, views, pages, actions, field labels'],
+          ['Providers', 'Connect ObjectOS or your REST/GraphQL API'],
+          ['Renderers', 'Render tables, forms, dashboards, pages'],
+          ['Override', 'Replace fields and regions with your React components'],
+        ],
+  },
+  cloud: {
+    eyebrow: isChinese(lang) ? zhText(lang, '在线工作区') : 'Online workspace',
+    title: isChinese(lang) ? zhText(lang, '开发、预览、发布同一份工件') : 'Develop, preview, promote one artifact',
+    center: 'ObjectCloud',
+    centerNote: isChinese(lang) ? zhText(lang, '即将开放') : 'Opening soon',
+    inputs: isChinese(lang) ? ['模板', '仓库', 'Studio', 'AI 协作'] : ['Templates', 'Repos', 'Studio', 'AI collaboration'],
+    outputs: isChinese(lang) ? ['预览运行时', '工件导出', '托管环境', '自托管'] : ['Runtime preview', 'Artifact export', 'Managed env', 'Self-hosted'],
+    spine: isChinese(lang) ? ['项目', '环境', '密钥', '审计', '版本'] : ['Projects', 'Envs', 'Secrets', 'Audit', 'Versions'],
+    flowTitle: isChinese(lang) ? zhText(lang, 'ObjectCloud 是云端开发路径，不是锁定路径') : 'ObjectCloud is a cloud development path, not a lock-in path',
+    flowSubtitle: isChinese(lang)
+      ? zhText(lang, '团队在线编辑和预览应用，但输出仍是可导出的 ObjectStack 元数据工件。')
+      : 'Teams edit and preview online, while the output remains an exportable ObjectStack metadata artifact.',
+    lanes: isChinese(lang)
+      ? [
+          ['创建', '从模板、仓库或 Studio 工程开始'],
+          ['协作', '在线编辑对象、权限、视图、动作和工具'],
+          ['预览', '在隔离 ObjectOS 环境检查 API、UI、审计、MCP'],
+          ['发布', '部署到托管环境或导出到自托管运行时'],
+        ]
+      : [
+          ['Create', 'Start from templates, repos, or Studio projects'],
+          ['Collaborate', 'Edit objects, permissions, views, actions, tools'],
+          ['Preview', 'Check API, UI, audit, MCP in isolated ObjectOS envs'],
+          ['Promote', 'Deploy managed or export to self-hosted runtimes'],
+        ],
+  },
+  studio: {
+    eyebrow: isChinese(lang) ? zhText(lang, '可视化建模') : 'Visual modeling',
+    title: isChinese(lang) ? zhText(lang, '看见元数据如何影响运行时') : 'See how metadata changes runtime behavior',
+    center: 'Studio',
+    centerNote: isChinese(lang) ? zhText(lang, '视觉开发环境') : 'Visual development environment',
+    inputs: isChinese(lang) ? ['对象', '关系', '权限', '动作'] : ['Objects', 'Relations', 'Permissions', 'Actions'],
+    outputs: isChinese(lang) ? ['模型图', '预览 UI', 'API 表面', '工具表面'] : ['Model graph', 'UI preview', 'API surface', 'Tool surface'],
+    spine: isChinese(lang) ? ['Inspect', 'Edit', 'Preview', 'Review', 'Export'] : ['Inspect', 'Edit', 'Preview', 'Review', 'Export'],
+    flowTitle: isChinese(lang) ? zhText(lang, 'Studio 让复杂应用模型可评审') : 'Studio makes complex app models reviewable',
+    flowSubtitle: isChinese(lang)
+      ? zhText(lang, '它用于理解和编辑元数据；CLI 仍负责自动化，ObjectCloud 负责云端工作区。')
+      : 'It helps teams understand and edit metadata; CLI still handles automation, ObjectCloud handles hosted workspaces.',
+    lanes: isChinese(lang)
+      ? [
+          ['打开', '加载项目、云工作区或元数据包'],
+          ['理解', '查看对象关系、权限、视图与工具依赖'],
+          ['编辑', '通过表单和关系图修改应用模型'],
+          ['预览', '检查 API、UI、运行时和 MCP 工具效果'],
+        ]
+      : [
+          ['Open', 'Load a project, cloud workspace, or artifact bundle'],
+          ['Understand', 'Inspect object relations, permissions, views, tools'],
+          ['Edit', 'Modify app metadata through forms and diagrams'],
+          ['Preview', 'Check API, UI, runtime, and MCP tool effects'],
+        ],
+  },
+  cli: {
+    eyebrow: isChinese(lang) ? zhText(lang, '自动化入口') : 'Automation entry point',
+    title: isChinese(lang) ? zhText(lang, '源码、CI 和 Agent 共用命令') : 'One command surface for source, CI, and agents',
+    center: 'CLI',
+    centerNote: isChinese(lang) ? zhText(lang, '脚本化工具') : 'Scriptable tool',
+    inputs: isChinese(lang) ? ['开发者', 'CI', 'Agent', '发布脚本'] : ['Developers', 'CI', 'Agents', 'Release scripts'],
+    outputs: isChinese(lang) ? ['脚手架', '校验', '生成', '部署'] : ['Scaffold', 'Validate', 'Generate', 'Deploy'],
+    spine: isChinese(lang) ? ['init', 'validate', 'generate', 'build', 'deploy'] : ['init', 'validate', 'generate', 'build', 'deploy'],
+    flowTitle: isChinese(lang) ? zhText(lang, 'CLI 是 ObjectStack 的可重复执行路径') : 'CLI is the repeatable execution path for ObjectStack',
+    flowSubtitle: isChinese(lang)
+      ? zhText(lang, '同一组命令可被开发者、本地脚本、CI/CD 和 AI Coding Agent 使用。')
+      : 'The same commands can be used by developers, local scripts, CI/CD, and AI coding agents.',
+    lanes: isChinese(lang)
+      ? [
+          ['Scaffold', '创建项目、对象、动作、视图、Driver'],
+          ['Validate', '检查元数据、权限、视图和工具契约'],
+          ['Generate', '生成类型、JSON Schema、SDK 与 MCP 工具'],
+          ['Deploy', '构建工件并发布到云端或自托管运行时'],
+        ]
+      : [
+          ['Scaffold', 'Create projects, objects, actions, views, drivers'],
+          ['Validate', 'Check metadata, permissions, views, tool contracts'],
+          ['Generate', 'Emit types, JSON Schema, SDKs, MCP tools'],
+          ['Deploy', 'Build artifacts and promote to cloud or self-hosted runtime'],
+        ],
+  },
+} as const;
+
+const productVisual = isProduct ? productVisuals[section as keyof typeof productVisuals] : undefined;
 ---
 
 <Base lang={lang} title={documentTitle} description={description}>
@@ -117,11 +310,36 @@ const capabilityRows =
           </div>
         )}
       </div>
-      <aside class={`route-mark route-${section}`} aria-label={`${pageTitle} route marker`}>
-        <span>/{lang}/{section}</span>
-        <strong>{isProduct ? product?.hero?.title : pageTitle}</strong>
-        <p>{isProduct ? product?.hero?.subtitle : description}</p>
-      </aside>
+      {productVisual ? (
+        <aside class={`product-visual route-${section}`} aria-label={`${pageTitle} architecture`}>
+          <div class="visual-topline">
+            <span>{productVisual.eyebrow}</span>
+            <code>/{lang}/{section}</code>
+          </div>
+          <h2>{productVisual.title}</h2>
+          <div class="visual-system">
+            <div class="visual-column">
+              {productVisual.inputs.map((item) => <span>{item}</span>)}
+            </div>
+            <div class="visual-core">
+              <strong>{productVisual.center}</strong>
+              <small>{productVisual.centerNote}</small>
+            </div>
+            <div class="visual-column">
+              {productVisual.outputs.map((item) => <span>{item}</span>)}
+            </div>
+          </div>
+          <div class="visual-spine">
+            {productVisual.spine.map((item) => <span>{item}</span>)}
+          </div>
+        </aside>
+      ) : (
+        <aside class={`route-mark route-${section}`} aria-label={`${pageTitle} route marker`}>
+          <span>/{lang}/{section}</span>
+          <strong>{pageTitle}</strong>
+          <p>{description}</p>
+        </aside>
+      )}
     </div>
   </section>
   )}
@@ -142,6 +360,27 @@ const capabilityRows =
           </div>
         </div>
       </section>
+
+      {productVisual && (
+        <section class="section product-map-section">
+          <div class="container product-map">
+            <div>
+              <p class="eyebrow">{productVisual.eyebrow}</p>
+              <h2>{productVisual.flowTitle}</h2>
+              <p class="lead">{productVisual.flowSubtitle}</p>
+            </div>
+            <div class="flow-board" aria-label={`${pageTitle} system flow`}>
+              {productVisual.lanes.map(([label, text], index) => (
+                <div class="flow-lane">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{label}</strong>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {product.example && (
         <section class="section band">
@@ -495,6 +734,205 @@ const capabilityRows =
     color: rgba(247, 248, 244, 0.68);
   }
 
+  .product-visual {
+    overflow: hidden;
+    min-height: 430px;
+    border: 1px solid #202522;
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(215, 238, 104, 0.08), transparent 28%),
+      linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      #151917;
+    background-size: auto, 28px 28px, 28px 28px;
+    box-shadow: 0 30px 80px rgba(20, 25, 23, 0.2);
+    color: #f7f8f4;
+    padding: 24px;
+  }
+
+  .visual-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+    color: rgba(247, 248, 244, 0.68);
+    font-size: 0.78rem;
+    font-weight: 780;
+    text-transform: uppercase;
+  }
+
+  .visual-topline code {
+    border: 1px solid rgba(215, 238, 104, 0.22);
+    border-radius: 999px;
+    padding: 6px 10px;
+    background: rgba(215, 238, 104, 0.08);
+    color: var(--acid);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.78rem;
+    text-transform: none;
+  }
+
+  .product-visual h2 {
+    max-width: 34rem;
+    margin-bottom: 28px;
+    color: #fffdf7;
+    font-size: clamp(1.45rem, 3vw, 2.18rem);
+    line-height: 1.08;
+  }
+
+  .visual-system {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(130px, 0.82fr) minmax(0, 0.82fr);
+    gap: 20px;
+    align-items: center;
+  }
+
+  .visual-system::before {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    left: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(215, 238, 104, 0.52), transparent);
+    content: "";
+  }
+
+  .visual-column {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 10px;
+  }
+
+  .visual-column span,
+  .visual-spine span {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.055);
+    color: rgba(247, 248, 244, 0.82);
+    padding: 10px 12px;
+    font-size: 0.86rem;
+    font-weight: 680;
+  }
+
+  .visual-core {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    min-height: 138px;
+    border: 1px solid rgba(215, 238, 104, 0.36);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(215, 238, 104, 0.18), rgba(215, 238, 104, 0.04)),
+      rgba(10, 114, 95, 0.18);
+    box-shadow: 0 0 0 7px rgba(215, 238, 104, 0.035);
+    text-align: center;
+  }
+
+  .visual-core strong {
+    color: #fffdf7;
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  }
+
+  .visual-core small {
+    max-width: 8rem;
+    color: rgba(247, 248, 244, 0.64);
+    font-size: 0.78rem;
+    font-weight: 680;
+  }
+
+  .visual-spine {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 18px;
+  }
+
+  .visual-spine span {
+    border-color: rgba(215, 238, 104, 0.2);
+    background: rgba(215, 238, 104, 0.07);
+    color: var(--acid);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.78rem;
+  }
+
+  .product-map-section {
+    padding-top: 36px;
+  }
+
+  .product-map {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.05fr);
+    gap: 44px;
+    align-items: center;
+  }
+
+  .flow-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76)),
+      var(--panel);
+    overflow: hidden;
+  }
+
+  .flow-lane {
+    position: relative;
+    min-height: 238px;
+    border-right: 1px solid var(--line);
+    padding: 22px;
+  }
+
+  .flow-lane:last-child {
+    border-right: 0;
+  }
+
+  .flow-lane::after {
+    position: absolute;
+    top: 36px;
+    right: -9px;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    border-top: 1px solid var(--line-strong);
+    border-right: 1px solid var(--line-strong);
+    background: var(--panel);
+    transform: rotate(45deg);
+    content: "";
+  }
+
+  .flow-lane:last-child::after {
+    content: none;
+  }
+
+  .flow-lane span {
+    display: inline-flex;
+    margin-bottom: 52px;
+    color: var(--accent-strong);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .flow-lane strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+  }
+
+  .flow-lane p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+
   .code-grid h3 {
     margin-top: 0;
   }
@@ -807,11 +1245,28 @@ const capabilityRows =
 
   @media (max-width: 900px) {
     .hero-grid,
+    .product-map,
     .solutions-hero-grid,
     .section-heading,
     .industry-row,
     .playbook-grid {
       grid-template-columns: 1fr;
+    }
+
+    .product-visual {
+      min-height: auto;
+    }
+
+    .flow-board {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .flow-lane:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .flow-lane:nth-child(2)::after {
+      content: none;
     }
 
     .stats-grid {
@@ -824,6 +1279,82 @@ const capabilityRows =
   }
 
   @media (max-width: 560px) {
+    .product-visual {
+      padding: 18px;
+    }
+
+    .product-visual h2 {
+      margin-bottom: 18px;
+    }
+
+    .visual-topline {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .visual-system {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .visual-system::before {
+      top: 15%;
+      right: auto;
+      bottom: 15%;
+      left: 50%;
+      width: 1px;
+      height: auto;
+      background: linear-gradient(180deg, transparent, rgba(215, 238, 104, 0.52), transparent);
+    }
+
+    .visual-column {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .visual-column span {
+      padding: 8px 9px;
+      font-size: 0.78rem;
+    }
+
+    .visual-core {
+      min-height: 96px;
+    }
+
+    .visual-spine {
+      margin-top: 16px;
+      padding-top: 14px;
+    }
+
+    .visual-spine span {
+      padding: 7px 9px;
+    }
+
+    .flow-board {
+      grid-template-columns: 1fr;
+    }
+
+    .flow-lane,
+    .flow-lane:nth-child(2n) {
+      min-height: auto;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .flow-lane:last-child {
+      border-bottom: 0;
+    }
+
+    .flow-lane::after {
+      content: none;
+    }
+
+    .flow-lane span {
+      margin-bottom: 22px;
+    }
+
     .stats-grid {
       grid-template-columns: 1fr;
     }
