@@ -26,6 +26,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://www.objects
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:type" content="website" />
     <link rel="alternate" hreflang="en" href={Astro.url.pathname.replace(/^\/(en|zh-Hans|zh-Hant)/, '/en')} />
     <link rel="alternate" hreflang="zh-Hans" href={Astro.url.pathname.replace(/^\/(en|zh-Hans|zh-Hant)/, '/zh-Hans')} />
     <link rel="alternate" hreflang="zh-Hant" href={Astro.url.pathname.replace(/^\/(en|zh-Hans|zh-Hant)/, '/zh-Hant')} />

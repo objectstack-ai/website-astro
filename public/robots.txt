@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://objectstack.ai/sitemap.xml
+Sitemap: https://www.objectstack.ai/sitemap-index.xml

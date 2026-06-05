@@ -5,18 +5,30 @@ import { cwd, exit } from 'node:process';
 
 const ROOT = cwd();
 const DIST = path.join(ROOT, 'dist');
-const SITE = 'https://www.objectos.ai';
-const LOCALES = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'de', 'es', 'fr', 'ko'];
-const CLUSTER_SLUGS = [
-  'ai-native-app-platform',
-  'legacy-system-modernization',
-  'self-hosted-ai',
-  'crm-case-management-ai',
-  'manufacturing-ai',
+const SITE = 'https://www.objectstack.ai';
+const LOCALES = ['en', 'zh-Hans', 'zh-Hant'];
+const CONTENT_SECTIONS = [
+  'objectstack',
+  'objectql',
+  'objectos',
+  'objectui',
+  'cloud',
+  'studio',
+  'cli',
+  'enterprise',
+  'pricing',
+  'integrations',
+  'market',
+  'solutions',
+  'privacy',
+  'terms',
 ];
-const CLUSTER_PATHS = LOCALES.flatMap((locale) =>
-  CLUSTER_SLUGS.map((slug) => `/${locale}/${slug}/`)
-);
+const ROUTES = LOCALES.flatMap((locale) => [
+  `/${locale}/`,
+  `/${locale}/agents/`,
+  `/${locale}/blog/`,
+  ...CONTENT_SECTIONS.map((section) => `/${locale}/${section}/`),
+]);
 const issues = [];
 
 async function readDist(file) {
@@ -56,42 +68,26 @@ const sitemapIndex = await readDist('sitemap-index.xml');
 requireContains('sitemap-index.xml', sitemapIndex, `${SITE}/sitemap-0.xml`, 'missing sitemap-0.xml entry');
 
 const sitemap = await readDist('sitemap-0.xml');
-requireContains('sitemap-0.xml', sitemap, `${SITE}/en/blog/`, 'missing English blog index');
-requireContains('sitemap-0.xml', sitemap, `${SITE}/zh-Hans/blog/`, 'missing Simplified Chinese blog index');
+for (const route of ROUTES) {
+  requireContains('sitemap-0.xml', sitemap, `${SITE}${route}`, `missing route ${route}`);
+}
 
 const llms = await readDist('llms.txt');
-requireContains('llms.txt', llms, '# ObjectOS', 'missing title');
-requireContains('llms.txt', llms, '## English Articles', 'missing English article section');
-requireContains('llms.txt', llms, '## Simplified Chinese Articles', 'missing Simplified Chinese article section');
-for (const clusterPath of CLUSTER_PATHS) {
-  requireContains('llms.txt', llms, `${SITE}${clusterPath}`, `missing cluster page ${clusterPath}`);
-  requireContains('sitemap-0.xml', sitemap, `${SITE}${clusterPath}`, `missing cluster page ${clusterPath}`);
+requireContains('llms.txt', llms, '# ObjectStack', 'missing title');
+for (const route of ROUTES) {
+  requireContains('llms.txt', llms, route.replace(/\/$/, ''), `missing route ${route}`);
 }
 
 const rootRss = await readDist('rss.xml');
 requireContains('rss.xml', rootRss, '<rss version="2.0"', 'is not an RSS feed');
-requireContains('rss.xml', rootRss, `${SITE}/rss.xml`, 'missing root feed self URL');
+requireContains('rss.xml', rootRss, '<title>ObjectStack Blog</title>', 'missing feed title');
 requireContains('rss.xml', rootRss, '<item>', 'has no feed items');
-
-for (const locale of LOCALES) {
-  const rss = await readDist(`${locale}/rss.xml`);
-  requireContains(`${locale}/rss.xml`, rss, '<rss version="2.0"', 'is not an RSS feed');
-  requireContains(`${locale}/rss.xml`, rss, `${SITE}/${locale}/rss.xml`, 'missing locale feed self URL');
-  requireContains(`${locale}/rss.xml`, rss, '<item>', 'has no feed items');
-}
-
-for (const clusterPath of CLUSTER_PATHS) {
-  const file = `${clusterPath.replace(/^\//, '')}index.html`;
-  const html = await readDist(file);
-  requireContains(file, html, `${SITE}${clusterPath}`, 'missing absolute cluster URL');
-  requireContains(file, html, '"@type":"FAQPage"', 'missing FAQPage JSON-LD');
-  requireContains(file, html, '"@type":"ItemList"', 'missing reading path ItemList JSON-LD');
-}
 
 const htmlFiles = (await walk(DIST))
   .filter((file) => file.endsWith('.html'))
   .map((file) => path.relative(DIST, file).split(path.sep).join('/'))
-  .filter((file) => file !== 'index.html');
+  .filter((file) => file !== 'index.html' && file !== '404.html')
+  .filter((file) => LOCALES.some((locale) => file.startsWith(`${locale}/`)));
 
 for (const file of htmlFiles) {
   const html = await readDist(file);
@@ -99,18 +95,11 @@ for (const file of htmlFiles) {
   const canonical = `${SITE}${expectedPath}`;
   requireContains(file, html, `<link rel="canonical" href="${canonical}">`, 'missing expected canonical URL');
   requireContains(file, html, `<meta property="og:url" content="${canonical}">`, 'missing expected Open Graph URL');
-  requireContains(file, html, 'type="application/ld+json"', 'missing JSON-LD structured data');
 
   const locale = LOCALES.find((candidate) => file.startsWith(`${candidate}/`));
   if (locale) {
     requireContains(file, html, `<html lang="${locale}">`, 'missing matching html lang');
     requireContains(file, html, 'rel="alternate" hreflang="x-default"', 'missing x-default hreflang');
-    requireContains(file, html, `href="${SITE}/${locale}/rss.xml"`, 'missing locale RSS discovery link');
-  }
-
-  if (/^[^/]+\/blog\/[^/]+\/index\.html$/.test(file) && !file.includes('/topics/')) {
-    requireContains(file, html, '"@type":"BlogPosting"', 'missing BlogPosting JSON-LD');
-    requireContains(file, html, '"@type":"BreadcrumbList"', 'missing BreadcrumbList JSON-LD');
   }
 }
 

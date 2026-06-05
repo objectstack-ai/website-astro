@@ -8,7 +8,7 @@
     "dev": "node scripts/gen-zh-hant.mjs && astro dev",
     "dev:raw": "astro dev",
     "content:lint": "node scripts/gen-zh-hant.mjs && astro check",
-    "seo:smoke": "node scripts/gen-zh-hant.mjs && astro build",
+    "seo:smoke": "node scripts/seo-smoke.mjs",
     "build": "node scripts/gen-zh-hant.mjs && astro build",
     "preview": "astro preview",
     "check": "node scripts/gen-zh-hant.mjs && astro check"
